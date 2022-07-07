@@ -13,7 +13,7 @@ import Inspect from 'vite-plugin-inspect'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/IU-UI/',
 
   resolve: {
     alias: {

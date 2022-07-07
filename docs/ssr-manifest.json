@@ -29,17 +29,17 @@
   "../../../../__uno.css": [],
   "src/main.ts": [],
   "index.html": [],
-  "assets/app.a83ca468.js-unocss-hash.css": [],
+  "assets/app.db2afc3f.js-unocss-hash.css": [],
   "src/layouts/404.vue": [
-    "/assets/404.c0fa8966.js"
+    "/IU-UI/assets/404.5fbe28e1.js"
   ],
   "src/layouts/home.vue": [
-    "/assets/home.9efdae42.js"
+    "/IU-UI/assets/home.f13f7a82.js"
   ],
   "src/pages/about.md": [
-    "/assets/about.8683a96e.js"
+    "/IU-UI/assets/about.9a61d5d2.js"
   ],
   "src/pages/[...all].vue": [
-    "/assets/_...all_.11e8134c.js"
+    "/IU-UI/assets/_...all_.e81eeb10.js"
   ]
 }
