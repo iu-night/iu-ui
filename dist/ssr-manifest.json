@@ -1,0 +1,45 @@
+{
+  "vite/modulepreload-polyfill": [],
+  "node_modules/.pnpm/@vue+shared@3.2.37/node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+reactivity@3.2.37/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+runtime-core@3.2.37/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+runtime-dom@3.2.37/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/.pnpm/vue-demi@0.13.2_vue@3.2.37/node_modules/vue-demi/lib/index.mjs": [],
+  "node_modules/.pnpm/pinia@2.0.14_j6bzmzd4ujpabbp5objtwxyjp4/node_modules/pinia/dist/pinia.esm-browser.js": [],
+  "src/modules/pinia.ts": [],
+  "node_modules/.pnpm/vue-router@4.1.1_vue@3.2.37/node_modules/vue-router/dist/vue-router.mjs": [],
+  "node_modules/.pnpm/@vueuse+head@0.7.6_vue@3.2.37/node_modules/@vueuse/head/dist/index.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_eokielpygmxkps7ibtqtl57hgq/node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_eokielpygmxkps7ibtqtl57hgq/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_eokielpygmxkps7ibtqtl57hgq/node_modules/vite-ssg/dist/index.mjs": [],
+  "vite/preload-helper": [],
+  "node_modules/.pnpm/@vueuse+shared@8.8.0_vue@3.2.37/node_modules/@vueuse/shared/index.mjs": [],
+  "node_modules/.pnpm/@vueuse+core@8.8.0_vue@3.2.37/node_modules/@vueuse/core/index.mjs": [],
+  "src/dark/dark.ts": [],
+  "plugin-vue:export-helper": [],
+  "src/components/Header.vue": [],
+  "src/layouts/default.vue": [],
+  "../../../../@vite-plugin-vue-layouts/generated-layouts": [],
+  "src/App.vue": [],
+  "../../../../@vite-plugin-pages/route-block": [],
+  "src/pages/index.vue": [],
+  "../../../../@vite-plugin-pages/generated-pages?id=~pages": [],
+  "node_modules/.pnpm/@unocss+reset@0.43.2/node_modules/@unocss/reset/tailwind.css": [],
+  "src/styles/main.css": [],
+  "../../../../__uno.css": [],
+  "src/main.ts": [],
+  "index.html": [],
+  "assets/app.a83ca468.js-unocss-hash.css": [],
+  "src/layouts/404.vue": [
+    "/assets/404.c0fa8966.js"
+  ],
+  "src/layouts/home.vue": [
+    "/assets/home.9efdae42.js"
+  ],
+  "src/pages/about.md": [
+    "/assets/about.8683a96e.js"
+  ],
+  "src/pages/[...all].vue": [
+    "/assets/_...all_.11e8134c.js"
+  ]
+}

@@ -1,0 +1,23 @@
+<script setup lang="ts">
+useHead({
+  title: 'IU-UI',
+  meta: [
+    { name: 'description', content: 'Components based on Vue3' },
+    {
+      name: 'theme-color',
+      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
+    },
+  ],
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+    },
+  ],
+})
+</script>
+
+<template>
+  <RouterView />
+</template>
