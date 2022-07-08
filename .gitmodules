@@ -1,0 +1,3 @@
+[submodule "docs/iu-night.github.io"]
+	path = docs/iu-night.github.io
+	url = https://github.com/iu-night/iu-night.github.io
