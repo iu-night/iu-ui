@@ -91,7 +91,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: 'docs',
+    outDir: 'docs/iu-night.github.io/docs',
   },
 })
 
