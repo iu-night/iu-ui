@@ -34,8 +34,10 @@ specifiers:
   vite-plugin-vue-layouts: ^0.6.0
   vite-plugin-vue-markdown: ^0.20.1
   vite-ssg: ^0.20.2
+  vite-ssg-sitemap: ^0.2.7
   vue: ^3.2.37
   vue-router: ^4.1.1
+  vue-starport: ^0.3.0
   vue-tsc: ^0.38.2
 
 dependencies:
@@ -46,6 +48,7 @@ dependencies:
   prism-theme-vars: 0.2.3
   vue: 3.2.37
   vue-router: 4.1.1_vue@3.2.37
+  vue-starport: 0.3.0
 
 devDependencies:
   '@antfu/eslint-config': 0.25.2_4x5o4skxv6sl53vpwefgt23khm
@@ -76,6 +79,7 @@ devDependencies:
   vite-plugin-vue-layouts: 0.6.0_ecv5zhukn2wee76aswaja5pyga
   vite-plugin-vue-markdown: 0.20.1_vite@2.9.13
   vite-ssg: 0.20.2_eokielpygmxkps7ibtqtl57hgq
+  vite-ssg-sitemap: 0.2.7
   vue-tsc: 0.38.2_typescript@4.7.4
 
 packages:
@@ -6541,6 +6545,10 @@ packages:
       vite: 2.9.13_sass@1.53.0
     dev: true
 
+  /vite-ssg-sitemap/0.2.7:
+    resolution: {integrity: sha512-vzB2qey/PZGv8gd3nCkLiXxEemByZrTHjhkO7aFcjbxAKlW36RraBMZkizzRUo6uB06Uo7yM4UmzjE5h6dfvsg==}
+    dev: true
+
   /vite-ssg/0.20.2_eokielpygmxkps7ibtqtl57hgq:
     resolution: {integrity: sha512-XtBgJEDrN9cL6pgzXvThrTS7Pm5zwZZnBt50EmL/O+QbdhD/ZjCbcp4GmIrWFBWjVBFcgfwgPccmWv3DAF6s/w==}
     engines: {node: '>=14.0.0'}
@@ -6639,6 +6647,15 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.2.0
       vue: 3.2.37
+
+  /vue-starport/0.3.0:
+    resolution: {integrity: sha512-CfwYVxJDFqj7zoDw0TAMdNdpefuTdUH3rtupsadSa1je5Z7S/XwUCdxN0vVjBEEvWh33HmqjdK0IRQMWDlV7VQ==}
+    dependencies:
+      '@vueuse/core': 8.8.0_vue@3.2.37
+      vue: 3.2.37
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: false
 
   /vue-tsc/0.38.2_typescript@4.7.4:
     resolution: {integrity: sha512-+OMmpw9BZC9khul3I1HGtWchv7BCiaM7NvfdilVAiOFkjnivIoaW6jJm6YPQJaEPouePtpkDUWovyzgNxWdDsw==}

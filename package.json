@@ -17,7 +17,8 @@
     "pinia": "^2.0.14",
     "prism-theme-vars": "^0.2.3",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.1"
+    "vue-router": "^4.1.1",
+    "vue-starport": "^0.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -48,6 +49,7 @@
     "vite-plugin-vue-layouts": "^0.6.0",
     "vite-plugin-vue-markdown": "^0.20.1",
     "vite-ssg": "^0.20.2",
+    "vite-ssg-sitemap": "^0.2.7",
     "vue-tsc": "^0.38.2"
   }
 }

@@ -11,5 +11,7 @@ declare module '@vue/runtime-core' {
     MdCom: typeof import('./components/MdCom.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Starport: typeof import('vue-starport')['Starport']
+    StarportCarrier: typeof import('vue-starport')['StarportCarrier']
   }
 }
