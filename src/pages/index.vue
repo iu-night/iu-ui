@@ -1,14 +1,25 @@
 <script setup lang="ts">
-const sum = ref<number[]>([111])
+import { IuButton } from '../../packages'
+// const sum = ref<number[]>([111])
 </script>
 
 <template>
-  <div class="text-center mt-20px">
-    <div class="text-30px font-bold">
+  <div class="flex flex-col mt-20px justify-center">
+    <!-- <div class="font-bold text-30px">
       IU-UI
     </div>
-    <div class="text-30px font-bold">
+    <div class="font-bold text-30px">
       Home
+    </div>
+    <div flex justify-center>
+      <Starport port="menu" w-141px h-50px transition-all duration-800>
+        <HeadNav />
+      </Starport>
+    </div> -->
+    <div>
+      <button btn text-sm m="3 t8" @click="$router.push('components/button')">
+        开始
+      </button>
     </div>
   </div>
 </template>

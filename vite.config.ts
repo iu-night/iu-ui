@@ -21,6 +21,7 @@ export default defineConfig({
     alias: {
       '@/': `${resolve(__dirname, 'src')}/`,
       '#/': `${resolve(__dirname, 'type')}/`,
+      'iu-ui/': `${resolve(__dirname, 'packages')}/`,
     },
   },
 

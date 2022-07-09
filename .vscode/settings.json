@@ -7,5 +7,12 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "stylelint.validate": ["css", "postcss", "scss", "vue", "sass"]
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "scss",
+    "vue",
+    "sass"
+  ],
+  "windicss.sortOnSave": true
 }

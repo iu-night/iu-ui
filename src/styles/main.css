@@ -26,3 +26,11 @@ html.dark {
   background: rgb(13 148 136);
   opacity: 0.75;
 }
+
+/* [data-starport-craft] {
+  background: #0805;
+}
+
+[data-starport-proxy]:not([data-starport-landed]) {
+  background: #8005;
+} */

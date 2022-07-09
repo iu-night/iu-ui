@@ -19,5 +19,7 @@ useHead({
 </script>
 
 <template>
-  <RouterView />
+  <StarportCarrier>
+    <RouterView />
+  </StarportCarrier>
 </template>
