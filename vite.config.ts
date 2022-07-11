@@ -64,7 +64,7 @@ export default defineConfig({
     }),
 
     Markdown({
-      wrapperClasses: 'prose prose-sm m-auto text-left',
+      wrapperClasses: 'prose prose-sm text-left',
       headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/

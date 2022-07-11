@@ -3,13 +3,17 @@
     <Header />
     <div class="flex">
       <SideBar class="h-[calc(100vh-51px)] fixed b-r-[#ebebeb] b-r-1px dark:b-r-[#282828]" />
-      <RouterView v-slot="{ Component }" class="ml-300px">
-        <Transition name="fade" mode="out-in">
-          <KeepAlive>
-            <component :is="Component" />
-          </KeepAlive>
-        </Transition>
-      </RouterView>
+      <div
+        class="bg-[#fafafa] h-[calc(100vh-51px)] ml-251px pl-40px w-[calc(100%-251px)] overflow-x-hidden dark:bg-[#1e1e1e]"
+      >
+        <RouterView v-slot="{ Component }" class="">
+          <Transition name="fade" mode="out-in">
+            <KeepAlive>
+              <component :is="Component" />
+            </KeepAlive>
+          </Transition>
+        </RouterView>
+      </div>
     </div>
   </main>
 </template>
