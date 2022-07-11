@@ -34,3 +34,20 @@ html.dark {
 [data-starport-proxy]:not([data-starport-landed]) {
   background: #8005;
 } */
+
+.fade-leave-active,
+.fade-enter-active {
+  transition: all 0.25s ease;
+}
+
+.fade-enter-from {
+  transform: translateX(15px);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.fade-leave-to {
+  transform: translateX(-15px);
+  opacity: 0;
+  transition: all 0.25s ease;
+}

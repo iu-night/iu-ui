@@ -85,12 +85,12 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    onFinished() { generateSitemap() },
+    // onFinished() { generateSitemap() },
   },
 
   build: {
-    // outDir: 'docs/iu-night.github.io/docs',
-    outDir: 'dist',
+    outDir: 'docs/iu-night.github.io/docs',
+    // outDir: 'dist',
   },
 })
 

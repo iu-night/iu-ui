@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { IuButton } from '../../packages'
-// const sum = ref<number[]>([111])
 </script>
 
 <template>
   <div flex-center mt-8px>
-    <button btn text-5 @click="$router.push('components/button')">
+    <button btn text-18px @click="$router.push('/guide/start')">
       开始
     </button>
   </div>
