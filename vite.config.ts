@@ -14,7 +14,6 @@ import Inspect from 'vite-plugin-inspect'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/IU-UI/',
   base: '/',
 
   resolve: {
@@ -59,9 +58,7 @@ export default defineConfig({
     }),
 
     Components({
-      // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
-      // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
     }),
@@ -92,7 +89,8 @@ export default defineConfig({
   },
 
   build: {
-    outDir: 'docs/iu-night.github.io/docs',
+    // outDir: 'docs/iu-night.github.io/docs',
+    outDir: 'dist',
   },
 })
 
