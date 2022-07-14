@@ -18,10 +18,12 @@
       "vite/client",
       "vue/ref-macros",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client",
+      "unplugin-vue-define-options",
     ],
     "paths": {
       "@/*": ["src/*"],
+      "iu-ui": ["packages"],
       "iu-ui/*": ["packages/*"]
     }
   },

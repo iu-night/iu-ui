@@ -1,1 +1,4 @@
-export { default as IuButton } from './src/IuButton.vue'
+import { withInstall } from 'iu-ui/utils'
+import Button from './src/Button.vue'
+
+export const IuButton = withInstall(Button)

@@ -11,6 +11,7 @@ import Pages from 'vite-plugin-pages'
 import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,9 +19,9 @@ export default defineConfig({
 
   resolve: {
     alias: {
+      'iu-ui': `${resolve(__dirname, 'packages')}`,
       '@/': `${resolve(__dirname, 'src')}/`,
       '#/': `${resolve(__dirname, 'type')}/`,
-      'iu-ui/': `${resolve(__dirname, 'packages')}/`,
     },
   },
 
@@ -29,6 +30,8 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
     }),
+
+    DefineOptions(),
 
     Pages({
       dirs: [
@@ -61,6 +64,12 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
+      resolvers: [
+        (name: string) => {
+          if (name.match(/^(Iu[A-Z]|iu-[a-z])/))
+            return { name, from: 'iu-ui' }
+        },
+      ],
     }),
 
     Markdown({
