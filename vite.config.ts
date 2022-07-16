@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
@@ -31,6 +32,8 @@ export default defineConfig({
       reactivityTransform: true,
     }),
 
+    vueJsx(),
+
     DefineOptions(),
 
     Pages({
@@ -52,7 +55,6 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
-      dts: 'src/auto-imports.d.ts',
       dirs: [
         'src/stores',
         'src/dark',
@@ -63,7 +65,6 @@ export default defineConfig({
     Components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts',
       resolvers: [
         (name: string) => {
           if (name.match(/^(Iu[A-Z]|iu-[a-z])/))

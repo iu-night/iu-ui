@@ -22,7 +22,7 @@ defineOptions({
 <style lang="scss" scoped>
 .iu-button {
   --i-apply:
-    in-flex-center px-4 py-1 rounded bg-teal-700 text-white cursor-pointer align-middle
+    in-flex-center px-4 py-1 rounded bg-teal-700 text-white cursor-pointer align-middle select-none
     hover:bg-teal-800
     disabled:cursor-no-drop disabled:hover:bg-gray-600 disabled:bg-gray-600 disabled:opacity-50
     disabled:active:bg-gray-600;

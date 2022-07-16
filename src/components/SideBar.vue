@@ -16,7 +16,7 @@ const sideItems: ISideBar[] = [
     items: [
       {
         title: '开始',
-        name: 'start',
+        name: 'Start',
         route: '/guide/start',
         tips: '',
       },
@@ -27,8 +27,20 @@ const sideItems: ISideBar[] = [
     items: [
       {
         title: '按钮',
-        name: 'button',
+        name: 'Button',
         route: `${com}button`,
+        tips: '',
+      },
+      {
+        title: '卡片',
+        name: 'Card',
+        route: `${com}card`,
+        tips: '',
+      },
+      {
+        title: '间距',
+        name: 'Space',
+        route: `${com}space`,
         tips: '',
       },
     ],
@@ -43,13 +55,18 @@ const sideItems: ISideBar[] = [
         <div class="side-title">
           {{ list.title }}
         </div>
-        <RouterLink v-for="(item, index) in list.items" :key="item.title" :to="item.route">
+        <RouterLink v-for="(item, index) in list.items" :key="item.name" :to="item.route">
           <div
             class="side-btn"
             :class="{ 'side-btn-active': $route.path === item.route }"
             :style="`animation-delay: ${(listIndex * 5 + index) * 25}ms;`"
           >
-            {{ item.title }}
+            <div flex-1>
+              {{ item.title }}
+            </div>
+            <div text-14px opacity-70>
+              {{ item.name }}
+            </div>
           </div>
         </RouterLink>
       </div>
@@ -63,7 +80,7 @@ const sideItems: ISideBar[] = [
 }
 
 .side-btn {
-  @apply flex rounded-5px h-40px mt-10px opacity-0 pl-30px items-center
+  @apply flex rounded-5px h-40px mt-10px opacity-0 pr-10px pl-30px items-center
     hover:bg-gray-100 hover:text-teal-900 dark:hover:bg-gray-700
     dark:hover:text-teal;
 

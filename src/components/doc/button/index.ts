@@ -1,2 +1,3 @@
 import DocButtonCode from './DocButton.vue?raw'
-export { DocButtonCode }
+import ButtonDisabledCode from './ButtonDisabled.vue?raw'
+export { DocButtonCode, ButtonDisabledCode }

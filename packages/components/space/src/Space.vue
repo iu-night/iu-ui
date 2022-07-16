@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { IuNode } from 'iu-ui/utils'
 interface ISpace {
   vertical?: boolean
   align?: 'start' | 'end' | 'center' | 'baseline' | 'stretch'
@@ -7,7 +8,7 @@ interface ISpace {
   gapX?: string
   gapY?: string
 }
-const props = withDefaults(defineProps<ISpace>(), {
+withDefaults(defineProps<ISpace>(), {
   vertical: false,
   justify: 'start',
 })
@@ -16,9 +17,8 @@ defineOptions({
   name: 'IuSpace',
 })
 
-const gapStyle = computed(() => {
-  return props.gap ? { gap: props.gap } : null
-})
+const slots = useSlots()
+const content = slots?.default?.() || []
 </script>
 
 <template>
@@ -27,13 +27,16 @@ const gapStyle = computed(() => {
     :class="`iu-space-justify-${justify} ${align ? `iu-space-align-${align}` : ``} ${vertical ? `iu-space-vertical` : ``}`"
     :style="`gap: ${gap}; column-gap: ${gapX}; row-gap: ${gapY};`"
   >
-    <slot />
+    <div v-for="(item, index) in content" :key="index">
+      <IuNode :content="item" />
+    </div>
+    <!-- <slot /> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
 .iu-space {
-  --i-apply: flex gap-x-12px gap-y-10px;
+  --i-apply: flex flex-wrap gap-x-12px gap-y-10px;
 }
 
 .iu-space-vertical {

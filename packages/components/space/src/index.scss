@@ -1,0 +1,51 @@
+.iu-space {
+  --i-apply: flex flex-wrap gap-x-12px gap-y-10px;
+}
+
+.iu-space-vertical {
+  --i-apply: flex-col;
+}
+
+.iu-space-justify-center {
+  --i-apply: justify-center;
+}
+
+.iu-space-justify-start {
+  --i-apply: justify-start;
+}
+
+.iu-space-justify-end {
+  --i-apply: justify-end;
+}
+
+.iu-space-justify-between {
+  --i-apply: justify-between;
+}
+
+.iu-space-justify-around {
+  --i-apply: justify-around;
+}
+
+.iu-space-justify-evenly {
+  --i-apply: justify-evenly;
+}
+
+.iu-space-align-center {
+  --i-apply: items-center;
+}
+
+.iu-space-align-start {
+  --i-apply: items-start;
+}
+
+.iu-space-align-end {
+  --i-apply: items-end;
+}
+
+.iu-space-align-baseline {
+  --i-apply: items-baseline;
+}
+
+.iu-space-align-stretch {
+  --i-apply: items-stretch;
+}
