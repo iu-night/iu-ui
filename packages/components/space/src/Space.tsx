@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/no-unknown-property */
 import type { ComponentPublicInstance, PropType, VNode, VNodeChild } from 'vue'
 import { Comment, Fragment } from 'vue'
 

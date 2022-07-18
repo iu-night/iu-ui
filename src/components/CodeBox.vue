@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import Prism from 'prismjs'
 defineProps<{
   title?: string
-  code?: string
+  code: string
 }>()
 const showCode = ref(false)
+const type = 'markup'
+
+onMounted(() => {
+  Prism.highlightAll()
+})
 </script>
 
 <template>
@@ -17,9 +23,10 @@ const showCode = ref(false)
         </div>
       </template>
       <template #footer>
-        <div v-if="showCode && code" class="code-area">
-          <pre><code v-text="code" /></pre>
-          <!-- code area -->
+        <div v-show="showCode && code" class="code-area">
+          <pre flex w-full>
+            <code :class="`language-${type}`" v-html="Prism.highlight(code, Prism.languages[type], type)" />
+          </pre>
         </div>
       </template>
       <template #action>
@@ -32,7 +39,7 @@ const showCode = ref(false)
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .code-icon {
   --i-apply:
     flex-center py-5px cursor-pointer
@@ -45,7 +52,7 @@ const showCode = ref(false)
 }
 
 .code-area {
-  --i-apply: flex py-10px b-t-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
+  --i-apply: flex pt-10px b-t-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
 
   animation: fadeDown 0.2s ease-in-out;
 }

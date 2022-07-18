@@ -5,7 +5,7 @@
 <template>
   <div class="flex flex-col mt-20px justify-center">
     <div flex justify-center>
-      <Starport port="head-nav" h-50px transition-all duration-800>
+      <Starport port="menu" w-100px h-50px>
         <HeadNav />
       </Starport>
     </div>

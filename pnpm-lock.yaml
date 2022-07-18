@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.25.2
   '@iconify-json/carbon': ^1.1.6
   '@types/markdown-it-link-attributes': ^3.0.1
+  '@types/prismjs': ^1.26.0
   '@unocss/reset': ^0.44.2
   '@vitejs/plugin-vue': ^3.0.0
   '@vitejs/plugin-vue-jsx': ^2.0.0
@@ -18,6 +19,7 @@ specifiers:
   postcss-html: ^1.5.0
   postcss-scss: ^4.0.4
   prism-theme-vars: ^0.2.4
+  prismjs: ^1.28.0
   sass: ^1.53.0
   stylelint: ^14.9.1
   stylelint-config-rational-order: ^0.1.2
@@ -32,6 +34,7 @@ specifiers:
   vite: ^3.0.0
   vite-plugin-inspect: ^0.6.0
   vite-plugin-pages: ^0.25.0
+  vite-plugin-prismjs: ^0.0.8
   vite-plugin-vue-layouts: ^0.6.0
   vite-plugin-vue-markdown: ^0.20.1
   vite-ssg: ^0.20.2
@@ -47,6 +50,7 @@ dependencies:
   '@vueuse/head': 0.7.6_vue@3.2.37
   pinia: 2.0.16_j6bzmzd4ujpabbp5objtwxyjp4
   prism-theme-vars: 0.2.4
+  prismjs: 1.28.0
   vue: 3.2.37
   vue-router: 4.1.2_vue@3.2.37
   vue-starport: 0.3.0
@@ -55,6 +59,7 @@ devDependencies:
   '@antfu/eslint-config': 0.25.2_4x5o4skxv6sl53vpwefgt23khm
   '@iconify-json/carbon': 1.1.6
   '@types/markdown-it-link-attributes': 3.0.1
+  '@types/prismjs': 1.26.0
   '@vitejs/plugin-vue': 3.0.0_vite@3.0.0+vue@3.2.37
   '@vitejs/plugin-vue-jsx': 2.0.0_vite@3.0.0+vue@3.2.37
   critters: 0.0.16
@@ -78,6 +83,7 @@ devDependencies:
   vite: 3.0.0_sass@1.53.0
   vite-plugin-inspect: 0.6.0_vite@3.0.0
   vite-plugin-pages: 0.25.0_vite@3.0.0
+  vite-plugin-prismjs: 0.0.8_prismjs@1.28.0
   vite-plugin-vue-layouts: 0.6.0_5vcanmustn365rg452uyprxay4
   vite-plugin-vue-markdown: 0.20.1_vite@3.0.0
   vite-ssg: 0.20.2_zodgg63wx4ia7g264h7fi3aaae
@@ -722,6 +728,10 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    dev: true
+
+  /@types/prismjs/1.26.0:
+    resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
     dev: true
 
   /@types/unist/2.0.6:
@@ -1426,6 +1436,14 @@ packages:
   /available-typed-arrays/1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /babel-plugin-prismjs/2.1.0_prismjs@1.28.0:
+    resolution: {integrity: sha512-ehzSKYfeAz4U78zi/sfwsjDPlq0LvDKxNefcZTJ/iKBu+plsHsLqZhUeGf1+82LAcA35UZGbU6ksEx2Utphc/g==}
+    peerDependencies:
+      prismjs: ^1.18.0
+    dependencies:
+      prismjs: 1.28.0
     dev: true
 
   /bail/1.0.5:
@@ -5240,7 +5258,6 @@ packages:
   /prismjs/1.28.0:
     resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==}
     engines: {node: '>=6'}
-    dev: true
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -6740,6 +6757,17 @@ packages:
       vite: 3.0.0_sass@1.53.0
       yaml: 2.1.1
     transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vite-plugin-prismjs/0.0.8_prismjs@1.28.0:
+    resolution: {integrity: sha512-mBPPMS/hwVUArdqCtp/oajZT7iq1qwJDDCciNZ3R5+Q5tQUuUHXtDKuZHYnklPLElNbENf2FyuOtC4FrgxQRAA==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      '@babel/core': 7.18.6
+      babel-plugin-prismjs: 2.1.0_prismjs@1.28.0
+    transitivePeerDependencies:
+      - prismjs
       - supports-color
     dev: true
 

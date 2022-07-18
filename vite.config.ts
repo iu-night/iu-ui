@@ -13,6 +13,7 @@ import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import prismjs from 'vite-plugin-prismjs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -33,6 +34,11 @@ export default defineConfig({
     }),
 
     vueJsx(),
+
+    prismjs({
+      languages: ['js', 'css', 'markup'],
+      css: true,
+    }),
 
     DefineOptions(),
 

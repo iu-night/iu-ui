@@ -1,5 +1,5 @@
 <template>
-  <IuCard :hoverable="false">
+  <IuCard>
     <template #header>
       #header
     </template>

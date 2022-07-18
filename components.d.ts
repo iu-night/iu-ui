@@ -18,7 +18,6 @@ declare module '@vue/runtime-core' {
     IuCard: typeof import('iu-ui')['IuCard']
     IuName: typeof import('./src/components/IuName.vue')['default']
     IuSpace: typeof import('iu-ui')['IuSpace']
-    MdCom: typeof import('./src/components/MdCom.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SideBar: typeof import('./src/components/SideBar.vue')['default']

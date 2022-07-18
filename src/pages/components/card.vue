@@ -13,7 +13,7 @@ import { DocCardCode, DocCardSlotCode } from '@/components/doc'
           <DocCard />
         </Starport>
       </CodeBox>
-      <CodeBox w-500px title="悬浮" :code="DocCardSlotCode">
+      <CodeBox w-500px title="悬浮" code="">
         在写了在写了...
       </CodeBox>
       <CodeBox w-500px title="插槽" :code="DocCardSlotCode">

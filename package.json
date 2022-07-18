@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --port 3366 ",
-    "build:doc": "vite-ssg build",
+    "site": "vite-ssg build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -16,6 +16,7 @@
     "@vueuse/head": "^0.7.6",
     "pinia": "^2.0.16",
     "prism-theme-vars": "^0.2.4",
+    "prismjs": "^1.28.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2",
     "vue-starport": "^0.3.0"
@@ -24,6 +25,7 @@
     "@antfu/eslint-config": "^0.25.2",
     "@iconify-json/carbon": "^1.1.6",
     "@types/markdown-it-link-attributes": "^3.0.1",
+    "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.0.0",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "critters": "^0.0.16",
@@ -47,6 +49,7 @@
     "vite": "^3.0.0",
     "vite-plugin-inspect": "^0.6.0",
     "vite-plugin-pages": "^0.25.0",
+    "vite-plugin-prismjs": "^0.0.8",
     "vite-plugin-vue-layouts": "^0.6.0",
     "vite-plugin-vue-markdown": "^0.20.1",
     "vite-ssg": "^0.20.2",
