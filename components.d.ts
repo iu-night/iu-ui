@@ -7,11 +7,15 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ButtonApi: typeof import('./src/components/doc/button/ButtonApi.md')['default']
     ButtonDisabled: typeof import('./src/components/doc/button/ButtonDisabled.vue')['default']
+    ButtonProps: typeof import('./src/components/doc/button/ButtonProps.md')['default']
+    CardApi: typeof import('./src/components/doc/card/CardApi.md')['default']
+    CardHoverable: typeof import('./src/components/doc/card/CardHoverable.vue')['default']
+    CardSlot: typeof import('./src/components/doc/card/CardSlot.vue')['default']
     CodeBox: typeof import('./src/components/CodeBox.vue')['default']
     DocButton: typeof import('./src/components/doc/button/DocButton.vue')['default']
     DocCard: typeof import('./src/components/doc/card/DocCard.vue')['default']
-    DocCardSlot: typeof import('./src/components/doc/card/DocCardSlot.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HeadNav: typeof import('./src/components/HeadNav.vue')['default']
     IuButton: typeof import('iu-ui')['IuButton']

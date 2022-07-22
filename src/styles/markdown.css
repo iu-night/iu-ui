@@ -3,10 +3,53 @@
 
 .prose {
   --prism-font-family: 'DM Mono', monospace;
+
+  max-width: 100% !important;
 }
 
 .prose img {
   width: 100%;
+}
+
+.prose table {
+  display: table;
+  border: 1px solid #d8d8d8;
+  border-color: rgb(10 10 10 / 15%);
+  border-radius: 4px;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow:
+    0 1px 2px -2px rgb(0 0 0 / 8%),
+    0 3px 6px 0 rgb(0 0 0 / 6%),
+    0 5px 12px 4px rgb(0 0 0 / 4%);
+  opacity: 0.9
+}
+
+.dark .prose table {
+  border-color: rgb(216 216 216 / 10%);
+  box-shadow:
+    0 1px 2px -2px rgb(255 255 255 / 8%),
+    0 3px 6px 0 rgb(255 255 255 / 6%),
+    0 5px 12px 4px rgb(255 255 255 / 4%)
+}
+
+.prose thead {
+  background-color: #efefef;
+  border-radius: 4px 4px 0 0;
+}
+
+.prose thead th:first-child {
+  border-right-color: transparent;
+  border-radius: 4px 0 0;
+}
+
+.prose thead th:last-child {
+  border-right-color: transparent;
+  border-radius: 0 4px 0 0;
+}
+
+.dark .prose thead {
+  background-color: #252525;
 }
 
 html:not(.dark) {

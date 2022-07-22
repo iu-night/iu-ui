@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DocCardCode, DocCardSlotCode } from '@/components/doc'
+import { CardHoverableCode, CardSlotCode, DocCardCode } from '@/components/doc'
 </script>
 
 <template>
@@ -8,17 +8,22 @@ import { DocCardCode, DocCardSlotCode } from '@/components/doc'
       Card
     </div>
     <IuSpace>
-      <CodeBox w-500px title="基础" :code="DocCardCode">
-        <Starport port="iu-card" w-300px h-100px>
-          <DocCard />
-        </Starport>
-      </CodeBox>
-      <CodeBox w-500px title="悬浮" code="">
-        在写了在写了...
-      </CodeBox>
-      <CodeBox w-500px title="插槽" :code="DocCardSlotCode">
-        <DocCardSlot />
-      </CodeBox>
+      <IuSpace vertical>
+        <CodeBox w-500px title="基础" :code="DocCardCode">
+          <Starport port="iu-card" w-300px h-100px>
+            <DocCard />
+          </Starport>
+        </CodeBox>
+        <CodeBox w-500px title="悬浮" :code="CardHoverableCode">
+          <CardHoverable />
+        </CodeBox>
+      </IuSpace>
+      <IuSpace vertical>
+        <CodeBox w-500px title="插槽" :code="CardSlotCode">
+          <CardSlot />
+        </CodeBox>
+      </IuSpace>
     </IuSpace>
+    <CardApi />
   </div>
 </template>

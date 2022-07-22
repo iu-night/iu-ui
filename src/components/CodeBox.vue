@@ -41,18 +41,18 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .code-icon {
-  --i-apply:
+  --iu-apply:
     flex-center py-5px cursor-pointer
     transition duration-200 ease-in-out
     hover:opacity-100 hover:text-teal-500;
 }
 
 .code-icon-btn {
-  --i-apply: inline-block select-none;
+  --iu-apply: inline-block select-none;
 }
 
 .code-area {
-  --i-apply: flex pt-10px b-t-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
+  --iu-apply: flex pt-10px b-t-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
 
   animation: fadeDown 0.2s ease-in-out;
 }

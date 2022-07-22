@@ -1,4 +1,4 @@
 import { withInstall } from 'iu-ui/utils'
-import Card from './src/Card.vue'
+import card from './src/card.vue'
 
-export const IuCard = withInstall(Card)
+export const IuCard = withInstall(card)

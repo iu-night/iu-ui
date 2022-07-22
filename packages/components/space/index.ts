@@ -1,4 +1,4 @@
 import { withInstall } from 'iu-ui/utils'
-import Space from './src/Space'
+import space from './src/space'
 
-export const IuSpace = withInstall(Space)
+export const IuSpace = withInstall(space)

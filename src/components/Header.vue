@@ -20,7 +20,7 @@
 
 <style scoped lange="scss">
 .header {
-  --i-apply:
+  --iu-apply:
     flex b-b-[#ebebeb] b-b-1px text-xl w-full px-30px text-25px items-center justify-between
     dark:b-b-[#282828];
 }

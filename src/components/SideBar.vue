@@ -37,6 +37,11 @@ const sideItems: ISideBar[] = [
         route: `${com}card`,
         tips: '',
       },
+    ],
+  },
+  {
+    title: '布局',
+    items: [
       {
         title: '间距',
         name: 'Space',
@@ -101,10 +106,10 @@ const sideItems: ISideBar[] = [
 }
 
 .side-btn-active {
-  --i-apply: bg-[#18a058] bg-opacity-10 text-teal-900 dark:text-teal dark:bg-teal-800;
+  --iu-apply: bg-[#18a058] bg-opacity-10 text-teal-900 dark:text-teal dark:bg-teal-800;
 
   &:hover {
-    --i-apply: bg-[#18a058] bg-opacity-10 text-teal-900 dark:bg-teal-800;
+    --iu-apply: bg-[#18a058] bg-opacity-10 text-teal-900 dark:bg-teal-800;
   }
 }
 </style>

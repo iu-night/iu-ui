@@ -26,7 +26,7 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives({
-      varStyle: '--i-',
+      varStyle: '--iu-',
     }),
     transformerVariantGroup(),
   ],

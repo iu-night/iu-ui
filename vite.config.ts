@@ -62,7 +62,7 @@ export default defineConfig({
         '@vueuse/core',
       ],
       dirs: [
-        'src/stores',
+        // 'src/stores/*',
         'src/dark',
       ],
       vueTemplate: true,

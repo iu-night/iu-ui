@@ -17,5 +17,6 @@ import { ButtonDisabledCode, DocButtonCode } from '@/components/doc'
         <ButtonDisabled />
       </CodeBox>
     </IuSpace>
+    <ButtonApi />
   </div>
 </template>
