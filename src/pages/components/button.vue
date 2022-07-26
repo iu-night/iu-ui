@@ -9,7 +9,7 @@ import { ButtonDisabledCode, DocButtonCode } from '@/components/doc'
     </div>
     <IuSpace vertical>
       <CodeBox w-500px title="基础" :code="DocButtonCode">
-        <Starport port="iu-button" w-296px h-34px>
+        <Starport port="iu-button" w-375px h-34px>
           <DocButton />
         </Starport>
       </CodeBox>

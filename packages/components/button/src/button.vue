@@ -64,9 +64,9 @@ const handleAnimationEnd = () => {
 
 .iu-button {
   --iu-apply:
-    in-flex-center px-16px py-4px rounded-4px leading-normal cursor-pointer align-middle select-none
+    in-flex-center px-16px py-4px rounded-4px leading-normal cursor-pointer align-middle select-none text-[#222]
     disabled:cursor-no-drop disabled:hover:bg-gray-600 disabled:bg-gray-600 disabled:opacity-50
-    disabled:active:bg-gray-600;
+    disabled:active:bg-gray-600 dark:text-white;
 
   line-height: 1.5;
 }

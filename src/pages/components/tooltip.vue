@@ -9,7 +9,7 @@ import { DocTooltipCode } from '@/components/doc'
     </div>
     <IuSpace vertical>
       <CodeBox w-500px title="基础" :code="DocTooltipCode">
-        <Starport port="iu-tooltip" w-296px h-34px>
+        <Starport port="iu-tooltip" w-236px h-34px>
           <DocTooltip />
         </Starport>
       </CodeBox>
