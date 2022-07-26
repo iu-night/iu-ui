@@ -1,4 +1,6 @@
 export * from './button'
 export * from './card'
+export * from './collapse-transition'
+export * from './popover'
 // export * from './scrollbar'
 export * from './space'

@@ -1,4 +1,4 @@
 import { withInstall } from 'iu-ui/utils'
-import Scrollbar from './src/Scrollbar.vue'
+import scrollbar from './src/scrollbar.vue'
 
-export const IuScrollbar = withInstall(Scrollbar)
+export const IuScrollbar = withInstall(scrollbar)

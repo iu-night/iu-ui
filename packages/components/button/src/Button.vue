@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // 用来测试
 interface IProps {
-  type?: 'primary' | 'warning' | 'success' | 'error'
+  type?: 'default' | 'primary' | 'warning' | 'success' | 'error'
 
 }
 withDefaults(defineProps<IProps>(), {
-  type: 'primary',
+  type: 'default',
 })
 
 const emit = defineEmits({
@@ -65,8 +65,6 @@ const handleAnimationEnd = () => {
 .iu-button {
   --iu-apply:
     in-flex-center px-16px py-4px rounded-4px leading-normal cursor-pointer align-middle select-none
-    bg-teal-700 text-white
-    hover:bg-teal-800
     disabled:cursor-no-drop disabled:hover:bg-gray-600 disabled:bg-gray-600 disabled:opacity-50
     disabled:active:bg-gray-600;
 
@@ -115,6 +113,13 @@ const handleAnimationEnd = () => {
   }
 
   // @include pulse($pulse0, $pulse100);
+}
+
+.iu-button-default {
+  --iu-apply:
+    b-1px b-[#efeff5]
+    hover:b-[#cfcfcf]
+    dark:b-[#fff] dark:b-opacity-10 dark:hover:b-opacity-50;
 }
 
 .iu-button-primary {

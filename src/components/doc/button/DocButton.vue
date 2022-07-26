@@ -1,5 +1,8 @@
 <template>
   <IuSpace>
+    <IuButton>
+      开始
+    </IuButton>
     <IuButton type="primary">
       开始
     </IuButton>

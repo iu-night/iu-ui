@@ -44,3 +44,8 @@ html.dark {
   opacity: 0;
   transition: all 0.25s ease;
 }
+
+.iu-ct-leave-active,
+.iu-ct-enter-active {
+  transition: all 0.3s ease-in-out;
+}

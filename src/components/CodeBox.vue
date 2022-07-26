@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Prism from 'prismjs'
+
 defineProps<{
   title?: string
   code: string
@@ -8,7 +9,7 @@ const showCode = ref(false)
 const type = 'markup'
 
 onMounted(() => {
-  Prism.highlightAll()
+  // Prism.highlightAll()
 })
 </script>
 
@@ -17,20 +18,30 @@ onMounted(() => {
     <IuCard hoverable :title="title">
       <slot />
       <template #extra>
-        <div class="code-icon" :title="showCode ? '隐藏代码' : '显示代码'" @click="showCode = !showCode">
+        <div
+          v-tooltip.top="showCode ? '隐藏代码' : '显示代码'"
+          class="code-icon"
+          @click="showCode = !showCode"
+        >
           <div v-if="showCode" class="code-icon-btn i-carbon-code-hide" />
           <div v-else class="code-icon-btn i-carbon-code" />
         </div>
       </template>
-      <template #footer>
-        <div v-show="showCode && code" class="code-area">
-          <pre flex w-full>
-            <code :class="`language-${type}`" v-html="Prism.highlight(code, Prism.languages[type], type)" />
-          </pre>
-        </div>
+      <template v-if="code" #footer>
+        <IuCollapseTransition>
+          <div v-show="showCode" class="code-area">
+            <pre flex w-full>
+              <code :class="`language-${type}`" v-html="Prism.highlight(code, Prism.languages[type], type)" />
+            </pre>
+          </div>
+        </IuCollapseTransition>
       </template>
       <template #action>
-        <div class="code-icon" :title="showCode ? '隐藏代码' : '显示代码'" @click="showCode = !showCode">
+        <div
+          v-tooltip.top="showCode ? '隐藏代码' : '显示代码'"
+          class="code-icon"
+          @click="showCode = !showCode"
+        >
           <div v-if="showCode" class="code-icon-btn i-carbon-code-hide" />
           <div v-else class="code-icon-btn i-carbon-code" />
         </div>
@@ -54,18 +65,18 @@ onMounted(() => {
 .code-area {
   --iu-apply: flex pt-10px b-t-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
 
-  animation: fadeDown 0.2s ease-in-out;
+  // animation: fadeDown 0.2s ease-in-out;
 }
 
-@keyframes fadeDown {
-  0% {
-    transform: scaleY(0.8) translateY(-4px);
-    opacity: 0.8;
-  }
+// @keyframes fadeDown {
+//   0% {
+//     transform: scaleY(0.8) translateY(-4px);
+//     opacity: 0.8;
+//   }
 
-  100% {
-    transform: scaleY(0.9999) translateY(0);
-    opacity: 1;
-  }
-}
+//   100% {
+//     transform: scaleY(0.9999) translateY(0);
+//     opacity: 1;
+//   }
+// }
 </style>

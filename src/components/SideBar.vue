@@ -40,6 +40,17 @@ const sideItems: ISideBar[] = [
     ],
   },
   {
+    title: '反馈',
+    items: [
+      {
+        title: '文字提示',
+        name: 'Tooltip',
+        route: `${com}tooltip`,
+        tips: '',
+      },
+    ],
+  },
+  {
     title: '布局',
     items: [
       {
