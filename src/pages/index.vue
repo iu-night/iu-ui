@@ -22,6 +22,11 @@
           <DocTooltip />
         </Starport>
       </RouterLink>
+      <RouterLink flex to="/components/space">
+        <Starport port="iu-space" w-300px h-34px>
+          <DocSpace />
+        </Starport>
+      </RouterLink>
     </IuSpace>
   </div>
 </template>

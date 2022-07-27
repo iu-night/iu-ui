@@ -8,14 +8,14 @@ defineProps<{
 const showCode = ref(false)
 const type = 'markup'
 
-onMounted(() => {
-  // Prism.highlightAll()
-})
+// onMounted(() => {
+//   Prism.highlightAll()
+// })
 </script>
 
 <template>
   <div>
-    <IuCard hoverable :title="title">
+    <IuCard hoverable :title="title" :bordered="false">
       <slot />
       <template #extra>
         <div
