@@ -32,8 +32,6 @@ function calculationLocation(el: any, target: any, placements: any) {
     return
   el.tooltipPostiton.y = 0
   el.tooltipPostiton.x = 0
-  console.log(el.$el)
-  // console.log(target)
   const el_dom = el.$el.getBoundingClientRect()
   const target_dom = target.getBoundingClientRect()
 

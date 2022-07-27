@@ -1,5 +1,5 @@
 <template>
-  <IuSpace>
+  <IuSpace align="center">
     <IuButton>
       开始
     </IuButton>

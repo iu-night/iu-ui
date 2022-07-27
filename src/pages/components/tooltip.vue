@@ -5,7 +5,7 @@ import { DocTooltipCode } from '@/components/doc'
 <template>
   <div class="flex flex-col mt-30px">
     <div mb-30px text-30px font-bold>
-      Button
+      Tooltip
     </div>
     <IuSpace vertical>
       <CodeBox w-500px title="基础" :code="DocTooltipCode">

@@ -65,7 +65,7 @@ const sideItems: ISideBar[] = [
 </script>
 
 <template>
-  <div>
+  <div class="iu-side-bar">
     <div class="px-20px w-250px">
       <div v-for="(list, listIndex) in sideItems" :key="list.title">
         <div class="side-title">
@@ -91,6 +91,12 @@ const sideItems: ISideBar[] = [
 </template>
 
 <style scoped lang="scss">
+.iu-side-bar {
+  --iu-apply:
+    h-full pt-55px fixed z-888
+    shadow-iu dark:shadow-iud;
+}
+
 .side-title {
   @apply flex h-40px mt-10px opacity-60 pl-20px items-center;
 }

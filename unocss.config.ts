@@ -15,6 +15,12 @@ export default defineConfig({
     'flex-center': 'flex justify-center items-center',
     'in-flex-center': 'inline-flex justify-center items-center',
   },
+  theme: {
+    boxShadow: {
+      iu: '0 1px 2px -2px rgb(0 0 0 / 8%), 0 3px 6px 0 rgb(0 0 0 / 6%), 0 5px 12px 4px rgb(0 0 0 / 4%)',
+      iud: '0 1px 2px -2px rgb(255 255 255 / 8%), 0 3px 6px 0 rgb(255 255 255 / 6%), 0 5px 12px 4px rgb(255 255 255 / 4%)',
+    },
+  },
   presets: [
     presetUno(),
     presetAttributify(),

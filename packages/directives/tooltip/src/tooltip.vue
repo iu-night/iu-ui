@@ -45,56 +45,50 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
 <style lang="scss" scoped>
 .iu-tooltip {
   --iu-apply:
-    fixed inline-block rounded-5px pointer-events-none
+    fixed inline-block rounded-5px pointer-events-none break-words
+    top-0 left-0 z-1000 min-w-10px
     p-10px font-500 text-12px
-    text-gray-700 bg-[#fafafa]
-    dark:text-gray-200 dark:bg-[#1e1e1e];
+    text-gray-700 bg-[#eaeaea]
+    dark:text-gray-200 dark:bg-[#4e4e4e];
 
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  min-width: 10px;
   line-height: 1.2;
-  word-wrap: break-word;
 }
 
 .iu-tooltip-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px;
+  --iu-apply:
+    b-transparent b-l-[#eaeaea] dark:b-l-[#4e4e4e]
+    absolute w-0 h-0 b-8px;
 }
 
 .iu-tooltip-arrow.left {
-  --iu-apply: b-transparent b-l-[#fafafa] dark:b-l-[#1e1e1e];
+  --iu-apply:
+    b-transparent b-l-[#eaeaea] dark:b-l-[#4e4e4e]
+    top-1/2 -right-15px;
 
-  top: 50%;
-  right: -15px;
   transform: translate3d(0, -50%, 0);
 }
 
 .iu-tooltip-arrow.bottom {
-  --iu-apply: b-transparent b-b-[#fafafa] dark:b-b-[#1e1e1e];
+  --iu-apply:
+    b-transparent b-b-[#eaeaea] dark:b-b-[#4e4e4e]
+    -top-15px left-1/2;
 
-  top: -15px;
-  left: 50%;
   transform: translate3d(-50%, 0, 0);
 }
 
 .iu-tooltip-arrow.right {
-  --iu-apply: b-transparent b-r-[#fafafa] dark:b-r-[#1e1e1e];
+  --iu-apply:
+    b-transparent b-r-[#eaeaea] dark:b-r-[#4e4e4e]
+    top-1/2 -left-15px;
 
-  top: 50%;
-  left: -15px;
   transform: translate3d(0, -50%, 0);
 }
 
 .iu-tooltip-arrow.top {
-  --iu-apply: b-transparent b-t-[#fafafa] dark:b-t-[#1e1e1e];
+  --iu-apply:
+    b-transparent b-t-[#eaeaea] dark:b-t-[#4e4e4e]
+    -bottom-15px left-1/2;
 
-  bottom: -15px;
-  left: 50%;
   transform: translate3d(-50%, 0, 0);
 }
 

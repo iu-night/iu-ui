@@ -1,6 +1,6 @@
 <template>
-  <main class="flex-center flex-col py-10 px-4 text-gray-700 dark:text-gray-200">
-    <Starport port="iu-ui" w-121px h-45px>
+  <main class="flex-center flex-col px-4 pt-30 text-gray-700 dark:text-gray-200">
+    <Starport port="iu-ui" w-121px h-45px z-1000>
       <IuName />
     </Starport>
 

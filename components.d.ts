@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ButtonApi: typeof import('./src/components/doc/button/ButtonApi.md')['default']
     ButtonDisabled: typeof import('./src/components/doc/button/ButtonDisabled.vue')['default']
+    ButtonRound: typeof import('./src/components/doc/button/ButtonRound.vue')['default']
     CardApi: typeof import('./src/components/doc/card/CardApi.md')['default']
     CardBordered: typeof import('./src/components/doc/card/CardBordered.vue')['default']
     CardHoverable: typeof import('./src/components/doc/card/CardHoverable.vue')['default']

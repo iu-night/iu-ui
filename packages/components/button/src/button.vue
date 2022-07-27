@@ -1,12 +1,7 @@
 <script setup lang="ts">
-// 用来测试
-interface IProps {
-  type?: 'default' | 'primary' | 'warning' | 'success' | 'error'
+import { buttonProps } from './button'
 
-}
-withDefaults(defineProps<IProps>(), {
-  type: 'default',
-})
+defineProps(buttonProps)
 
 const emit = defineEmits({
   click: (evt: MouseEvent) => evt instanceof MouseEvent,
@@ -36,7 +31,12 @@ const handleAnimationEnd = () => {
   <button
     type="button"
     class="iu-button"
-    :class="[`iu-button-${type}`, pulse ? `iu-button-pulse` : '']"
+    :class="[
+      `iu-button-${type}`,
+      pulse ? `iu-button-pulse` : '',
+      {
+        'iu-button-round': round,
+      }]"
     @click="handleClick"
     @animationend="handleAnimationEnd"
   >
@@ -67,8 +67,10 @@ const handleAnimationEnd = () => {
     in-flex-center px-16px py-4px rounded-4px leading-normal cursor-pointer align-middle select-none text-[#222]
     disabled:cursor-no-drop disabled:hover:bg-gray-600 disabled:bg-gray-600 disabled:opacity-50
     disabled:active:bg-gray-600 dark:text-white;
+}
 
-  line-height: 1.5;
+.iu-button-round {
+  --iu-apply: rounded-20px;
 }
 
 .iu-button-pulse {
