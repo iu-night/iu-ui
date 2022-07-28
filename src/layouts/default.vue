@@ -4,7 +4,7 @@
     <div class="flex h-100vh">
       <SideBar />
       <div
-        class="bg-[#fafafa] ml-250px px-40px pt-55px pb-40px w-[calc(100%-251px)] overflow-x-hidden dark:bg-[#1e1e1e]"
+        class="bg-[#fafafa] ml-250px px-40px pt-55px pb-40px w-[calc(100%-251px)] overflow-x-hidden crollDivClass dark:bg-[#1e1e1e]"
       >
         <RouterView v-slot="{ Component }" class="">
           <Transition name="fade" mode="out-in">
@@ -12,6 +12,7 @@
           </Transition>
         </RouterView>
       </div>
+      <IuBacktop target="crollDivClass" />
     </div>
   </main>
 </template>

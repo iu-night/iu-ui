@@ -1,3 +1,4 @@
+export * from './backtop'
 export * from './button'
 export * from './card'
 export * from './collapse-transition'

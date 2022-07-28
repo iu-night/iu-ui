@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     DocTooltip: typeof import('./src/components/doc/tooltip/DocTooltip.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HeadNav: typeof import('./src/components/HeadNav.vue')['default']
+    IuBacktop: typeof import('iu-ui')['IuBacktop']
     IuButton: typeof import('iu-ui')['IuButton']
     IuCard: typeof import('iu-ui')['IuCard']
     IuCollapseTransition: typeof import('iu-ui')['IuCollapseTransition']

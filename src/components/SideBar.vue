@@ -54,6 +54,12 @@ const sideItems: ISideBar[] = [
     title: '布局',
     items: [
       {
+        title: '回到顶部',
+        name: 'Backtop',
+        route: `${com}backtop`,
+        tips: '',
+      },
+      {
         title: '间距',
         name: 'Space',
         route: `${com}space`,
