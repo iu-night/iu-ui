@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AngleUp } from '@vicons/fa'
+// import { AngleUp } from '@vicons/fa'
 // import { Icon } from '@vicons/utils'
 
 import { backtopProps } from './backtop'
@@ -13,6 +13,7 @@ defineOptions({
 })
 
 const el = shallowRef<HTMLElement>()
+const ctr = shallowRef<Document | HTMLElement>()
 const backtopVis = ref(false)
 const backTopStyle = computed(() => ({
   right: `${props.right}px`,
@@ -57,12 +58,15 @@ const handleClick = (event: MouseEvent) => {
 
 const handleScrollThrottled = useThrottleFn(handleScroll, 300)
 
-useEventListener(document, 'scroll', handleScrollThrottled, true)
+useEventListener(ctr, 'scroll', handleScrollThrottled, true)
 
 onMounted(() => {
-  el.value = document.documentElement
-  if (props.target)
-    el.value = document.querySelector<HTMLElement>(`.${props.target}`) ?? undefined
+  if (!import.meta.env.SSR) {
+    ctr.value = document
+    el.value = document.documentElement
+    if (props.target)
+      el.value = document.querySelector<HTMLElement>(`.${props.target}`) ?? undefined
+  }
 })
 </script>
 
@@ -75,9 +79,13 @@ onMounted(() => {
       @click="handleClick"
     >
       <slot>
-        <!-- <Icon> -->
-        <AngleUp />
-        <!-- </Icon> -->
+        <div class="h-20px text-20px w-20px in-flex-center ">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 320 512"><path
+            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+            fill="currentColor"
+            data-darkreader-inline-fill=""
+          /></svg>
+        </div>
       </slot>
     </div>
   </transition>
@@ -87,8 +95,10 @@ onMounted(() => {
 .iu-backtop {
   --iu-apply:
     fixed flex-center w-40px h-40px rounded-1/2 z-999
-    cursor-pointer select-none text-white bg-teal-600
-    shadow-backtop shadow-backtopd
+    cursor-pointer select-none
+    text-[#1e1e1e] dark:text-white
+    bg-white dark:bg-[#414141]
+    shadow-backtop dark:shadow-backtopd
     opacity-80 hover:opacity-100;
 }
 
