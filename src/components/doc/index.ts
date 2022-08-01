@@ -2,4 +2,5 @@
 export * from './button'
 export * from './card'
 export * from './space'
+export * from './switch'
 export * from './tooltip'

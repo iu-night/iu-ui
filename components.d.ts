@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     DocButton: typeof import('./src/components/doc/button/DocButton.vue')['default']
     DocCard: typeof import('./src/components/doc/card/DocCard.vue')['default']
     DocSpace: typeof import('./src/components/doc/space/DocSpace.vue')['default']
+    DocSwitch: typeof import('./src/components/doc/switch/DocSwitch.vue')['default']
     DocTooltip: typeof import('./src/components/doc/tooltip/DocTooltip.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HeadNav: typeof import('./src/components/HeadNav.vue')['default']
@@ -27,6 +28,7 @@ declare module '@vue/runtime-core' {
     IuCollapseTransition: typeof import('iu-ui')['IuCollapseTransition']
     IuName: typeof import('./src/components/IuName.vue')['default']
     IuSpace: typeof import('iu-ui')['IuSpace']
+    IuSwitch: typeof import('iu-ui')['IuSwitch']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
@@ -38,5 +40,7 @@ declare module '@vue/runtime-core' {
     SpaceVerticalCenter: typeof import('./src/components/doc/space/SpaceVerticalCenter.vue')['default']
     Starport: typeof import('vue-starport')['Starport']
     StarportCarrier: typeof import('vue-starport')['StarportCarrier']
+    SwitchApi: typeof import('./src/components/doc/switch/SwitchApi.md')['default']
+    SwitchRound: typeof import('./src/components/doc/switch/SwitchRound.vue')['default']
   }
 }

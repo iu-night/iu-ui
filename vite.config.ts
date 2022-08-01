@@ -9,7 +9,7 @@ import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Pages from 'vite-plugin-pages'
-import generateSitemap from 'vite-ssg-sitemap'
+// import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import DefineOptions from 'unplugin-vue-define-options/vite'
@@ -98,11 +98,11 @@ export default defineConfig({
     Inspect(),
   ],
 
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-    // onFinished() { generateSitemap() },
-  },
+  // ssgOptions: {
+  //   script: 'async',
+  //   formatting: 'minify',
+  //   // onFinished() { generateSitemap() },
+  // },
 
   build: {
     outDir: 'docs/iu-night.github.io/docs',

@@ -1,0 +1,120 @@
+<script setup lang="ts">
+import { switchProps } from './switch'
+
+const props = defineProps(switchProps)
+const emit = defineEmits(['update:value'])
+
+const left = computed(() => props.value ? '20px' : '2px')
+
+const className = computed(() => {
+  return {
+    'iu-switch-active': props.value,
+    'iu-switch-square': !props.round,
+    'iu-switch-disabled': props.disabled,
+  }
+})
+
+const setValue = (val: boolean) => {
+  emit('update:value', val)
+}
+
+const handleClick = () => {
+  if (props.disabled)
+    return
+  if (props.value)
+    setValue(false)
+  else
+    setValue(true)
+}
+
+defineOptions({
+  name: 'IuSwitch',
+})
+</script>
+
+<template>
+  <div class="iu-switch" @click="handleClick">
+    <div
+      class="iu-switch-rail"
+      :class="{
+        'iu-switch-active': value,
+        'iu-switch-square': !round,
+        'iu-switch-disabled': disabled,
+      }"
+    >
+      <div class="iu-switch-btn">
+        <div v-if="$slots.icon">
+          <slot name="icon" />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+.iu-switch {
+  --iu-apply:
+    in-flex-center align-middle
+    leading-normal
+    select-none
+    h-22px min-w-40px;
+}
+
+.iu-switch-rail {
+  --iu-apply:
+    overflow-hidden relative
+    bg-black bg-opacity-20
+    dark:bg-white dark:bg-opacity-20
+    rounded-11px
+    h-22px min-w-40px
+    cursor-pointer;
+  --iu-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition:
+    border-radius 0.3s var(--iu-bezier),
+    opacity 0.3s var(--iu-bezier),
+    background 0.3s var(--iu-bezier),
+    box-shadow 0.3s var(--iu-bezier);
+
+  &.iu-switch-square {
+    --iu-apply: rounded-4px;
+  }
+
+  &.iu-switch-disabled {
+    --iu-apply: cursor-not-allowed opacity-50;
+  }
+}
+
+.iu-switch-active {
+  background-color: v-bind(color);
+
+  .dark & {
+    background-color: v-bind(color);
+  }
+}
+
+.iu-switch-btn {
+  --iu-apply:
+    absolute
+    bg-white
+    rounded-1/2 box-border
+    shadow-switch
+    cursor-inherit
+    top-2px
+    h-18px w-18px;
+  --iu-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+
+  left: v-bind(left);
+  transition:
+    border-radius 0.3s var(--iu-bezier),
+    background-color 0.3s var(--iu-bezier),
+    left 0.3s var(--iu-bezier),
+    opacity 0.3s var(--iu-bezier),
+    max-width 0.3s var(--iu-bezier),
+    box-shadow 0.3s var(--iu-bezier);
+
+  .iu-switch-square & {
+    --iu-apply: rounded-4px;
+  }
+}
+</style>

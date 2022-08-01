@@ -40,6 +40,17 @@ const sideItems: ISideBar[] = [
     ],
   },
   {
+    title: '数据',
+    items: [
+      {
+        title: '开关',
+        name: 'Switch',
+        route: `${com}switch`,
+        tips: '',
+      },
+    ],
+  },
+  {
     title: '反馈',
     items: [
       {
