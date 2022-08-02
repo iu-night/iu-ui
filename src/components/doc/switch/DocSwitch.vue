@@ -4,7 +4,7 @@ const value = ref<boolean>(true)
 
 <template>
   <IuSpace align="center">
-    <IuSwitch v-model:value="value" />
-    <IuSwitch v-model:value="value" disabled />
+    <IuSwitch v-model="value" />
+    <IuSwitch v-model="value" disabled />
   </IuSpace>
 </template>

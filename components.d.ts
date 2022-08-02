@@ -41,6 +41,7 @@ declare module '@vue/runtime-core' {
     Starport: typeof import('vue-starport')['Starport']
     StarportCarrier: typeof import('vue-starport')['StarportCarrier']
     SwitchApi: typeof import('./src/components/doc/switch/SwitchApi.md')['default']
+    SwitchColor: typeof import('./src/components/doc/switch/SwitchColor.vue')['default']
     SwitchRound: typeof import('./src/components/doc/switch/SwitchRound.vue')['default']
   }
 }

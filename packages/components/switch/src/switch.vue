@@ -2,29 +2,34 @@
 import { switchProps } from './switch'
 
 const props = defineProps(switchProps)
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:value', 'update:modelValue'])
 
-const left = computed(() => props.value ? '20px' : '2px')
+const value = computed({
+  get() {
+    return props.modelValue
+  },
+  set(val) {
+    emit('update:modelValue', val)
+  },
+})
+
+const left = computed(() => value.value ? '20px' : '2px')
 
 const className = computed(() => {
   return {
-    'iu-switch-active': props.value,
+    'iu-switch-active': value.value,
     'iu-switch-square': !props.round,
     'iu-switch-disabled': props.disabled,
   }
 })
 
-const setValue = (val: boolean) => {
-  emit('update:value', val)
-}
-
 const handleClick = () => {
   if (props.disabled)
     return
-  if (props.value)
-    setValue(false)
+  if (value.value)
+    value.value = false
   else
-    setValue(true)
+    value.value = true
 }
 
 defineOptions({
@@ -36,11 +41,7 @@ defineOptions({
   <div class="iu-switch" @click="handleClick">
     <div
       class="iu-switch-rail"
-      :class="{
-        'iu-switch-active': value,
-        'iu-switch-square': !round,
-        'iu-switch-disabled': disabled,
-      }"
+      :class="className"
     >
       <div class="iu-switch-btn">
         <div v-if="$slots.icon">
@@ -58,6 +59,8 @@ defineOptions({
     leading-normal
     select-none
     h-22px min-w-40px;
+
+  outline: none;
 }
 
 .iu-switch-rail {

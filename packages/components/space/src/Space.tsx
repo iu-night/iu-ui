@@ -54,7 +54,7 @@ export default defineComponent({
     const { vertical, align, justify, gap, gapX, gapY } = this
     const children = flatten(getSlot(this))
     const spaceContents = children.map(child => (
-      <div role="none">
+      <div role="none" style="max-width: 100%">
         {child}
       </div>
     ))

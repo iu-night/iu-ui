@@ -3,7 +3,7 @@ import type { PropType } from 'vue'
 export const backtopProps = {
   visibilityHeight: {
     type: Number,
-    default: 200,
+    default: 150,
   },
   right: {
     type: Number,

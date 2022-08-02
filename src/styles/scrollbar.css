@@ -1,6 +1,6 @@
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   background-color: transparent;
 }
 
@@ -10,11 +10,11 @@
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-track-piece:horizontal:start {
+/* ::-webkit-scrollbar-track-piece:horizontal:start {
   --iu-apply: bg-[#cfcfcf] dark:bg-[#474747];
 
   border-radius: 5px;
-}
+} */
 
 ::-webkit-scrollbar-thumb {
   --iu-apply: bg-[#cfcfcf] dark:bg-[#474747];

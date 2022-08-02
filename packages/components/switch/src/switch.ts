@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 export const switchProps = {
-  value: {
+  modelValue: {
     type: Boolean,
     default: false,
   },

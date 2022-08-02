@@ -2,6 +2,7 @@
 // import { AngleUp } from '@vicons/fa'
 // import { Icon } from '@vicons/utils'
 
+import { getScrollParent } from 'seemly'
 import { backtopProps } from './backtop'
 
 const props = defineProps(backtopProps)
@@ -12,68 +13,52 @@ defineOptions({
   name: 'IuBacktop',
 })
 
-const el = shallowRef<HTMLElement>()
-const ctr = shallowRef<Document | HTMLElement>()
+const target = shallowRef<HTMLElement | null>(null)
 const backtopVis = ref(false)
+
+const backtopEl = shallowRef<HTMLElement | null>(null)
+
 const backTopStyle = computed(() => ({
   right: `${props.right}px`,
   bottom: `${props.bottom}px`,
 }))
 
-const cubic = (value: number): number => value ** 3
-
-const easeInOutCubic = (value: number): number => value < 0.5 ? cubic(value * 2) / 2 : 1 - cubic((1 - value) * 2) / 2
+const getScrollTop = (element: Element): number => {
+  const top = element ? element.scrollTop : 0
+  return Math.max(top, 0)
+}
 
 const scrollToTop = () => {
-  if (!el.value)
-    return
-  const beginTime = Date.now()
-  const beginValue = el.value.scrollTop
-  const frameFunc = () => {
-    if (!el.value)
-      return
-    const progress = (Date.now() - beginTime) / 500
-    if (progress < 1) {
-      el.value.scrollTop = beginValue * (1 - easeInOutCubic(progress))
-      requestAnimationFrame(frameFunc)
-    }
-    else {
-      el.value.scrollTop = 0
-      // el.value.scrollTop({
-      //   top: 0,
-      //   behavior: 'smooth',
-      // })
-    }
-  }
-  requestAnimationFrame(frameFunc)
+  target.value?.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
 }
+
 const handleScroll = () => {
-  if (el.value)
-    backtopVis.value = el.value.scrollTop >= props.visibilityHeight
+  if (target.value)
+    backtopVis.value = getScrollTop(target.value) >= props.visibilityHeight
 }
+
 const handleClick = (event: MouseEvent) => {
-  scrollToTop()
   emit('click', event)
+  scrollToTop()
 }
 
 const handleScrollThrottled = useThrottleFn(handleScroll, 300)
 
-useEventListener(ctr, 'scroll', handleScrollThrottled, true)
+useEventListener(document, 'scroll', handleScrollThrottled, true)
 
 onMounted(() => {
-  if (!import.meta.env.SSR) {
-    ctr.value = document
-    el.value = document.documentElement
-    if (props.target)
-      el.value = document.querySelector<HTMLElement>(`.${props.target}`) ?? undefined
-  }
+  target.value = props.target ? document.querySelector(props.target as string) as HTMLElement : getScrollParent(backtopEl.value)
 })
 </script>
 
 <template>
   <transition name="iu-fade-in">
     <div
-      v-if="backtopVis"
+      v-show="backtopVis"
+      ref="backtopEl"
       class="iu-backtop"
       :style="backTopStyle"
       @click="handleClick"

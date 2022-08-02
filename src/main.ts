@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 // import { ViteSSG } from 'vite-ssg'
 import { createHead } from '@vueuse/head'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { setupIu, setupStarport } from './modules'
 import App from './App.vue'
@@ -21,7 +21,7 @@ const routes = setupLayouts(generatedRoutes)
 const app = createApp(App)
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
 })
 
