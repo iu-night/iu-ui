@@ -42,7 +42,7 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
   </transition>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .iu-tooltip {
   --iu-apply:
     fixed inline-block rounded-5px pointer-events-none break-words

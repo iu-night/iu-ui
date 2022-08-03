@@ -79,7 +79,7 @@ defineOptions({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .iu-popover {
   --iu-apply: inline-block;
 

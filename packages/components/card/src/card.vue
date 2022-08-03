@@ -37,7 +37,7 @@ defineOptions({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .iu-card {
   --iu-apply:
     flex flex-col w-full text-16px rounded box-border break-words leading-normal

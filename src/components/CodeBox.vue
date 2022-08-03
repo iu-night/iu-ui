@@ -1,16 +1,35 @@
 <script setup lang="ts">
-import Prism from 'prismjs'
+// import Prism from 'prismjs'
+import type { CSSProperties } from 'vue'
+import { highlight, languages } from 'prismjs'
 
-defineProps<{
-  title?: string
-  code: string
-}>()
+const props = defineProps({
+  title: String,
+  code: {
+    type: String,
+    default: '',
+  },
+})
+
+const outCodeRef = shallowRef<HTMLElement | null>(null)
+const codeRef = shallowRef<HTMLElement | null>(null)
+
 const showCode = ref(false)
 const type = 'markup'
 
-// onMounted(() => {
-//   Prism.highlightAll()
-// })
+const style = computed<CSSProperties>(() => {
+  if (showCode.value) {
+    const height = outCodeRef?.value?.firstElementChild?.nextElementSibling?.clientHeight
+    console.log(height)
+    return { height: height ? `${height + 37}px` : 'auto' }
+  }
+  return { height: 0 }
+})
+
+onMounted(() => {
+  if (codeRef.value)
+    codeRef.value.innerHTML = highlight(props.code, languages[type], type)
+})
 </script>
 
 <template>
@@ -28,13 +47,12 @@ const type = 'markup'
         </div>
       </template>
       <template v-if="code" #footer>
-        <IuCollapseTransition>
-          <div v-show="showCode" class="code-area">
-            <pre flex w-full>
-              <code :class="`language-${type}`" v-html="Prism.highlight(code, Prism.languages[type], type)" />
-            </pre>
-          </div>
-        </IuCollapseTransition>
+        <div ref="outCodeRef" class="code-area" :style="style">
+          <IuDivider />
+          <pre class="flex w-full language-markup">
+            <code ref="codeRef" />
+          </pre>
+        </div>
       </template>
       <template #action>
         <div
@@ -63,9 +81,9 @@ const type = 'markup'
 }
 
 .code-area {
-  --iu-apply: flex pt-10px b-t-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
-
-  // animation: fadeDown 0.2s ease-in-out;
+  --iu-apply:
+    overflow-hidden
+    transition-height-245;
 }
 
 // @keyframes fadeDown {

@@ -71,6 +71,12 @@ const sideItems: ISideBar[] = [
         tips: '',
       },
       {
+        title: '分割线',
+        name: 'Divider',
+        route: `${com}divider`,
+        tips: '',
+      },
+      {
         title: '间距',
         name: 'Space',
         route: `${com}space`,

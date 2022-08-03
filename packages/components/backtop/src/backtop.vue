@@ -76,7 +76,7 @@ onMounted(() => {
   </transition>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .iu-backtop {
   --iu-apply:
     fixed flex-center w-40px h-40px rounded-1/2 z-999

@@ -32,6 +32,11 @@
           <DocSwitch />
         </Starport>
       </RouterLink>
+      <RouterLink flex to="/components/divider">
+        <Starport port="iu-divider" w-300px h-164px>
+          <DocDivider />
+        </Starport>
+      </RouterLink>
     </IuSpace>
   </div>
 </template>
