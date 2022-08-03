@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     DocSpace: typeof import('./src/components/doc/space/DocSpace.vue')['default']
     DocSwitch: typeof import('./src/components/doc/switch/DocSwitch.vue')['default']
     DocTooltip: typeof import('./src/components/doc/tooltip/DocTooltip.vue')['default']
+    ExDisplay: typeof import('./src/components/ExDisplay.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HeadNav: typeof import('./src/components/HeadNav.vue')['default']
     IuBacktop: typeof import('iu-ui')['IuBacktop']
