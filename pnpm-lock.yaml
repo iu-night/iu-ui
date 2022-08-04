@@ -35,6 +35,7 @@ specifiers:
   unplugin-vue-components: ^0.21.2
   unplugin-vue-define-options: ^0.6.2
   vite: ^3.0.4
+  vite-plugin-compression: ^0.5.1
   vite-plugin-inspect: ^0.6.0
   vite-plugin-pages: ^0.25.0
   vite-plugin-vue-layouts: ^0.7.0
@@ -86,6 +87,7 @@ devDependencies:
   unplugin-vue-components: 0.21.2_vite@3.0.4+vue@3.2.37
   unplugin-vue-define-options: 0.6.2_vite@3.0.4+vue@3.2.37
   vite: 3.0.4_sass@1.54.0
+  vite-plugin-compression: 0.5.1_vite@3.0.4
   vite-plugin-inspect: 0.6.0_vite@3.0.4
   vite-plugin-pages: 0.25.0_vite@3.0.4
   vite-plugin-vue-layouts: 0.7.0_2idawcohe3eegwclkuflddhqau
@@ -6823,6 +6825,19 @@ packages:
       replace-ext: 1.0.0
       unist-util-stringify-position: 1.1.2
       vfile-message: 1.1.1
+    dev: true
+
+  /vite-plugin-compression/0.5.1_vite@3.0.4:
+    resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      chalk: 4.1.2
+      debug: 4.3.4
+      fs-extra: 10.1.0
+      vite: 3.0.4_sass@1.54.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite-plugin-inspect/0.6.0_vite@3.0.4:

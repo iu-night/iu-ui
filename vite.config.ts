@@ -14,6 +14,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 // import prismjs from 'vite-plugin-prismjs'
+import viteCompression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -41,6 +42,8 @@ export default defineConfig({
     // }),
 
     DefineOptions(),
+
+    viteCompression(),
 
     Pages({
       dirs: [
