@@ -4,14 +4,10 @@
       Divider
     </div>
     <IuSpace>
-      <ExDisplay
-        title="基础"
-        name="divider"
-        comName="DocDivider"
-        port
-        height="164px"
-      >
-        <DocDivider />
+      <ExDisplay title="基础" name="divider" comName="DocDivider">
+        <Starport port="iu-divider" h-164px w-300px>
+          <DocDivider />
+        </Starport>
       </ExDisplay>
       <ExDisplay title="竖直" name="divider" comName="DividerVertical">
         <DividerVertical />

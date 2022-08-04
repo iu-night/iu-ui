@@ -5,8 +5,10 @@
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="card" comName="DocCard" port height="100px" width="300px">
-          <DocCard />
+        <ExDisplay title="基础" name="card" comName="DocCard">
+          <Starport port="iu-card" h-100px w-300px>
+            <DocCard />
+          </Starport>
         </ExDisplay>
         <ExDisplay title="悬浮" name="card" comName="CardHoverable">
           <CardHoverable />

@@ -4,8 +4,10 @@
       Tooltip
     </div>
     <IuSpace vertical>
-      <ExDisplay title="基础" name="tooltip" comName="DocTooltip" port height="34px" width="236px">
-        <DocTooltip />
+      <ExDisplay title="基础" name="tooltip" comName="DocTooltip">
+        <Starport port="iu-tooltip" h-34px w-236px>
+          <DocTooltip />
+        </Starport>
       </ExDisplay>
     </IuSpace>
   </div>

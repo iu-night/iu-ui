@@ -5,8 +5,10 @@
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="switch" comName="DocSwitch" port height="22px" width="92px">
-          <DocSwitch />
+        <ExDisplay title="基础" name="switch" comName="DocSwitch">
+          <Starport port="iu-switch" h-22px w-92px>
+            <DocSwitch />
+          </Starport>
         </ExDisplay>
         <ExDisplay title="形状" name="switch" comName="SwitchRound">
           <SwitchRound />

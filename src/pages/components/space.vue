@@ -5,8 +5,10 @@
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="space" comName="DocSpace" port height="34px" width="300px">
-          <DocSpace />
+        <ExDisplay title="基础" name="space" comName="DocSpace">
+          <Starport port="iu-space" h-34px w-300px>
+            <DocSpace />
+          </Starport>
         </ExDisplay>
         <ExDisplay title="居中" name="space" comName="SpaceCenter">
           <SpaceCenter />

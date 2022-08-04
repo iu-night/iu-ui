@@ -5,8 +5,10 @@
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="button" comName="DocButton" port height="34px" width="375px">
-          <DocButton />
+        <ExDisplay title="基础" name="button" comName="DocButton">
+          <Starport port="iu-button" h-34px w-375px>
+            <DocButton />
+          </Starport>
         </ExDisplay>
         <ExDisplay title="禁用" name="button" comName="ButtonDisabled">
           <ButtonDisabled />
