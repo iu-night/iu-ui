@@ -1,18 +1,10 @@
-<script setup lang="ts">
-import { DocTooltipCode } from '@/components/doc'
-</script>
-
 <template>
   <div class="flex flex-col mt-30px">
     <div mb-30px text-30px font-bold>
       Tooltip
     </div>
     <IuSpace vertical>
-      <CodeBox w-500px title="基础" :code="DocTooltipCode">
-        <Starport port="iu-tooltip" w-236px h-34px>
-          <DocTooltip />
-        </Starport>
-      </CodeBox>
+      <ExDisplay title="基础" name="tooltip" comName="DocTooltip" port height="34px" width="236px" />
     </IuSpace>
   </div>
 </template>

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { CardBorderedCode, CardHoverableCode, CardSlotCode, DocCardCode } from '@/components/doc'
-</script>
-
 <template>
   <div class="flex flex-col mt-30px">
     <div mb-30px text-30px font-bold>
@@ -9,22 +5,12 @@ import { CardBorderedCode, CardHoverableCode, CardSlotCode, DocCardCode } from '
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="基础" :code="DocCardCode">
-          <Starport port="iu-card" w-300px h-100px>
-            <DocCard />
-          </Starport>
-        </CodeBox>
-        <CodeBox w-500px title="悬浮" :code="CardHoverableCode">
-          <CardHoverable />
-        </CodeBox>
+        <ExDisplay title="基础" name="card" comName="DocCard" port height="100px" width="300px" />
+        <ExDisplay title="悬浮" name="card" comName="CardHoverable" />
       </IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="插槽" :code="CardSlotCode">
-          <CardSlot />
-        </CodeBox>
-        <CodeBox w-500px title="边框" :code="CardBorderedCode">
-          <CardBordered />
-        </CodeBox>
+        <ExDisplay title="插槽" name="card" comName="CardSlot" />
+        <ExDisplay title="边框" name="card" comName="CardBordered" />
       </IuSpace>
     </IuSpace>
     <CardApi />

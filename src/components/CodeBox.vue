@@ -15,12 +15,11 @@ const outCodeRef = shallowRef<HTMLElement | null>(null)
 const codeRef = shallowRef<HTMLElement | null>(null)
 
 const showCode = ref(false)
-const type = 'markup'
+const lang = 'markup'
 
 const style = computed<CSSProperties>(() => {
   if (showCode.value) {
     const height = outCodeRef?.value?.firstElementChild?.nextElementSibling?.clientHeight
-    console.log(height)
     return { height: height ? `${height + 37}px` : 'auto' }
   }
   return { height: 0 }
@@ -28,8 +27,18 @@ const style = computed<CSSProperties>(() => {
 
 onMounted(() => {
   if (codeRef.value)
-    codeRef.value.innerHTML = highlight(props.code, languages[type], type)
+    codeRef.value.innerHTML = highlight(props.code, languages[lang], lang)
 })
+
+watch(
+  () => [props.code, codeRef],
+  ([value, _coderef]) => {
+    if (value) {
+      if (codeRef.value)
+        codeRef.value.innerHTML = highlight(props.code, languages[lang], lang)
+    }
+  },
+)
 </script>
 
 <template>
@@ -46,8 +55,8 @@ onMounted(() => {
           <div v-else class="code-icon-btn i-carbon-code" />
         </div>
       </template>
-      <template v-if="code" #footer>
-        <div ref="outCodeRef" class="code-area" :style="style">
+      <template #footer>
+        <div v-show="code" ref="outCodeRef" class="code-area" :style="style">
           <IuDivider />
           <pre class="flex w-full language-markup">
             <code ref="codeRef" />

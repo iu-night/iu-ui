@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { ButtonDisabledCode, ButtonRoundCode, DocButtonCode } from '@/components/doc'
-</script>
-
 <template>
   <div class="flex flex-col mt-30px">
     <div mb-30px text-30px font-bold>
@@ -9,19 +5,11 @@ import { ButtonDisabledCode, ButtonRoundCode, DocButtonCode } from '@/components
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="基础" :code="DocButtonCode">
-          <Starport port="iu-button" w-375px h-34px>
-            <DocButton />
-          </Starport>
-        </CodeBox>
-        <CodeBox w-500px title="禁用" :code="ButtonDisabledCode">
-          <ButtonDisabled />
-        </CodeBox>
+        <ExDisplay title="基础" name="button" comName="DocButton" port height="34px" width="375px" />
+        <ExDisplay title="禁用" name="button" comName="ButtonDisabled" />
       </IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="圆角" :code="ButtonRoundCode">
-          <ButtonRound />
-        </CodeBox>
+        <ExDisplay title="圆角" name="button" comName="ButtonRound" />
       </IuSpace>
     </IuSpace>
     <ButtonApi />

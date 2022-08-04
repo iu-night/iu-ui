@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { DocSwitchCode, SwitchColorCode, SwitchRoundCode } from '@/components/doc'
-</script>
-
 <template>
   <div class="flex flex-col mt-30px">
     <div mb-30px text-30px font-bold>
@@ -9,19 +5,11 @@ import { DocSwitchCode, SwitchColorCode, SwitchRoundCode } from '@/components/do
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="基础" :code="DocSwitchCode">
-          <Starport port="iu-switch" w-92px h-22px>
-            <DocSwitch />
-          </Starport>
-        </CodeBox>
-        <CodeBox w-500px title="形状" :code="SwitchRoundCode">
-          <SwitchRound />
-        </CodeBox>
+        <ExDisplay title="基础" name="switch" comName="DocSwitch" port height="22px" width="92px" />
+        <ExDisplay title="形状" name="switch" comName="SwitchRound" />
       </IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="颜色" :code="SwitchColorCode">
-          <SwitchColor />
-        </CodeBox>
+        <ExDisplay title="颜色" name="switch" comName="SwitchColor" />
       </IuSpace>
     </IuSpace>
     <SwitchApi />

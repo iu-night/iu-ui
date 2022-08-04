@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { DocSpaceCode, SpaceAroundCode, SpaceCenterCode, SpaceEndCode, SpaceVerticalCenterCode, SpaceVerticalCode } from '@/components/doc'
-</script>
-
 <template>
   <div class="flex flex-col mt-30px">
     <div mb-30px text-30px font-bold>
@@ -9,28 +5,14 @@ import { DocSpaceCode, SpaceAroundCode, SpaceCenterCode, SpaceEndCode, SpaceVert
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="基础" :code="DocSpaceCode">
-          <Starport port="iu-space" w-300px h-34px>
-            <DocSpace />
-          </Starport>
-        </CodeBox>
-        <CodeBox w-500px title="居中" :code="SpaceCenterCode">
-          <SpaceCenter />
-        </CodeBox>
-        <CodeBox w-500px title="around" :code="SpaceAroundCode">
-          <SpaceAround />
-        </CodeBox>
-        <CodeBox w-500px title="end" :code="SpaceEndCode">
-          <SpaceEnd />
-        </CodeBox>
+        <ExDisplay title="基础" name="space" comName="DocSpace" port height="34px" width="300px" />
+        <ExDisplay title="居中" name="space" comName="SpaceCenter" />
+        <ExDisplay title="around" name="space" comName="SpaceAround" />
+        <ExDisplay title="end" name="space" comName="SpaceEnd" />
       </IuSpace>
       <IuSpace vertical>
-        <CodeBox w-500px title="垂直" :code="SpaceVerticalCode">
-          <SpaceVertical />
-        </CodeBox>
-        <CodeBox w-500px title="垂直居中" :code="SpaceVerticalCenterCode">
-          <SpaceVerticalCenter />
-        </CodeBox>
+        <ExDisplay title="垂直" name="space" comName="SpaceVertical" />
+        <ExDisplay title="垂直居中" name="space" comName="SpaceVerticalCenter" />
       </IuSpace>
     </IuSpace>
     <SpaceApi />
