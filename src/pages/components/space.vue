@@ -5,14 +5,26 @@
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="space" comName="DocSpace" port height="34px" width="300px" />
-        <ExDisplay title="居中" name="space" comName="SpaceCenter" />
-        <ExDisplay title="around" name="space" comName="SpaceAround" />
-        <ExDisplay title="end" name="space" comName="SpaceEnd" />
+        <ExDisplay title="基础" name="space" comName="DocSpace" port height="34px" width="300px">
+          <DocSpace />
+        </ExDisplay>
+        <ExDisplay title="居中" name="space" comName="SpaceCenter">
+          <SpaceCenter />
+        </ExDisplay>
+        <ExDisplay title="around" name="space" comName="SpaceAround">
+          <SpaceAround />
+        </ExDisplay>
+        <ExDisplay title="end" name="space" comName="SpaceEnd">
+          <SpaceEnd />
+        </ExDisplay>
       </IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="垂直" name="space" comName="SpaceVertical" />
-        <ExDisplay title="垂直居中" name="space" comName="SpaceVerticalCenter" />
+        <ExDisplay title="垂直" name="space" comName="SpaceVertical">
+          <SpaceVertical />
+        </ExDisplay>
+        <ExDisplay title="垂直居中" name="space" comName="SpaceVerticalCenter">
+          <SpaceVerticalCenter />
+        </ExDisplay>
       </IuSpace>
     </IuSpace>
     <SpaceApi />

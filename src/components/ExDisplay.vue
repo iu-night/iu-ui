@@ -17,7 +17,7 @@ const props = defineProps({
   },
 })
 
-const example = shallowRef<Record<string, any> | null>(null)
+// const example = shallowRef<Record<string, any> | null>(null)
 const code = shallowRef<string>('')
 
 const style = computed(() => {
@@ -28,7 +28,7 @@ const style = computed(() => {
 })
 
 const init = async () => {
-  example.value = markRaw(defineAsyncComponent(() => import(`./doc/${props.name}/${props.comName}.vue`)))
+  // example.value = markRaw(defineAsyncComponent(() => import(`./doc/${props.name}/${props.comName}.vue`)))
   code.value = (await import(`./doc/${props.name}/${props.comName}.vue?raw`)).default
 }
 
@@ -41,11 +41,11 @@ onMounted(() => {
   <CodeBox w-500px :title="title" :code="code">
     <template v-if="port">
       <Starport :port="`iu-${name}`" :style="style">
-        <component :is="example" />
+        <slot />
       </Starport>
     </template>
     <template v-else>
-      <component :is="example" />
+      <slot />
     </template>
   </CodeBox>
 </template>

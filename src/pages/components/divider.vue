@@ -10,8 +10,12 @@
         comName="DocDivider"
         port
         height="164px"
-      />
-      <ExDisplay title="竖直" name="divider" comName="DividerVertical" />
+      >
+        <DocDivider />
+      </ExDisplay>
+      <ExDisplay title="竖直" name="divider" comName="DividerVertical">
+        <DividerVertical />
+      </ExDisplay>
     </IuSpace>
     <DividerApi />
   </div>

@@ -5,11 +5,17 @@
     </div>
     <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="switch" comName="DocSwitch" port height="22px" width="92px" />
-        <ExDisplay title="形状" name="switch" comName="SwitchRound" />
+        <ExDisplay title="基础" name="switch" comName="DocSwitch" port height="22px" width="92px">
+          <DocSwitch />
+        </ExDisplay>
+        <ExDisplay title="形状" name="switch" comName="SwitchRound">
+          <SwitchRound />
+        </ExDisplay>
       </IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="颜色" name="switch" comName="SwitchColor" />
+        <ExDisplay title="颜色" name="switch" comName="SwitchColor">
+          <SwitchColor />
+        </ExDisplay>
       </IuSpace>
     </IuSpace>
     <SwitchApi />
