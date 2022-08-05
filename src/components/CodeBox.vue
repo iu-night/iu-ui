@@ -92,7 +92,7 @@ watch(
 .code-area {
   --iu-apply:
     overflow-hidden
-    transition-height-245;
+    transition-height-300;
 }
 
 // @keyframes fadeDown {
