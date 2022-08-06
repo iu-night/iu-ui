@@ -34,6 +34,7 @@
 
 .iu-header-logo {
   --iu-apply:
+    flex items-center
     text-25px font-bold pl-30px
     w-245px h-full
     backdrop-blur-5px backdrop-saturate-50;
