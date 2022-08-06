@@ -89,7 +89,7 @@ const sideItems: ISideBar[] = [
 
 <template>
   <div class="iu-side-bar">
-    <div class="px-20px w-250px">
+    <div class="px-20px pb-40px w-250px">
       <div v-for="(list, listIndex) in sideItems" :key="list.title">
         <div class="side-title">
           {{ list.title }}
@@ -116,8 +116,20 @@ const sideItems: ISideBar[] = [
 <style scoped lang="scss">
 .iu-side-bar {
   --iu-apply:
-    h-full pt-55px fixed z-888
+    h-full pt-55px fixed z-888 overflow-auto
     shadow-iu dark:shadow-iud;
+
+  overflow: overlay;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track-piece:vertical:start {
+    background-color: transparent;
+  }
 }
 
 .side-title {
