@@ -54,7 +54,7 @@ defineOptions({
 }
 
 .iu-card-bordered {
-  --iu-apply: b-1px b-[#efeff5] dark:b-[#fff] dark:b-opacity-10;
+  --iu-apply: b-1px b-[#efeff5] dark:b-[#fff]:10;
 }
 
 .iu-card-hover:hover {

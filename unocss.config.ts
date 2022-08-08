@@ -14,6 +14,7 @@ export default defineConfig({
     'icon-btn': 'inline-block cursor-pointer select-none transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600',
     'flex-center': 'flex justify-center items-center',
     'in-flex-center': 'inline-flex justify-center items-center',
+    'iu-b': 'b-1px b-[#000]:10 dark:b-[#fff]:10',
   },
   theme: {
     boxShadow: {

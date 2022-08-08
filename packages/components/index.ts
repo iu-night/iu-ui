@@ -1,6 +1,7 @@
 export * from './backtop'
 export * from './button'
 export * from './card'
+export * from './checkbox'
 export * from './collapse-transition'
 export * from './divider'
 export * from './popover'

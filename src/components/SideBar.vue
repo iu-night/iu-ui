@@ -43,6 +43,12 @@ const sideItems: ISideBar[] = [
     title: '数据',
     items: [
       {
+        title: '复选框',
+        name: 'Checkbox',
+        route: `${com}checkbox`,
+        tips: '',
+      },
+      {
         title: '开关',
         name: 'Switch',
         route: `${com}switch`,
@@ -158,10 +164,10 @@ const sideItems: ISideBar[] = [
 }
 
 .side-btn-active {
-  --iu-apply: bg-[#18a058] bg-opacity-10 text-teal-900 dark:text-teal dark:bg-teal-800;
+  --iu-apply: bg-[#18a058]:10 text-teal-900 dark:text-teal dark:bg-teal-800;
 
   &:hover {
-    --iu-apply: bg-[#18a058] bg-opacity-10 text-teal-900 dark:bg-teal-800;
+    --iu-apply: bg-[#18a058]:10 text-teal-900 dark:bg-teal-800;
   }
 }
 </style>

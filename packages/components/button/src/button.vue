@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { buttonProps } from './button'
 
-defineProps(buttonProps)
+const props = defineProps(buttonProps)
 
 const emit = defineEmits({
   click: (evt: MouseEvent) => evt instanceof MouseEvent,
@@ -12,6 +12,15 @@ defineOptions({
 })
 
 const pulse = ref(false)
+
+const className = computed(() => {
+  return [
+    `iu-button-${props.type}`,
+    {
+      'iu-button-round': props.round,
+      'iu-button-pulse': pulse.value,
+    }]
+})
 
 const handleClick = (evt: MouseEvent) => {
   pulse.value = false
@@ -31,12 +40,7 @@ const handleAnimationEnd = () => {
   <button
     type="button"
     class="iu-button"
-    :class="[
-      `iu-button-${type}`,
-      pulse ? `iu-button-pulse` : '',
-      {
-        'iu-button-round': round,
-      }]"
+    :class="className"
     @click="handleClick"
     @animationend="handleAnimationEnd"
   >

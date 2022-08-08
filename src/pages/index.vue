@@ -27,6 +27,11 @@
           <DocSpace />
         </Starport>
       </RouterLink>
+      <RouterLink flex to="/components/checkbox">
+        <Starport port="iu-checkbox" w-118px h-22px>
+          <DocCheckbox />
+        </Starport>
+      </RouterLink>
       <RouterLink flex to="/components/switch">
         <Starport port="iu-switch" w-92px h-22px>
           <DocSwitch />

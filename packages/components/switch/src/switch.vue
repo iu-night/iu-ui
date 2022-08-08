@@ -2,7 +2,7 @@
 import { switchProps } from './switch'
 
 const props = defineProps(switchProps)
-const emit = defineEmits(['update:value', 'update:modelValue'])
+const emit = defineEmits(['update:modelValue'])
 
 const value = computed({
   get() {
@@ -66,8 +66,8 @@ defineOptions({
 .iu-switch-rail {
   --iu-apply:
     overflow-hidden relative
-    bg-black bg-opacity-20
-    dark:bg-white dark:bg-opacity-20
+    bg-black:20
+    dark:bg-white:20
     rounded-11px
     h-22px min-w-40px
     cursor-pointer;
