@@ -3,7 +3,8 @@
 	"rules": {
 		"no-console": "off",
 		"vue/attribute-hyphenation": "off",
-    "vue/v-on-event-hyphenation": "off",
-		"@typescript-eslint/no-unused-vars": "off"
+    	"vue/v-on-event-hyphenation": "off",
+		"@typescript-eslint/no-unused-vars": "off",
+		"prefer-const": "off"
 	}
 }

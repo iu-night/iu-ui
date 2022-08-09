@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import Prism from 'prismjs'
 import type { CSSProperties } from 'vue'
 import { highlight, languages } from 'prismjs'
 
@@ -11,31 +10,31 @@ const props = defineProps({
   },
 })
 
-const outCodeRef = shallowRef<HTMLElement | null>(null)
-const codeRef = shallowRef<HTMLElement | null>(null)
+let outCodeRef = $shallowRef<HTMLElement | null>(null)
+let codeRef = $shallowRef<HTMLElement | null>(null)
 
-const showCode = ref(false)
+let showCode = $ref(false)
 const lang = 'markup'
 
 const style = computed<CSSProperties>(() => {
-  if (showCode.value) {
-    const height = outCodeRef?.value?.firstElementChild?.nextElementSibling?.clientHeight
+  if (showCode) {
+    const height = outCodeRef?.firstElementChild?.nextElementSibling?.clientHeight
     return { height: height ? `${height + 37}px` : 'auto' }
   }
   return { height: 0 }
 })
 
 onMounted(() => {
-  if (codeRef.value)
-    codeRef.value.innerHTML = highlight(props.code, languages[lang], lang)
+  if (codeRef)
+    codeRef.innerHTML = highlight(props.code, languages[lang], lang)
 })
 
 watch(
   () => [props.code, codeRef],
   ([value, _coderef]) => {
     if (value) {
-      if (codeRef.value)
-        codeRef.value.innerHTML = highlight(props.code, languages[lang], lang)
+      if (codeRef)
+        codeRef.innerHTML = highlight(props.code, languages[lang], lang)
     }
   },
 )

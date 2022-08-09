@@ -6,11 +6,11 @@ const props = defineProps({
 })
 
 // const example = shallowRef<Record<string, any> | null>(null)
-const code = shallowRef<string>('')
+let code = $shallowRef<string>('')
 
 const init = async () => {
   // example.value = markRaw(defineAsyncComponent(() => import(`./doc/${props.name}/${props.comName}.vue`)))
-  code.value = (await import(`./doc/${props.name}/${props.comName}.vue?raw`)).default
+  code = (await import(`./doc/${props.name}/${props.comName}.vue?raw`)).default
 }
 
 onMounted(() => {
