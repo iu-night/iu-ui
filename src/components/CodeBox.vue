@@ -2,7 +2,7 @@
 import type { CSSProperties } from 'vue'
 import { highlight, languages } from 'prismjs'
 
-const props = defineProps({
+const { code = '' } = defineProps({
   title: String,
   code: {
     type: String,
@@ -26,15 +26,15 @@ const style = computed<CSSProperties>(() => {
 
 onMounted(() => {
   if (codeRef)
-    codeRef.innerHTML = highlight(props.code, languages[lang], lang)
+    codeRef.innerHTML = highlight(code, languages[lang], lang)
 })
 
 watch(
-  () => [props.code, codeRef],
+  () => [code, codeRef],
   ([value, _coderef]) => {
     if (value) {
       if (codeRef)
-        codeRef.innerHTML = highlight(props.code, languages[lang], lang)
+        codeRef.innerHTML = highlight(code, languages[lang], lang)
     }
   },
 )
