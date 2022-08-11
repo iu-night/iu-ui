@@ -3,9 +3,6 @@
 
 <template>
   <div flex-center flex-col mt-8px>
-    <!-- <button btn mb-30px text-18px @click="$router.push('/guide/start')">
-      开始
-    </button> -->
     <IuSpace vertical align="center">
       <RouterLink flex to="/components/button">
         <Starport port="iu-button" w-375px h-50px>

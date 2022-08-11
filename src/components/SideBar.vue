@@ -60,6 +60,12 @@ const sideItems: ISideBar[] = [
     title: '反馈',
     items: [
       {
+        title: '模态框',
+        name: 'Modal',
+        route: `${com}modal`,
+        tips: '',
+      },
+      {
         title: '文字提示',
         name: 'Tooltip',
         route: `${com}tooltip`,

@@ -1,6 +1,7 @@
 import type { App } from 'vue'
 
 import './styles/var.scss'
+import 'uno.css'
 
 import * as components from './components'
 import * as directives from './directives'
@@ -9,7 +10,7 @@ export * from './utils'
 export * from './directives'
 export * from './components'
 
-export const install = function (app: App) {
+const install = function (app: App) {
   Object.keys(components).forEach((key) => {
     const component = components[key as keyof typeof components]
     if (component.install)
