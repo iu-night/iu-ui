@@ -7,8 +7,11 @@ export const modalProps = {
     type: Boolean,
     default: false,
   },
-  width: {
+  title: {
     type: String,
-    default: '300px',
+  },
+  maskClose: {
+    type: Boolean,
+    default: true,
   },
 }

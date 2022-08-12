@@ -7,10 +7,19 @@ const show = ref(false)
     <IuButton @click="show = !show">
       打开
     </IuButton>
-    <IuModal v-model:show="show" title="Modal">
+    <IuModal v-model:show="show">
+      <template #header>
+        #header
+      </template>
       <div style="width: 300px;">
-        modal
+        default
       </div>
+      <template #footer>
+        #footer
+      </template>
+      <template #action>
+        #action
+      </template>
     </IuModal>
   </div>
 </template>

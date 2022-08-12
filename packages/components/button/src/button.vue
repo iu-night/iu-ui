@@ -13,16 +13,21 @@ defineOptions({
 
 const pulse = ref(false)
 
+const buttonType = computed(() => !props.disabled && props.type ? `iu-button-${props.type}` : '')
+
 const className = computed(() => {
   return [
-    `iu-button-${props.type}`,
+    buttonType.value,
     {
       'iu-button-round': props.round,
       'iu-button-pulse': pulse.value,
+      'iu-button-disabled': props.disabled,
     }]
 })
 
 const handleClick = (evt: MouseEvent) => {
+  if (props.disabled)
+    return
   pulse.value = false
 
   requestAnimationFrame(() => {
@@ -68,13 +73,20 @@ const handleAnimationEnd = () => {
 
 .iu-button {
   --iu-apply:
-    in-flex-center px-16px py-4px rounded-4px leading-normal cursor-pointer align-middle select-none text-[#222]
-    disabled:cursor-no-drop disabled:hover:bg-gray-600 disabled:bg-gray-600 disabled:opacity-50
-    disabled:active:bg-gray-600 dark:text-white;
+    in-flex-center align-middle
+    text-white
+    px-16px py-4px
+    rounded-4px leading-normal
+    cursor-pointer select-none
+    transition-300;
+}
+
+.iu-button-disabled {
+  --iu-apply: cursor-not-allowed bg-gray-600 opacity-50;
 }
 
 .iu-button-round {
-  --iu-apply: rounded-20px;
+  --iu-apply: rounded-16px;
 }
 
 .iu-button-pulse {
@@ -122,10 +134,13 @@ const handleAnimationEnd = () => {
 }
 
 .iu-button-default {
+  // --iu-apply:
+  //   b-1px b-[#efeff5]
+  //   hover:b-[#cfcfcf]
+  //   dark:b-[#fff] dark:b-opacity-10 dark:hover:b-opacity-50;
   --iu-apply:
-    b-1px b-[#efeff5]
-    hover:b-[#cfcfcf]
-    dark:b-[#fff] dark:b-opacity-10 dark:hover:b-opacity-50;
+    bg-[#000]:30 hover:bg-[#000]:50
+    dark:bg-[#fff]:40 dark:hover:bg-[#fff]:50;
 }
 
 .iu-button-primary {

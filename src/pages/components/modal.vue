@@ -10,7 +10,16 @@
             <DocModal />
           </Starport>
         </ExDisplay>
+        <ExDisplay title="插槽" name="modal" comName="ModalSlot">
+          <ModalSlot />
+        </ExDisplay>
+      </IuSpace>
+      <IuSpace vertical>
+        <ExDisplay title="遮罩关闭" name="modal" comName="ModalMask">
+          <ModalMask />
+        </ExDisplay>
       </IuSpace>
     </IuSpace>
+    <ModalApi />
   </div>
 </template>
