@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.25.2
   '@iconify-json/carbon': ^1.1.7
   '@types/markdown-it-link-attributes': ^3.0.1
+  '@types/nprogress': ^0.2.0
   '@types/prismjs': ^1.26.0
   '@vicons/fa': ^0.12.0
   '@vicons/utils': ^0.1.4
@@ -14,6 +15,7 @@ specifiers:
   eslint: ^8.21.0
   markdown-it-link-attributes: ^4.0.0
   markdown-it-prism: ^2.2.4
+  nprogress: ^0.2.0
   pinia: ^2.0.17
   pnpm: ^7.9.0
   postcss: ^8.4.16
@@ -50,6 +52,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 9.1.0_vue@3.2.37
   '@vueuse/head': 0.7.9_vue@3.2.37
+  nprogress: 0.2.0
   pinia: 2.0.17_j6bzmzd4ujpabbp5objtwxyjp4
   prism-theme-vars: 0.2.4
   prismjs: 1.28.0
@@ -62,6 +65,7 @@ devDependencies:
   '@antfu/eslint-config': 0.25.2_qugx7qdu5zevzvxaiqyxfiwquq
   '@iconify-json/carbon': 1.1.7
   '@types/markdown-it-link-attributes': 3.0.1
+  '@types/nprogress': 0.2.0
   '@types/prismjs': 1.26.0
   '@vicons/fa': 0.12.0
   '@vicons/utils': 0.1.4_vue@3.2.37
@@ -759,6 +763,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/nprogress/0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -4731,6 +4739,10 @@ packages:
     dependencies:
       path-key: 3.1.1
     dev: true
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}

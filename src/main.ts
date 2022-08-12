@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import { createHead } from '@vueuse/head'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
-import { setupIu, setupStarport } from './modules'
+import { setupIu, setupNprogress, setupStarport } from './modules'
 import App from './App.vue'
 
 // import type { UserModule } from './types'
@@ -29,6 +29,7 @@ app.use(router)
 app.use(head)
 
 setupStarport(app)
+setupNprogress(router)
 setupIu(app)
 
 app.mount('#app')
