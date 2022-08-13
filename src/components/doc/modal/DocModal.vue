@@ -5,7 +5,7 @@ const show = ref(false)
 <template>
   <div>
     <IuButton @click="show = !show">
-      打开
+      modal
     </IuButton>
     <IuModal v-model:show="show" title="Modal">
       <div style="width: 300px;">

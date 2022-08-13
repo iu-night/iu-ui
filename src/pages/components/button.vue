@@ -6,7 +6,7 @@
     <IuSpace>
       <IuSpace vertical>
         <ExDisplay title="基础" name="button" comName="DocButton">
-          <Starport port="iu-button" h-34px w-375px>
+          <Starport port="iu-button" h-34px w-490px>
             <DocButton />
           </Starport>
         </ExDisplay>

@@ -41,6 +41,7 @@ declare module '@vue/runtime-core' {
     IuName: typeof import('./src/components/IuName.vue')['default']
     IuSpace: typeof import('iu-ui')['IuSpace']
     IuSwitch: typeof import('iu-ui')['IuSwitch']
+    JumpPage: typeof import('./src/components/JumpPage.vue')['default']
     ModalApi: typeof import('./src/components/doc/modal/ModalApi.md')['default']
     ModalMask: typeof import('./src/components/doc/modal/ModalMask.vue')['default']
     ModalSlot: typeof import('./src/components/doc/modal/ModalSlot.vue')['default']

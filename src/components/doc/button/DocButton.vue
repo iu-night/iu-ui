@@ -1,19 +1,19 @@
 <template>
   <IuSpace align="center">
     <IuButton>
-      开始
+      Default
     </IuButton>
     <IuButton type="primary">
-      开始
+      Primary
     </IuButton>
     <IuButton type="warning">
-      开始
+      Warning
     </IuButton>
     <IuButton type="error">
-      开始
+      Error
     </IuButton>
     <IuButton type="success">
-      开始
+      Success
     </IuButton>
   </IuSpace>
 </template>

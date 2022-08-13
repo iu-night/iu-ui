@@ -1,12 +1,7 @@
-// import { createPinia } from 'pinia'
-// import { type UserModule } from '@/types'
+import { createPinia } from 'pinia'
+import type { App } from 'vue'
 
-// // Setup Pinia
-// export const install: UserModule = ({ isClient, initialState, app }) => {
-//   const pinia = createPinia()
-//   app.use(pinia)
-//   if (isClient)
-//     pinia.state.value = (initialState.pinia) || {}
-//   else
-//     initialState.pinia = pinia.state.value
-// }
+export function setupPinia(app: App) {
+  const pinia = createPinia()
+  app.use(pinia)
+}

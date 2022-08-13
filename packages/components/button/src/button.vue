@@ -78,7 +78,7 @@ const handleAnimationEnd = () => {
     px-16px py-4px
     rounded-4px leading-normal
     cursor-pointer select-none
-    transition-300;
+    transition-background-color-300;
 }
 
 .iu-button-disabled {
@@ -134,28 +134,32 @@ const handleAnimationEnd = () => {
 }
 
 .iu-button-default {
-  // --iu-apply:
-  //   b-1px b-[#efeff5]
-  //   hover:b-[#cfcfcf]
-  //   dark:b-[#fff] dark:b-opacity-10 dark:hover:b-opacity-50;
   --iu-apply:
-    bg-[#000]:30 hover:bg-[#000]:50
-    dark:bg-[#fff]:40 dark:hover:bg-[#fff]:50;
+    bg-zinc-400 hover:bg-zinc-500
+    dark:bg-zinc-600 dark:hover:bg-zinc-500;
 }
 
 .iu-button-primary {
-  --iu-apply: bg-[#1abc9c] hover:bg-[#16a085] active:bg-[#006266];
+  --iu-apply:
+    bg-teal-500 hover:bg-teal-600 active:bg-teal-500
+    dark:bg-teal-600 dark:hover:bg-teal-500 dark:active:bg-teal-600;
 }
 
 .iu-button-warning {
-  --iu-apply: bg-[#ffa502] hover:bg-[#de9002] active:bg-[#ad7001];
+  --iu-apply:
+    bg-amber-500 hover:bg-amber-600 active:bg-amber-500
+    dark:bg-amber-600 dark:hover:bg-amber-500 dark:active:bg-amber-600;
 }
 
 .iu-button-success {
-  --iu-apply: bg-[#2ecc71] hover:bg-[#27ad60] active:bg-[#1e874b];
+  --iu-apply:
+    bg-green-500 hover:bg-green-600 active:bg-green-500
+    dark:bg-green-600 dark:hover:bg-green-500 dark:active:bg-green-600;
 }
 
 .iu-button-error {
-  --iu-apply: bg-[#ee5a24] hover:bg-[#cc4d1f] active:bg-[#a84019];
+  --iu-apply:
+    bg-red-500 hover:bg-red-600 active:bg-red-500
+    dark:bg-red-600 dark:hover:bg-red-500 dark:active:bg-red-600;
 }
 </style>

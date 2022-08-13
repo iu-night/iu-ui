@@ -6,7 +6,7 @@
     <IuSpace>
       <IuSpace vertical>
         <ExDisplay title="基础" name="modal" comName="DocModal">
-          <Starport port="iu-modal" h-34px w-66px>
+          <Starport port="iu-modal" h-34px w-82px>
             <DocModal />
           </Starport>
         </ExDisplay>
