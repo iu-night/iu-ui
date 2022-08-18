@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <CodeBox min-w-550px :title="title" :code="code">
+  <CodeBox class="min-w-550px 2xl:min-w-600px" :title="title" :code="code">
     <slot />
   </CodeBox>
 </template>
