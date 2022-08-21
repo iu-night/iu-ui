@@ -3,7 +3,7 @@
     <div mb-30px text-30px font-bold>
       Tooltip
     </div>
-    <IuSpace vertical>
+    <IuSpace>
       <ExDisplay title="基础" name="tooltip" comName="DocTooltip">
         <Starport port="iu-tooltip" h-34px w-236px>
           <DocTooltip />

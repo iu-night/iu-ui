@@ -82,7 +82,7 @@ const handleAnimationEnd = () => {
 }
 
 .iu-button-disabled {
-  --iu-apply: cursor-not-allowed bg-gray-600 opacity-50;
+  --iu-apply: cursor-not-allowed bg-gray-400 opacity-50 dark:bg-gray-600;
 }
 
 .iu-button-round {
