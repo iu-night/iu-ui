@@ -49,6 +49,12 @@ const sideItems: ISideBar[] = [
         tips: '',
       },
       {
+        title: '输入框',
+        name: 'Input',
+        route: `${com}input`,
+        tips: '',
+      },
+      {
         title: '开关',
         name: 'Switch',
         route: `${com}switch`,

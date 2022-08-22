@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     IuCard: typeof import('iu-ui')['IuCard']
     IuCheckbox: typeof import('iu-ui')['IuCheckbox']
     IuDivider: typeof import('iu-ui')['IuDivider']
+    IuInput: typeof import('iu-ui')['IuInput']
     IuModal: typeof import('iu-ui')['IuModal']
     IuName: typeof import('./src/components/IuName.vue')['default']
     IuSpace: typeof import('iu-ui')['IuSpace']
