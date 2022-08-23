@@ -11,8 +11,11 @@ const onChange = (val: any) => {
     <div mb-30px text-30px font-bold>
       Input
     </div>
+    <div text-20px font-bold>
+      coming soon...
+    </div>
     <IuSpace>
-      <IuInput v-model="value" @change="onChange" />
+      <IuInput v-model="value" @input="onChange" />
     </IuSpace>
     <!-- <IuSpace>
       <IuSpace vertical>

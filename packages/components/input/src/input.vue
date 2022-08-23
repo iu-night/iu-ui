@@ -25,6 +25,11 @@ const value = computed({
 })
 const focused = ref<boolean>(false)
 
+const handleInput = (e: Event) => {
+  const { value } = e.target as HTMLInputElement
+  emit('input', value, e)
+}
+
 const handleChange = () => {
   emit('change', value.value)
 }
@@ -42,7 +47,11 @@ defineOptions({
 <template>
   <div class="iu-input">
     <template v-if="type !== 'textarea'">
-      <input v-model="value" @change="handleChange">
+      <input
+        v-model="value"
+        @input="handleInput"
+        @change="handleChange"
+      >
     </template>
     <template v-else>
       <textarea>
