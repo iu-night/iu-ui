@@ -22,6 +22,7 @@ const specialStyle = computed(() => {
 
 <template>
   <main ref="target" class="flex-center flex-col h-full text-gray-700 dark:text-gray-200 perspective-300">
+    <Starfield v-if="isDark" />
     <Starport port="iu-ui" w-121px h-45px z-1000>
       <IuName />
     </Starport>
@@ -31,6 +32,7 @@ const specialStyle = computed(() => {
         <HeadNav />
       </Starport>
     </div>
+
     <RouterView :style="specialStyle" />
   </main>
 </template>

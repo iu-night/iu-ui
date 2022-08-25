@@ -55,6 +55,7 @@ declare module '@vue/runtime-core' {
     SpaceEnd: typeof import('./src/components/doc/space/SpaceEnd.vue')['default']
     SpaceVertical: typeof import('./src/components/doc/space/SpaceVertical.vue')['default']
     SpaceVerticalCenter: typeof import('./src/components/doc/space/SpaceVerticalCenter.vue')['default']
+    Starfield: typeof import('./src/components/Starfield.vue')['default']
     Starport: typeof import('vue-starport')['Starport']
     StarportCarrier: typeof import('vue-starport')['StarportCarrier']
     SwitchApi: typeof import('./src/components/doc/switch/SwitchApi.md')['default']

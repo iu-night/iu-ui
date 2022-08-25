@@ -7,7 +7,7 @@ const setDis = (val: boolean) => {
 </script>
 
 <template>
-  <div flex-center flex-col mt-30px>
+  <div flex-center flex-col mt-30px z-1>
     <!-- <div absolute top-40px right-40px font-bold>
       <IuCheckbox :modelValue="disabled" @update:modelValue="setDis">
         禁用跳转
