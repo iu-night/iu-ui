@@ -84,14 +84,14 @@ defineOptions({
 }
 
 .iu-card-content {
-  --iu-apply: flex-1 px-20px py-10px box-border;
+  --iu-apply: flex-1 px-20px py-10px box-border rounded-b;
 }
 
 .iu-card-footer {
-  --iu-apply: flex-1 px-20px py-10px box-border;
+  --iu-apply: flex-1 px-20px py-10px box-border rounded-b;
 }
 
 .iu-card-action {
-  --iu-apply: flex-1 px-20px py-10px box-border bg-[#efefef] dark:bg-[#252525];
+  --iu-apply: flex-1 px-20px py-10px box-border rounded-b bg-[#efefef] dark:bg-[#252525];
 }
 </style>
