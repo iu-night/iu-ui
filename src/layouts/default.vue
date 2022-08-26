@@ -7,7 +7,7 @@
         class="bg-[#fafafa] ml-250px min-w-[calc(100%-251px)] px-40px pt-55px pb-40px overflow-auto crollDivClass dark:bg-[#1e1e1e]"
       >
         <RouterView v-slot="{ Component }" class="">
-          <Transition name="fade" mode="out-in">
+          <Transition name="fade-route" mode="out-in">
             <component :is="Component" />
           </Transition>
         </RouterView>

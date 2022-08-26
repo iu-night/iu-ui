@@ -29,21 +29,32 @@ html.dark {
   opacity: 0.75;
 }
 
-.fade-leave-active,
-.fade-enter-active {
+.fade-route-leave-active,
+.fade-route-enter-active {
   transition: all 0.25s ease;
 }
 
-.fade-enter-from {
+.fade-route-enter-from {
   transform: translateX(15px);
   opacity: 0;
   transition: all 0.25s ease;
 }
 
-.fade-leave-to {
+.fade-route-leave-to {
   transform: translateX(-15px);
   opacity: 0;
   transition: all 0.25s ease;
+}
+
+.fade-star-leave-active,
+.fade-star-enter-active {
+  transition: opacity 1s ease;
+}
+
+.fade-star-leave-to,
+.fade-star-enter-from {
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .iu-ct-leave-active,

@@ -7,7 +7,7 @@ let canvas = $ref<HTMLCanvasElement>()
 const container = $shallowRef<HTMLElement>()
 let ctx = $ref(canvas?.getContext('2d'))
 
-const stars = Array.from({ length: COUNT }, () => new Star(0, 0, 0))
+let show = $ref(true)
 
 class Star {
   x: number
@@ -52,45 +52,51 @@ class Star {
   }
 }
 
+const stars = Array.from({ length: COUNT }, () => new Star(0, 0, 0))
+
 const frame = () => {
-  const { clientWidth: width, clientHeight: height } = container
-  if (ctx) {
-    for (const star of stars) {
-      star.update(width, height, SPEED)
-      star.draw(ctx)
+  if (container) {
+    const { clientWidth: width, clientHeight: height } = container
+    if (ctx) {
+      for (const star of stars) {
+        star.update(width, height, SPEED)
+        star.draw(ctx)
+      }
+      ctx.fillRect(-width / 2, -height / 2, width, height)
     }
-    ctx.fillRect(-width / 2, -height / 2, width, height)
+    rafId = requestAnimationFrame(frame)
   }
-  rafId = requestAnimationFrame(frame)
 }
 
 const setup = () => {
   rafId > 0 && cancelAnimationFrame(rafId)
-  const { clientWidth: width, clientHeight: height } = container
-  const dpr = window.devicePixelRatio || 1
-  canvas.width = width * dpr
-  canvas.height = height * dpr
-  canvas.style.width = `${width}px`
-  canvas.style.height = `${height}px`
-  ctx?.scale(dpr, dpr)
-  for (const star of stars) {
-    star.x = Math.random() * width - width / 2
-    star.y = Math.random() * height - height / 2
-    star.z = 0
+  if (container) {
+    const { clientWidth: width, clientHeight: height } = container
+    const dpr = window.devicePixelRatio || 1
+    canvas.width = width * dpr
+    canvas.height = height * dpr
+    canvas.style.width = `${width}px`
+    canvas.style.height = `${height}px`
+    ctx?.scale(dpr, dpr)
+    for (const star of stars) {
+      star.x = Math.random() * width - width / 2
+      star.y = Math.random() * height - height / 2
+      star.z = 0
+    }
+    ctx?.translate(width / 2, height / 2)
+    if (ctx) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'
+      ctx.strokeStyle = 'white'
+    }
+    rafId = requestAnimationFrame(frame)
   }
-  ctx?.translate(width / 2, height / 2)
-  if (ctx) {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'
-    ctx.strokeStyle = 'white'
-  }
-  rafId = requestAnimationFrame(frame)
 }
 
 const resizeObserver = new ResizeObserver(setup)
 
 const unobserve = () => {
   useTimeoutFn(() => {
-    SPEED = 0.05
+    show = false
   }, 5000)
 }
 
@@ -99,7 +105,7 @@ onMounted(() => {
 
   resizeObserver.observe(container)
 
-  unobserve()
+  // unobserve()
 })
 </script>
 

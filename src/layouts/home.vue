@@ -5,6 +5,20 @@ const disabled = $computed(() => store.disableJump)
 const target = ref(null)
 const parallax = reactive(useParallax(target))
 
+let showStar = $ref(isDark.value)
+let timer: number | undefined
+
+const toggleStar = () => {
+  showStar = !showStar
+}
+
+const toogleStarTimeOut = () => {
+  clearTimeout(timer)
+  timer = setTimeout(() => {
+    toggleStar()
+  }, 7000)
+}
+
 const specialStyle = computed(() => {
   if (disabled) {
     return {
@@ -18,11 +32,32 @@ const specialStyle = computed(() => {
     }
   }
 })
+
+watch(
+  () => isDark.value,
+  (val) => {
+    if (val) {
+      toggleStar()
+      toogleStarTimeOut()
+    }
+    else {
+      showStar = false
+      clearTimeout(timer)
+    }
+  },
+)
+
+onMounted(() => {
+  if (isDark.value)
+    toogleStarTimeOut()
+})
 </script>
 
 <template>
   <main ref="target" class="flex-center flex-col h-full text-gray-700 dark:text-gray-200 perspective-300">
-    <Starfield v-if="isDark" />
+    <Transition name="fade-star" mode="out-in">
+      <Starfield v-if="isDark" class="transition-opacity-2000" :class="{ 'opacity-0': !showStar }" />
+    </Transition>
     <Starport port="iu-ui" w-121px h-45px z-1000>
       <IuName />
     </Starport>
