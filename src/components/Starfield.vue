@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const COUNT = 100
-let SPEED = $ref(0.2)
+const COUNT = 50
+let SPEED = 0.4
 
 let rafId = 0
 let canvas = $ref<HTMLCanvasElement>()
@@ -110,7 +110,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="container" class="absolute inset-0">
+  <div ref="container" class="absolute inset-0 -z-1">
     <canvas ref="canvas" />
   </div>
 </template>

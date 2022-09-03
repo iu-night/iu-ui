@@ -1,9 +1,4 @@
 <script setup lang="ts">
-const value = ref('111')
-
-const onChange = (val: any) => {
-  console.log(val)
-}
 </script>
 
 <template>
@@ -11,29 +6,26 @@ const onChange = (val: any) => {
     <div mb-30px text-30px font-bold>
       Input
     </div>
-    <div text-20px font-bold>
-      coming soon...
-    </div>
     <IuSpace>
-      <IuInput v-model="value" @input="onChange" />
-    </IuSpace>
-    <!-- <IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="基础" name="button" comName="DocButton">
-          <Starport port="iu-button" h-34px w-490px>
-            <DocButton />
+        <ExDisplay title="基础" name="input" comName="DocInput">
+          <Starport port="iu-input" h-70px w-300px>
+            <DocInput />
           </Starport>
         </ExDisplay>
-        <ExDisplay title="禁用" name="button" comName="ButtonDisabled">
-          <ButtonDisabled />
+        <ExDisplay title="圆角" name="input" comName="InputRound">
+          <InputRound />
         </ExDisplay>
       </IuSpace>
       <IuSpace vertical>
-        <ExDisplay title="圆角" name="button" comName="ButtonRound">
-          <ButtonRound />
+        <ExDisplay title="状态" name="input" comName="InputState">
+          <InputState />
         </ExDisplay>
       </IuSpace>
     </IuSpace>
-    <ButtonApi /> -->
+    <div text-20px font-bold mt-20px>
+      coming soon...
+    </div>
+    <!-- <InputApi /> -->
   </div>
 </template>

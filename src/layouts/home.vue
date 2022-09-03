@@ -16,7 +16,7 @@ const toogleStarTimeOut = () => {
   clearTimeout(timer)
   timer = setTimeout(() => {
     toggleStar()
-  }, 7000)
+  }, 5000)
 }
 
 const specialStyle = computed(() => {
@@ -54,11 +54,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <main ref="target" class="flex-center flex-col h-full text-gray-700 dark:text-gray-200 perspective-300">
+  <main ref="target" class="flex-center flex-col h-full text-gray-700 dark:text-gray-200">
     <Transition name="fade-star" mode="out-in">
       <Starfield v-if="isDark" class="transition-opacity-2000" :class="{ 'opacity-0': !showStar }" />
     </Transition>
-    <Starport port="iu-ui" w-121px h-45px z-1000>
+    <Starport port="iu-ui" w-121px h-45px relative z-1000>
       <IuName />
     </Starport>
 
@@ -68,6 +68,8 @@ onMounted(() => {
       </Starport>
     </div>
 
-    <RouterView :style="specialStyle" />
+    <div class="perspective-300">
+      <RouterView :style="specialStyle" />
+    </div>
   </main>
 </template>

@@ -4,15 +4,15 @@
 <template>
   <div class="iu-header">
     <div class="iu-header-logo">
-      <RouterLink flex w-130px to="/">
-        <Starport port="iu-ui" w-121px h-45px z-1000>
+      <RouterLink flex w-130px ml-30px to="/">
+        <Starport port="iu-ui" w-121px h-45px relative z-1000>
           <IuName />
         </Starport>
       </RouterLink>
     </div>
-    <div class="w-35px" />
-    <div class="iu-header-blur" />
-    <div>
+    <div class="w-25px" />
+    <!-- <div class="iu-header-blur" /> -->
+    <div class="iu-header-blur">
       <Starport port="menu" w-100px h-50px>
         <HeadNav />
       </Starport>
@@ -35,7 +35,7 @@
 .iu-header-logo {
   --iu-apply:
     flex items-center
-    text-25px font-bold pl-30px
+    text-25px font-bold
     w-245px h-full
     backdrop-blur-5px backdrop-saturate-50;
 
@@ -47,6 +47,7 @@
 .iu-header-blur {
   --iu-apply:
     flex-1 h-full
+    flex justify-end
     backdrop-blur-5px backdrop-saturate-50;
 }
 </style>

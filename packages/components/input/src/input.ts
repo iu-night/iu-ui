@@ -1,5 +1,7 @@
 import type { PropType } from 'vue'
+
 type inputType = 'text' | 'textarea' | 'warning' | 'success' | 'error'
+type inputState = 'error' | 'warning' | 'default'
 
 export const inputProps = {
   type: {
@@ -22,6 +24,11 @@ export const inputProps = {
     default: undefined,
   },
   size: String,
+  placeholder: String,
+  state: {
+    type: String as PropType<inputState>,
+    default: 'default',
+  },
 }
 
 export const inputEmits = {

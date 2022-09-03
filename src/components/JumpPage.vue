@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { to = '' } = defineProps<{ to: string }>()
 
-const url = computed(() => useStore().disableJump ? '' : to)
+const url = computed(() => useStore().disableJump ? '' : `/components/${to}`)
 </script>
 
 <template>
