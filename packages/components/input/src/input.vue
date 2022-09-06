@@ -132,7 +132,7 @@ defineOptions({
 }
 
 .iu-input-round {
-  --iu-apply: rounded-15px;
+  --iu-apply: rounded-15px px-10px;
 }
 
 .iu-input-el {
