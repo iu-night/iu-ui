@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 
-type inputType = 'text' | 'textarea' | 'warning' | 'success' | 'error'
+type inputType = 'text' | 'textarea' | 'password' | 'date' | 'datetime' | 'time'
 type inputState = 'error' | 'warning' | 'default'
 
 export const inputProps = {

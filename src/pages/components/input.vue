@@ -23,9 +23,6 @@
         </ExDisplay>
       </IuSpace>
     </IuSpace>
-    <div text-20px font-bold mt-20px>
-      coming soon...
-    </div>
-    <!-- <InputApi /> -->
+    <InputApi />
   </div>
 </template>

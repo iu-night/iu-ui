@@ -33,6 +33,7 @@ declare module '@vue/runtime-core' {
     ExDisplay: typeof import('./src/components/ExDisplay.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HeadNav: typeof import('./src/components/HeadNav.vue')['default']
+    InputApi: typeof import('./src/components/doc/input/InputApi.md')['default']
     InputRound: typeof import('./src/components/doc/input/InputRound.vue')['default']
     InputState: typeof import('./src/components/doc/input/InputState.vue')['default']
     IuBacktop: typeof import('iu-ui')['IuBacktop']
