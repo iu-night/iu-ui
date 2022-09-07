@@ -9,15 +9,24 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+  
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16.x
           cache: pnpm
-      - run: pnpm install
+          
+      - name: Setup
+        run: npm i -g @antfu/ni
 
+      - name: Install
+        run: nci
+        
       - name: Build
-        run: pnpm site
+        run: nr site
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
