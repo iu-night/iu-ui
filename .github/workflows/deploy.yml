@@ -32,9 +32,8 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env: 
-          EXTERNAL_REPOSITORY: iu-night/iu-night.github.io
-          PUBLISH_BRANCH: main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: iu-night/iu-night.github.io
+          publish_branch: main 
           publish_dir: dist
