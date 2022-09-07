@@ -128,8 +128,8 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           // cssCodeSplit: true,
         }
       : {
-          outDir: 'docs/iu-night.github.io/docs',
-          // outDir: 'dist',
+          // outDir: 'docs/iu-night.github.io/docs',
+          outDir: 'dist',
         },
   }
 })
