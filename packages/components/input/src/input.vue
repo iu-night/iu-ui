@@ -23,7 +23,10 @@ const value = computed({
     emit('update:modelValue', val)
   },
 })
+
 const focused = ref<boolean>(false)
+const showClear = ref<boolean>(false)
+const showPwd = ref<boolean>(false)
 
 const className = computed(() => {
   return [
@@ -77,12 +80,17 @@ defineOptions({
       <input
         v-model="value"
         class="iu-input-el"
+        :type="type"
         :placeholder="placeholder"
         @input="handleInput"
         @change="handleChange"
         @focus="handleFocus"
         @blur="handleBlur"
       >
+      <div
+        v-if="showClear"
+        class="cursor-pointer op50 hover:op80 i-carbon-close-filled"
+      />
     </template>
     <template v-else>
       <textarea
@@ -137,6 +145,7 @@ defineOptions({
 
 .iu-input-el {
   --iu-apply:
+    flex-1
     w-full
     p-0
     b-0
