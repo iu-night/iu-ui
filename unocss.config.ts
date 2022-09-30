@@ -38,7 +38,7 @@ export default defineConfig({
     transformerDirectives({
       varStyle: '--iu-',
     }),
-    transformerVariantGroup(),
+    // transformerVariantGroup(),
   ],
   safelist: 'prose prose-sm text-left'.split(' '),
 })

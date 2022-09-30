@@ -133,8 +133,7 @@ const sideItems: ISideBar[] = [
 
 <style scoped lang="scss">
 .iu-side-bar {
-  --iu-apply:
-    h-full pt-55px fixed z-888 overflow-auto
+  @apply h-full pt-55px fixed z-888 overflow-auto
     shadow-iu dark:shadow-iud;
 
   overflow: overlay;
@@ -176,10 +175,11 @@ const sideItems: ISideBar[] = [
 }
 
 .side-btn-active {
-  --iu-apply: bg-[#18a058]:10 text-teal-900 dark:text-teal dark:bg-teal-800;
+  @apply bg-[#18a058]:10 text-teal-900 dark:text-teal dark:bg-teal-800;
 
   &:hover {
-    --iu-apply: bg-[#18a058]:10 text-teal-900 dark:bg-teal-800;
+    @apply bg-[#18a058]:10 text-teal-900 dark:bg-teal-800;
   }
 }
 </style>
+
