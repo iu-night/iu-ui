@@ -107,33 +107,34 @@ const sideItems: ISideBar[] = [
 
 <template>
   <div class="iu-side-bar">
-    <div class="px-20px pb-40px w-250px">
-      <div v-for="(list, listIndex) in sideItems" :key="list.title">
-        <div class="side-title">
-          {{ list.title }}
-        </div>
-        <RouterLink v-for="(item, index) in list.items" :key="item.name" :to="item.route">
-          <div
-            class="side-btn"
-            :class="{ 'side-btn-active': $route.path === item.route }"
-            :style="`animation-delay: ${(listIndex * 5 + index) * 25}ms;`"
-          >
-            <div flex-1>
-              {{ item.title }}
-            </div>
-            <div text-14px opacity-70>
-              {{ item.name }}
-            </div>
-          </div>
-        </RouterLink>
+    <div v-for="(list, listIndex) in sideItems" :key="list.title">
+      <div class="side-title">
+        {{ list.title }}
       </div>
+      <RouterLink v-for="(item, index) in list.items" :key="item.name" :to="item.route">
+        <div
+          class="side-btn"
+          :class="{ 'side-btn-active': $route.path === item.route }"
+          :style="`animation-delay: ${(listIndex * 5 + index) * 25}ms;`"
+        >
+          <div flex-1>
+            {{ item.title }}
+          </div>
+          <div text-14px opacity-70>
+            {{ item.name }}
+          </div>
+        </div>
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .iu-side-bar {
-  @apply h-full pt-55px fixed z-888 overflow-auto
+  @apply h-full w-250px
+    pt-55px px-20px pb-40px
+    fixed flex flex-col
+    z-888 overflow-auto
     shadow-iu dark:shadow-iud;
 
   overflow: overlay;
@@ -141,10 +142,6 @@ const sideItems: ISideBar[] = [
   &::-webkit-scrollbar {
     width: 4px;
     height: 4px;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-track-piece:vertical:start {
     background-color: transparent;
   }
 }
