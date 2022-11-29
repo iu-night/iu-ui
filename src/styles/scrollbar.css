@@ -29,3 +29,12 @@
 /* ::-webkit-scrollbar-thumb:window-inactive {
   background: #aaa;
 } */
+
+* {
+  scrollbar-color: #cfcfcf #0000;
+  scrollbar-width: thin;
+}
+
+.dark * {
+  scrollbar-color: #474747 #0000;
+}

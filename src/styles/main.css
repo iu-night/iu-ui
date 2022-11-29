@@ -8,10 +8,13 @@ body,
   margin: 0;
   padding: 0;
   overflow: overlay;
+  scrollbar-color: #cfcfcf #0000;
+  scrollbar-width: thin;
 }
 
 html.dark {
   background: #121212;
+  scrollbar-color: #474747 #0000;
 }
 
 #nprogress {
