@@ -75,25 +75,25 @@ const setDis = (val: boolean) => {
 </template>
 
 <style scoped lang="scss">
-.dark .someStyle {
-  --iu-apply: p-10px rounded-5px overflow-hidden z-5;
+// .dark .someStyle {
+//   --iu-apply: p-10px rounded-5px overflow-hidden z-5;
 
-  box-shadow: inset 0 0 10px #80c3ff, 0 0 20px 10px rgb(163 212 255 / 13%);
+//   box-shadow: inset 0 0 10px #80c3ff, 0 0 20px 10px rgb(163 212 255 / 13%);
 
-  &::before {
-    --iu-apply: animate-spin animate-duration-5000;
+//   &::before {
+//     --iu-apply: animate-spin animate-duration-5000;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    border-radius: 0 !important;
-    box-shadow: 0 0 17px 3px #a3d4ff, 0 0 4px 2px #a3d4ff, inset 0 0 17px 3px #80c3ff, inset 0 0 4px 2px #80c3ff;
-    content: '';
-  }
-}
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 0 !important;
+//     box-shadow: 0 0 17px 3px #a3d4ff, 0 0 4px 2px #a3d4ff, inset 0 0 17px 3px #80c3ff, inset 0 0 4px 2px #80c3ff;
+//     content: '';
+//   }
+// }
 </style>
 
 <route lang="yaml">
