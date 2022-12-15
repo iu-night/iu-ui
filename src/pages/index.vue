@@ -76,12 +76,12 @@ const setDis = (val: boolean) => {
 
 <style scoped lang="scss">
 // .dark .someStyle {
-//   --iu-apply: p-10px rounded-5px overflow-hidden z-5;
+//   --iu: p-10px rounded-5px overflow-hidden z-5;
 
 //   box-shadow: inset 0 0 10px #80c3ff, 0 0 20px 10px rgb(163 212 255 / 13%);
 
 //   &::before {
-//     --iu-apply: animate-spin animate-duration-5000;
+//     --iu: animate-spin animate-duration-5000;
 
 //     position: absolute;
 //     top: 0;

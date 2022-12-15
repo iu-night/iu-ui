@@ -104,7 +104,7 @@ defineOptions({
 
 <style lang="scss">
 .iu-input {
-  --iu-apply:
+  --iu:
     relative
     inline-flex items-center
     w-full h-32px
@@ -115,36 +115,36 @@ defineOptions({
     transition-250;
 
   &:hover {
-    --iu-apply: b-teal-500 dark:b-teal-600;
+    --iu: b-teal-500 dark:b-teal-600;
   }
 }
 
 .iu-input-focus {
-  --iu-apply: b-teal-500 dark:b-teal-600 caret-teal-500;
+  --iu: b-teal-500 dark:b-teal-600 caret-teal-500;
 }
 
 .iu-input-error {
-  --iu-apply: b-red-500 dark:b-red-600 caret-red-500;
+  --iu: b-red-500 dark:b-red-600 caret-red-500;
 
   &:hover {
-    --iu-apply: b-red-500 dark:b-red-600;
+    --iu: b-red-500 dark:b-red-600;
   }
 }
 
 .iu-input-warning {
-  --iu-apply: b-amber-500 dark:b-amber-600 caret-amber-500;
+  --iu: b-amber-500 dark:b-amber-600 caret-amber-500;
 
   &:hover {
-    --iu-apply: b-amber-500 dark:b-amber-600;
+    --iu: b-amber-500 dark:b-amber-600;
   }
 }
 
 .iu-input-round {
-  --iu-apply: rounded-15px px-10px;
+  --iu: rounded-15px px-10px;
 }
 
 .iu-input-el {
-  --iu-apply:
+  --iu:
     flex-1
     w-full
     p-0

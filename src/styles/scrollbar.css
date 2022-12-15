@@ -5,19 +5,19 @@
 }
 
 ::-webkit-scrollbar-track-piece:vertical:start {
-  --iu-apply: bg-[#cfcfcf] dark:bg-[#474747];
+  --iu: bg-[#cfcfcf] dark:bg-[#474747];
 
   border-radius: 5px;
 }
 
 /* ::-webkit-scrollbar-track-piece:horizontal:start {
-  --iu-apply: bg-[#cfcfcf] dark:bg-[#474747];
+  --iu: bg-[#cfcfcf] dark:bg-[#474747];
 
   border-radius: 5px;
 } */
 
 ::-webkit-scrollbar-thumb {
-  --iu-apply: bg-[#cfcfcf] dark:bg-[#474747];
+  --iu: bg-[#cfcfcf] dark:bg-[#474747];
 
   border-radius: 5px;
 }

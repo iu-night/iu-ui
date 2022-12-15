@@ -50,7 +50,7 @@ defineOptions({
 
 <style lang="scss">
 .iu-modal-mask {
-  --iu-apply:
+  --iu:
     fixed flex
     top-0 left-0 z-9988
     w-full h-full
@@ -59,16 +59,16 @@ defineOptions({
     backdrop-blur-5px backdrop-saturate-50;
 
   // & > * {
-  //   --iu-apply: backdrop-blur-0;
+  //   --iu: backdrop-blur-0;
   // }
 }
 
 .iu-modal-wrapper {
-  --iu-apply: flex-center w-full h-full;
+  --iu: flex-center w-full h-full;
 }
 
 .iu-modal-container {
-  --iu-apply:
+  --iu:
     flex flex-col relative
     rounded-4px
     text-16px text-gray-700 dark:text-gray-200
@@ -78,7 +78,7 @@ defineOptions({
 }
 
 .iu-modal-close {
-  --iu-apply:
+  --iu:
     absolute
     right-0 top-0
     mt-20px mr-25px
@@ -88,37 +88,37 @@ defineOptions({
     transition-100;
 
   &:hover {
-    --iu-apply: bg-[#000]:20 dark:bg-[#fff]:20;
+    --iu: bg-[#000]:20 dark:bg-[#fff]:20;
   }
 }
 
 .iu-modal-header {
-  --iu-apply:
+  --iu:
     flex-1
     rounded-4px
     px-30px py-20px;
 
   .iu-modal-title {
-    --iu-apply: text-20px;
+    --iu: text-20px;
   }
 }
 
 .iu-modal-body {
-  --iu-apply:
+  --iu:
     flex-1
     rounded-4px
     px-30px pt-10px pb-20px;
 }
 
 .iu-modal-footer {
-  --iu-apply:
+  --iu:
     flex-1
     rounded-4px
     px-30px pb-20px;
 }
 
 .iu-modal-action {
-  --iu-apply:
+  --iu:
     flex-1
     rounded-4px
     px-30px py-20px

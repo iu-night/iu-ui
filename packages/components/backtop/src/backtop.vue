@@ -74,7 +74,7 @@ onMounted(() => {
 
 <style lang="scss">
 .iu-backtop {
-  --iu-apply:
+  --iu:
     fixed flex-center w-40px h-40px rounded-1/2 z-999
     cursor-pointer select-none
     text-[#1e1e1e] dark:text-white

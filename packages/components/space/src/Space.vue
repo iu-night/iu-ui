@@ -36,54 +36,54 @@ const content = slots?.default?.() || []
 
 <style lang="scss" scoped>
 .iu-space {
-  --iu-apply: flex flex-wrap gap-x-12px gap-y-10px;
+  --iu: flex flex-wrap gap-x-12px gap-y-10px;
 }
 
 .iu-space-vertical {
-  --iu-apply: flex-col;
+  --iu: flex-col;
 }
 
 .iu-space-justify-center {
-  --iu-apply: justify-center;
+  --iu: justify-center;
 }
 
 .iu-space-justify-start {
-  --iu-apply: justify-start;
+  --iu: justify-start;
 }
 
 .iu-space-justify-end {
-  --iu-apply: justify-end;
+  --iu: justify-end;
 }
 
 .iu-space-justify-between {
-  --iu-apply: justify-between;
+  --iu: justify-between;
 }
 
 .iu-space-justify-around {
-  --iu-apply: justify-around;
+  --iu: justify-around;
 }
 
 .iu-space-justify-evenly {
-  --iu-apply: justify-evenly;
+  --iu: justify-evenly;
 }
 
 .iu-space-align-center {
-  --iu-apply: items-center;
+  --iu: items-center;
 }
 
 .iu-space-align-start {
-  --iu-apply: items-start;
+  --iu: items-start;
 }
 
 .iu-space-align-end {
-  --iu-apply: items-end;
+  --iu: items-end;
 }
 
 .iu-space-align-baseline {
-  --iu-apply: items-baseline;
+  --iu: items-baseline;
 }
 
 .iu-space-align-stretch {
-  --iu-apply: items-stretch;
+  --iu: items-stretch;
 }
 </style>

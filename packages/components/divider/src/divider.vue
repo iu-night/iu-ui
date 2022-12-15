@@ -17,7 +17,7 @@ const className = computed(() => {
 
 <style lang="scss">
 .iu-divider {
-  --iu-apply:
+  --iu:
     relative
     clear-both
     my-10px mx-0
@@ -27,7 +27,7 @@ const className = computed(() => {
 }
 
 .iu-divider-vertical {
-  --iu-apply:
+  --iu:
     h-14px min-w-1px max-w-1px
     inline-block align-middle
     mx-10px my-0
@@ -37,6 +37,6 @@ const className = computed(() => {
 }
 
 .iu-divider-dashed {
-  --iu-apply: b-dashed;
+  --iu: b-dashed;
 }
 </style>

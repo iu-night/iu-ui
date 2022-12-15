@@ -22,7 +22,7 @@
 
 <style scoped lang="scss">
 .iu-header {
-  --iu-apply:
+  --iu:
     flex fixed w-full h-55px top-0 left-0 z-889
     text-xl pr-30px text-25px
     items-center justify-between
@@ -34,18 +34,18 @@
 }
 
 .iu-header-logo {
-  --iu-apply:
+  --iu:
     flex items-center
     text-25px font-bold
     w-245px h-full;
 
   & > * {
-    --iu-apply: backdrop-blur-0;
+    --iu: backdrop-blur-0;
   }
 }
 
 .iu-header-blur {
-  --iu-apply:
+  --iu:
     flex-1 h-full
     flex justify-end;
 }

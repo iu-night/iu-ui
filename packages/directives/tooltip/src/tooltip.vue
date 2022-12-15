@@ -44,7 +44,7 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
 
 <style lang="scss">
 .iu-tooltip {
-  --iu-apply:
+  --iu:
     fixed inline-block rounded-5px pointer-events-none break-words
     top-0 left-0 z-1000 min-w-10px
     p-10px font-500 text-12px
@@ -55,13 +55,13 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
 }
 
 .iu-tooltip-arrow {
-  --iu-apply:
+  --iu:
     b-transparent b-l-[#eaeaea] dark:b-l-[#4e4e4e]
     absolute w-0 h-0 b-8px;
 }
 
 .iu-tooltip-arrow.left {
-  --iu-apply:
+  --iu:
     b-transparent b-l-[#eaeaea] dark:b-l-[#4e4e4e]
     top-1/2 -right-15px;
 
@@ -69,7 +69,7 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
 }
 
 .iu-tooltip-arrow.bottom {
-  --iu-apply:
+  --iu:
     b-transparent b-b-[#eaeaea] dark:b-b-[#4e4e4e]
     -top-15px left-1/2;
 
@@ -77,7 +77,7 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
 }
 
 .iu-tooltip-arrow.right {
-  --iu-apply:
+  --iu:
     b-transparent b-r-[#eaeaea] dark:b-r-[#4e4e4e]
     top-1/2 -left-15px;
 
@@ -85,7 +85,7 @@ defineExpose({ showTip, hiddenTip, tooltipPostiton, text, placements })
 }
 
 .iu-tooltip-arrow.top {
-  --iu-apply:
+  --iu:
     b-transparent b-t-[#eaeaea] dark:b-t-[#4e4e4e]
     -bottom-15px left-1/2;
 

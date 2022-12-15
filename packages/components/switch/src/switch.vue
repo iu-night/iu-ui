@@ -54,7 +54,7 @@ defineOptions({
 
 <style lang="scss">
 .iu-switch {
-  --iu-apply:
+  --iu:
     in-flex-center align-middle
     leading-normal
     select-none
@@ -64,7 +64,7 @@ defineOptions({
 }
 
 .iu-switch-rail {
-  --iu-apply:
+  --iu:
     overflow-hidden relative
     bg-black:20
     dark:bg-white:20
@@ -80,11 +80,11 @@ defineOptions({
     box-shadow 0.3s var(--iu-bezier);
 
   &.iu-switch-square {
-    --iu-apply: rounded-4px;
+    --iu: rounded-4px;
   }
 
   &.iu-switch-disabled {
-    --iu-apply: cursor-not-allowed opacity-50;
+    --iu: cursor-not-allowed opacity-50;
   }
 }
 
@@ -97,7 +97,7 @@ defineOptions({
 }
 
 .iu-switch-btn {
-  --iu-apply:
+  --iu:
     absolute
     bg-white
     rounded-1/2 box-border
@@ -117,7 +117,7 @@ defineOptions({
     box-shadow 0.3s var(--iu-bezier);
 
   .iu-switch-square & {
-    --iu-apply: rounded-4px;
+    --iu: rounded-4px;
   }
 }
 </style>

@@ -39,7 +39,7 @@ defineOptions({
 
 <style lang="scss">
 .iu-card {
-  --iu-apply:
+  --iu:
     flex flex-col w-full text-16px rounded box-border break-words leading-normal
     text-gray-700 dark:text-gray-200
     bg-[#fff] dark:bg-[#121212];
@@ -54,7 +54,7 @@ defineOptions({
 }
 
 .iu-card-bordered {
-  --iu-apply: b-1px b-[#efeff5] dark:b-[#fff]:10;
+  --iu: b-1px b-[#efeff5] dark:b-[#fff]:10;
 }
 
 .iu-card-hover:hover {
@@ -72,26 +72,26 @@ defineOptions({
 }
 
 .iu-card-header {
-  --iu-apply: flex items-center px-20px py-10px text-20px font-500 box-border;
+  --iu: flex items-center px-20px py-10px text-20px font-500 box-border;
 }
 
 .iu-card-header-main {
-  --iu-apply: flex-1 items-center;
+  --iu: flex-1 items-center;
 }
 
 .iu-card-header-extra {
-  --iu-apply: flex items-center text-16px;
+  --iu: flex items-center text-16px;
 }
 
 .iu-card-content {
-  --iu-apply: flex-1 px-20px py-10px box-border rounded-b;
+  --iu: flex-1 px-20px py-10px box-border rounded-b;
 }
 
 .iu-card-footer {
-  --iu-apply: flex-1 px-20px py-10px box-border rounded-b;
+  --iu: flex-1 px-20px py-10px box-border rounded-b;
 }
 
 .iu-card-action {
-  --iu-apply: flex-1 px-20px py-10px box-border rounded-b bg-[#efefef] dark:bg-[#252525];
+  --iu: flex-1 px-20px py-10px box-border rounded-b bg-[#efefef] dark:bg-[#252525];
 }
 </style>

@@ -78,18 +78,18 @@ watch(
 
 <style scoped lang="scss">
 .code-icon {
-  --iu-apply:
+  --iu:
     flex-center py-5px cursor-pointer
     transition duration-200 ease-in-out
     hover:opacity-100 hover:text-teal-500;
 }
 
 .code-icon-btn {
-  --iu-apply: inline-block select-none;
+  --iu: inline-block select-none;
 }
 
 .code-area {
-  --iu-apply:
+  --iu:
     overflow-hidden
     transition-height-300;
 }

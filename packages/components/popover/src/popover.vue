@@ -20,13 +20,13 @@ defineOptions({
 
 <style lang="scss">
 .iu-popover {
-  --iu-apply: inline-block;
+  --iu: inline-block;
 
   .iu-trigger {
-    --iu-apply: text-0;
+    --iu: text-0;
 
     & > div {
-      --iu-apply: text-14px;
+      --iu: text-14px;
     }
   }
 }

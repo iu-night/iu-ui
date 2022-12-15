@@ -48,7 +48,7 @@ defineOptions({
 
 <style lang="scss">
 .iu-checkbox {
-  --iu-apply:
+  --iu:
     relative
     inline-flex items-center
     leading-none text-14px
@@ -57,11 +57,11 @@ defineOptions({
     cursor-pointer select-none;
 
   &.iu-checkbox-disabled {
-    --iu-apply: cursor-not-allowed opacity-50;
+    --iu: cursor-not-allowed opacity-50;
   }
 
   &:hover .iu-checkbox-icon {
-    --iu-apply: bg-[#000]:40 dark:bg-[#fff]:40;
+    --iu: bg-[#000]:40 dark:bg-[#fff]:40;
   }
 
   // &.iu-checkbox-checked:hover .iu-checkbox-icon {
@@ -70,7 +70,7 @@ defineOptions({
 }
 
 .iu-checkbox-icon {
-  --iu-apply:
+  --iu:
     relative
     inline-flex
     w-18px h-18px
@@ -79,7 +79,7 @@ defineOptions({
     transition-all-200;
 
   &::after {
-    --iu-apply:
+    --iu:
       absolute
       opacity-0
       left-1/2
@@ -97,7 +97,7 @@ defineOptions({
 
 .iu-checkbox-round {
   & .iu-checkbox-icon {
-    --iu-apply: rounded-1/2;
+    --iu: rounded-1/2;
   }
 }
 
@@ -114,6 +114,6 @@ defineOptions({
 }
 
 .iu-checkbox-label {
-  --iu-apply: ml-5px;
+  --iu: ml-5px;
 }
 </style>
