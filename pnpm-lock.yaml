@@ -39,7 +39,7 @@ specifiers:
   vite-plugin-compression: ^0.5.1
   vite-plugin-inspect: ^0.7.10
   vite-plugin-pages: ^0.28.0
-  vite-plugin-vue-inspector: ^2.0.1
+  vite-plugin-vue-inspector: ^2.0.2
   vite-plugin-vue-layouts: ^0.7.0
   vite-plugin-vue-markdown: ^0.22.1
   vite-ssg: ^0.22.1
@@ -93,7 +93,7 @@ devDependencies:
   vite-plugin-compression: 0.5.1_vite@4.0.1
   vite-plugin-inspect: 0.7.10_vite@4.0.1
   vite-plugin-pages: 0.28.0_vite@4.0.1
-  vite-plugin-vue-inspector: 2.0.1_vite@4.0.1
+  vite-plugin-vue-inspector: 2.0.2_vite@4.0.1
   vite-plugin-vue-layouts: 0.7.0_vbqgr7kaflb6tdlm6lscnalo3e
   vite-plugin-vue-markdown: 0.22.1_vite@4.0.1
   vite-ssg: 0.22.1_lkjaljg45e6xrfvmdacl4kpvu4
@@ -6011,6 +6011,7 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
 
   /spdx-correct/3.1.1:
     resolution: {integrity: sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==}
@@ -7007,8 +7008,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-inspector/2.0.1_vite@4.0.1:
-    resolution: {integrity: sha512-HlPr7acS4T2/Vb5DPU3LP2o46tmWRSWT/mzVR8C7XALHdl8PipRH9RkGsGi9DVocwLCa+wpy1T06fQdorI4/wQ==}
+  /vite-plugin-vue-inspector/2.0.2_vite@4.0.1:
+    resolution: {integrity: sha512-9QRQNsEKPexr0OLVglolJKJIbFoWwQl8GRizgKRKqbFHWty4+qni+iIeUHurKH16TaImlfvNYZXu486bUqJLOQ==}
     peerDependencies:
       vite: ^3.0.0-0 || ^4.0.0-0
     dependencies:

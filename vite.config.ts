@@ -16,6 +16,7 @@ import Inspect from 'vite-plugin-inspect'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 // import prismjs from 'vite-plugin-prismjs'
 import viteCompression from 'vite-plugin-compression'
+import Inspector from 'vite-plugin-vue-inspector'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
@@ -37,6 +38,10 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       }),
 
       vueJsx(),
+
+      Inspector({
+        toggleButtonVisibility: 'never',
+      }),
 
       // prismjs({
       //   languages: ['markup'],
@@ -132,4 +137,3 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         },
   }
 })
-
