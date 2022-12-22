@@ -66,6 +66,12 @@ const sideItems: ISideBar[] = [
     title: '反馈',
     items: [
       {
+        title: '加载',
+        name: 'Loading',
+        route: `${com}loading`,
+        tips: '',
+      },
+      {
         title: '模态框',
         name: 'Modal',
         route: `${com}modal`,
@@ -179,4 +185,3 @@ const sideItems: ISideBar[] = [
   }
 }
 </style>
-
