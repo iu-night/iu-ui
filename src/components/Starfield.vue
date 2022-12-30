@@ -70,7 +70,7 @@ const frame = () => {
 
 const setup = () => {
   rafId > 0 && cancelAnimationFrame(rafId)
-  if (container) {
+  if (container && canvas && window) {
     const { clientWidth: width, clientHeight: height } = container
     const dpr = window.devicePixelRatio || 1
     canvas.width = width * dpr
@@ -94,18 +94,10 @@ const setup = () => {
 
 const resizeObserver = new ResizeObserver(setup)
 
-const unobserve = () => {
-  useTimeoutFn(() => {
-    show = false
-  }, 5000)
-}
-
 onMounted(() => {
   ctx = canvas?.getContext('2d')
-
-  resizeObserver.observe(container)
-
-  // unobserve()
+  if (container)
+    resizeObserver.observe(container)
 })
 </script>
 

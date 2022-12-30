@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
-import { highlight, languages } from 'prismjs'
+import prismjs from 'prismjs'
 
 const { code = '' } = defineProps({
   title: String,
@@ -9,6 +9,8 @@ const { code = '' } = defineProps({
     default: '',
   },
 })
+
+const { highlight, languages } = prismjs
 
 let outCodeRef = $shallowRef<HTMLElement | null>(null)
 let codeRef = $shallowRef<HTMLElement | null>(null)

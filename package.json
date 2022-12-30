@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "vite --port 3366 --host",
-    "site": "vite build",
+    "site": "vite-ssg build",
     "lib": "vite build --mode package",
     "preview": "vite preview",
     "lint": "eslint .",
@@ -25,7 +25,7 @@
     "dts": "vue-tsc --declaration --emitDeclarationOnly"
   },
   "dependencies": {
-    "@vueuse/core": "^9.8.2",
+    "@vueuse/core": "^9.9.0",
     "@vueuse/head": "^1.0.22",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.28",
@@ -48,13 +48,13 @@
     "eslint": "^8.30.0",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-prism": "^2.3.0",
-    "pnpm": "^7.19.0",
+    "pnpm": "^7.21.0",
     "postcss": "^8.4.20",
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.6",
     "sass": "^1.57.1",
     "seemly": "^0.3.6",
-    "stylelint": "^14.16.0",
+    "stylelint": "^14.16.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard-scss": "^6.1.0",
@@ -73,6 +73,6 @@
     "vite-plugin-vue-markdown": "^0.22.1",
     "vite-ssg": "^0.22.1",
     "vite-ssg-sitemap": "^0.4.3",
-    "vue-tsc": "^1.0.16"
+    "vue-tsc": "^1.0.18"
   }
 }

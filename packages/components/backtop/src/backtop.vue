@@ -47,9 +47,9 @@ const handleClick = (event: MouseEvent) => {
 
 const handleScrollThrottled = useThrottleFn(handleScroll, 300)
 
-useEventListener(document, 'scroll', handleScrollThrottled, true)
-
 onMounted(() => {
+  useEventListener(document, 'scroll', handleScrollThrottled, true)
+
   target.value = props.target ? document.querySelector(props.target as string) as HTMLElement : getScrollParent(backtopEl.value)
 })
 </script>
