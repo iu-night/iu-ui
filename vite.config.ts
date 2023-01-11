@@ -15,7 +15,6 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 // import prismjs from 'vite-plugin-prismjs'
-import viteCompression from 'vite-plugin-compression'
 import Inspector from 'vite-plugin-vue-inspector'
 
 // https://vitejs.dev/config/
@@ -49,8 +48,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       // }),
 
       DefineOptions(),
-
-      viteCompression(),
 
       Pages({
         dirs: [
@@ -130,7 +127,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
               },
             },
           },
-          // cssCodeSplit: true,
+          cssCodeSplit: true,
         }
       : {
           outDir: 'dist',
