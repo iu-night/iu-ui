@@ -6,7 +6,7 @@ const target = ref(null)
 const parallax = reactive(useParallax(target))
 
 let showStar = $ref(isDark.value)
-let timer: number | undefined
+let timer: NodeJS.Timeout
 
 const toggleStar = () => {
   showStar = !showStar

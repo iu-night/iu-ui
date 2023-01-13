@@ -1,35 +1,7 @@
-import type { ComponentPublicInstance, PropType, VNode, VNodeChild } from 'vue'
-import { Comment, Fragment } from 'vue'
+import type { PropType } from 'vue'
+import { flatten, getSlot } from 'iu-ui/utils'
 
 import './index.scss'
-
-function getSlot(
-  instance: ComponentPublicInstance,
-  slotName = 'default',
-  fallback: VNodeChild[] = [],
-): VNodeChild[] {
-  const slots = instance.$slots
-  const slot = slots[slotName]
-  if (slot === undefined)
-    return fallback
-  return slot()
-}
-
-function flatten(vNodes: any) {
-  const result: VNode[] = []
-  vNodes.forEach((vNode: any) => {
-    if (vNode.type === Comment)
-      return
-    if (vNode.type === Fragment && Array.isArray(vNode.children)) {
-      vNode.children.forEach((item: VNode) => {
-        result.push(item)
-      })
-      return
-    }
-    result.push(vNode)
-  })
-  return result
-}
 
 const spaceProps = {
   vertical: {

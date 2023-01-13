@@ -38,9 +38,9 @@ export default defineConfig(({ mode }: ConfigEnv) => {
 
       vueJsx(),
 
-      Inspector({
-        toggleButtonVisibility: 'never',
-      }),
+      // Inspector({
+      //   toggleButtonVisibility: 'never',
+      // }),
 
       // prismjs({
       //   languages: ['markup'],

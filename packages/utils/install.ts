@@ -1,6 +1,6 @@
 import type { App, Component, Plugin } from 'vue'
 
-function withInstall<T>(comp: T, alias?: string): T & Plugin {
+function withInstall<T extends Component>(comp: T, alias?: string): T & Plugin {
   const componentPlugin = comp as T & Component & Plugin
 
   componentPlugin.install = (app: App) => {

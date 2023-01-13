@@ -3,7 +3,7 @@ import type { ComponentResolver } from 'unplugin-vue-components'
 /**
  * Resolver for IU-UI
  *
- * @link https://www.iu-night.github.io
+ * @link
  */
 export function IuUiResolver(): ComponentResolver {
   return {

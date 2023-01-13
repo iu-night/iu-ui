@@ -78,6 +78,12 @@ const sideItems: ISideBar[] = [
         tips: '',
       },
       {
+        title: '弹出提示',
+        name: 'Popover',
+        route: `${com}popover`,
+        tips: '',
+      },
+      {
         title: '文字提示',
         name: 'Tooltip',
         route: `${com}tooltip`,
