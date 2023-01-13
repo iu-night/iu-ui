@@ -46,8 +46,6 @@ declare module '@vue/runtime-core' {
     IuModal: typeof import('iu-ui')['IuModal']
     IuName: typeof import('./src/components/IuName.vue')['default']
     IuPopover: typeof import('iu-ui')['IuPopover']
-    IuPopoverSlot: typeof import('iu-ui')['IuPopoverSlot']
-    IuPopoverv2: typeof import('iu-ui')['IuPopoverv2']
     IuSpace: typeof import('iu-ui')['IuSpace']
     IuSwitch: typeof import('iu-ui')['IuSwitch']
     JumpPage: typeof import('./src/components/JumpPage.vue')['default']
