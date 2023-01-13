@@ -38,13 +38,17 @@ html.dark {
 }
 
 .fade-route-enter-from {
+  /*
   transform: translateX(15px);
+   */
   opacity: 0;
   transition: all 0.25s ease;
 }
 
 .fade-route-leave-to {
+  /*
   transform: translateX(-15px);
+  */
   opacity: 0;
   transition: all 0.25s ease;
 }
