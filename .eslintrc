@@ -4,7 +4,8 @@
 		"no-console": "off",
 		"vue/attribute-hyphenation": "off",
     "vue/v-on-event-hyphenation": "off",
-		"@typescript-eslint/no-unused-vars": "off",
-		"prefer-const": "off"
+		"prefer-const": "off",
+		"unused-imports/no-unused-vars": "off",
+		"unused-imports/no-unused-imports": "off"
 	}
 }

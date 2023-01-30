@@ -9,6 +9,30 @@ interface ISideBar {
   title: string
   items: ISideItems[]
 }
+
+let isCollapsed = $ref(false)
+
+let sideBarStyle = $computed(() => {
+  if (isCollapsed) {
+    return {
+      transform: 'translate3d(0, 0, 0)',
+    }
+  }
+})
+
+let sideBarBtnStyle = $computed(() => {
+  if (isCollapsed) {
+    return {
+      left: '255px',
+    }
+  }
+})
+
+const setCollapsed = () => {
+  if (isCollapsed)
+    isCollapsed = false
+}
+
 const com = '/components/'
 const sideItems: ISideBar[] = [
   {
@@ -118,36 +142,45 @@ const sideItems: ISideBar[] = [
 </script>
 
 <template>
-  <div class="iu-side-bar">
-    <div v-for="(list, listIndex) in sideItems" :key="list.title">
-      <div class="side-title">
-        {{ list.title }}
-      </div>
-      <RouterLink v-for="(item, index) in list.items" :key="item.name" :to="item.route">
-        <div
-          class="side-btn"
-          :class="{ 'side-btn-active': $route.path === item.route }"
-          :style="`animation-delay: ${(listIndex * 5 + index) * 25}ms;`"
-        >
-          <div flex-1>
-            {{ item.title }}
-          </div>
-          <div text-14px opacity-70>
-            {{ item.name }}
-          </div>
+  <aside>
+    <div class="iu-side-bar" :style="sideBarStyle">
+      <div v-for="(list, listIndex) in sideItems" :key="list.title">
+        <div class="side-title">
+          {{ list.title }}
         </div>
-      </RouterLink>
+        <RouterLink v-for="(item, index) in list.items" :key="item.name" :to="item.route" @click="setCollapsed">
+          <div
+            class="side-btn"
+            :class="{ 'side-btn-active': $route.path === item.route }"
+            :style="`animation-delay: ${(listIndex * 5 + index) * 25}ms;`"
+          >
+            <div flex-1>
+              {{ item.title }}
+            </div>
+            <div text-14px opacity-70>
+              {{ item.name }}
+            </div>
+          </div>
+        </RouterLink>
+      </div>
     </div>
-  </div>
+    <div class="iu-side-bar-btn" :style="sideBarBtnStyle" @click="isCollapsed = !isCollapsed">
+      <div v-if="!isCollapsed" i-carbon-chevron-right />
+      <div v-else i-carbon-chevron-left />
+    </div>
+  </aside>
 </template>
 
 <style scoped lang="scss">
 .iu-side-bar {
-  @apply h-full w-250px
+  --iu:
+    h-full w-250px
     pt-55px px-20px pb-40px
-    fixed flex flex-col
+    flex flex-col shrink-0
     z-888 overflow-auto
-    shadow-iu dark:shadow-iud;
+    shadow-iu dark:shadow-iud
+    bg-white dark:bg-[#121212]
+    transition-transform;
 
   overflow: overlay;
 
@@ -158,12 +191,27 @@ const sideItems: ISideBar[] = [
   }
 }
 
+.iu-side-bar-btn {
+  --iu:
+    display-none
+    rounded-1/2
+    justify-center items-center
+    w-30px h-30px z-999
+    cursor-pointer select-none
+    text-[#1e1e1e] dark:text-white
+    shadow-backtop dark:shadow-backtopd
+    bg-white dark:bg-[#414141]
+    opacity-80 hover:opacity-100
+    transition-left;
+}
+
 .side-title {
-  @apply flex h-40px mt-10px opacity-60 pl-20px items-center;
+  --iu: flex h-40px mt-10px opacity-60 pl-20px items-center;
 }
 
 .side-btn {
-  @apply flex rounded-5px h-40px mt-10px opacity-0 pr-10px pl-30px items-center
+  --iu:
+    flex rounded-5px h-40px mt-10px opacity-0 pr-10px pl-30px items-center
     hover:bg-gray-100 hover:text-teal-900 dark:hover:bg-gray-700
     dark:hover:text-teal;
 
@@ -184,10 +232,22 @@ const sideItems: ISideBar[] = [
 }
 
 .side-btn-active {
-  @apply bg-[#18a058]:10 text-teal-900 dark:text-teal dark:bg-teal-800;
+  --iu: bg-[#18a058]:10 text-teal-900 dark:text-teal dark:bg-teal-800;
 
   &:hover {
-    @apply bg-[#18a058]:10 text-teal-900 dark:bg-teal-800;
+    --iu: bg-[#18a058]:10 text-teal-900 dark:bg-teal-800;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .iu-side-bar {
+    --iu: fixed;
+
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  .iu-side-bar-btn {
+    --iu: flex absolute top-55px left-5px;
   }
 }
 </style>

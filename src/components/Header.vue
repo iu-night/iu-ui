@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="iu-header">
+  <header class="iu-header">
     <div class="iu-header-logo">
       <RouterLink flex w-130px ml-30px to="/">
         <Starport port="iu-ui" w-121px h-45px relative z-1000>
@@ -17,7 +17,7 @@
         <HeadNav />
       </Starport>
     </div>
-  </div>
+  </header>
 </template>
 
 <style scoped lang="scss">

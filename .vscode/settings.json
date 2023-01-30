@@ -14,6 +14,6 @@
     "vue",
     "sass"
   ],
-  "windicss.sortOnSave": true,
+  // "windicss.sortOnSave": true,
   "typescript.tsdk": "node_modules/typescript/lib"
 }

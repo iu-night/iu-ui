@@ -1,36 +1,36 @@
-name: Deploy
+# name: Deploy
 
-on:
-  push:
-    branches:
-      - pre
+# on:
+#   push:
+#     branches:
+#       - pre
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
       
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.24.3
+#       - name: Install pnpm
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 7.26.2
   
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: pnpm
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 16.x
+#           cache: pnpm
 
-      - name: Install
-        run: pnpm install --no-frozen-lockfile
+#       - name: Install
+#         run: pnpm install --no-frozen-lockfile
           
-      - name: Build
-        run: pnpm site
+#       - name: Build
+#         run: pnpm site
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: iu-night/iu-night.github.io
-          publish_branch: main 
-          publish_dir: dist
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+#           external_repository: iu-night/iu-night.github.io
+#           publish_branch: main 
+#           publish_dir: dist
