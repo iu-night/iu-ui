@@ -18,6 +18,8 @@ let codeRef = $shallowRef<HTMLElement | null>(null)
 let showCode = $ref(false)
 const lang = 'markup'
 
+const codeText = computed(() => showCode ? '隐藏代码' : '显示代码')
+
 const style = computed<CSSProperties>(() => {
   if (showCode) {
     const height = outCodeRef?.firstElementChild?.nextElementSibling?.clientHeight
@@ -47,14 +49,18 @@ watch(
     <IuCard hoverable :title="title" :bordered="false">
       <slot />
       <template #extra>
-        <div
-          v-tooltip.top="showCode ? '隐藏代码' : '显示代码'"
-          class="code-icon"
-          @click="showCode = !showCode"
-        >
-          <div v-if="showCode" class="code-icon-btn i-carbon-code-hide" />
-          <div v-else class="code-icon-btn i-carbon-code" />
-        </div>
+        <IuPopover>
+          <template #trigger>
+            <div
+              class="code-icon"
+              @click="showCode = !showCode"
+            >
+              <div v-if="showCode" class="code-icon-btn i-carbon-code-hide" />
+              <div v-else class="code-icon-btn i-carbon-code" />
+            </div>
+          </template>
+          <span text-14px>{{ codeText }}</span>
+        </IuPopover>
       </template>
       <template #footer>
         <div v-show="code" ref="outCodeRef" class="code-area" :style="style">
@@ -65,14 +71,18 @@ watch(
         </div>
       </template>
       <template #action>
-        <div
-          v-tooltip.top="showCode ? '隐藏代码' : '显示代码'"
-          class="code-icon"
-          @click="showCode = !showCode"
-        >
-          <div v-if="showCode" class="code-icon-btn i-carbon-code-hide" />
-          <div v-else class="code-icon-btn i-carbon-code" />
-        </div>
+        <IuPopover>
+          <template #trigger>
+            <div
+              class="code-icon"
+              @click="showCode = !showCode"
+            >
+              <div v-if="showCode" class="code-icon-btn i-carbon-code-hide" />
+              <div v-else class="code-icon-btn i-carbon-code" />
+            </div>
+          </template>
+          <span text-14px>{{ codeText }}</span>
+        </IuPopover>
       </template>
     </IuCard>
   </div>

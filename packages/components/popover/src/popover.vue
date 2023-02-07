@@ -7,6 +7,7 @@ import {
   shift,
   useFloating,
 } from '@floating-ui/vue'
+import type { StyleValue } from 'vue'
 import type { IInstance } from './popover'
 import { popoverProps } from './popover'
 import popTrigger from './popTrigger'
@@ -31,21 +32,23 @@ const { x, y, strategy, placement, middlewareData } = useFloating(triggerRef, po
   middleware: [offset(10), flip(), shift(), arrow({ element: arrowRef })],
 })
 
-const arrowStyle = computed(() => {
-  const { x: arrowX, y: arrowY } = middlewareData.value.arrow
-  const staticSide = {
-    top: 'bottom',
-    right: 'left',
-    bottom: 'top',
-    left: 'right',
-  }[placement.value.split('-')[0]]
+const arrowStyle = computed<StyleValue>(() => {
+  if (middlewareData.value.arrow) {
+    const { x: arrowX, y: arrowY } = middlewareData.value.arrow
+    const staticSide = {
+      top: 'bottom',
+      right: 'left',
+      bottom: 'top',
+      left: 'right',
+    }[placement.value.split('-')[0]]
 
-  return {
-    position: 'absolute',
-    left: arrowX != null ? `${arrowX}px` : '',
-    top: arrowY != null ? `${arrowY}px` : '',
-    [staticSide!]: '-4px',
+    return {
+      left: arrowX != null ? `${arrowX}px` : '',
+      top: arrowY != null ? `${arrowY}px` : '',
+      [staticSide!]: '-4px',
+    }
   }
+  return {}
 })
 
 const setTargetRef = (el: HTMLElement | null): void => {
@@ -78,14 +81,14 @@ watch(isOutside, (value) => {
       >
         <div
           class="
-      text-gray-700 dark:text-gray-200
-        z-a inline-block relative
-        bg-[#eaeaea] dark:bg-[#4e4e4e]
-        px-10px py-8px
-        rounded-4px"
+        text-gray-700 dark:text-gray-200
+          z-a inline-block relative
+          bg-[#eaeaea] dark:bg-[#4e4e4e]
+          px-8px py-5px
+          rounded-4px"
         >
           <slot name="default" />
-          <!-- <div ref="arrowRef" /> -->
+          <div ref="arrowRef" class="absolute rotate-45 w-2 h-2 bg-inherit" :style="arrowStyle" />
         </div>
       </div>
     </transition>
@@ -101,6 +104,6 @@ watch(isOutside, (value) => {
 
 .iu-popover-leave-from,
 .iu-popover-enter-to {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 </style>
