@@ -13,15 +13,24 @@ defineOptions({
 
 const pulse = ref(false)
 
-const buttonType = computed(() => !props.disabled && props.type ? `iu-button-${props.type}` : '')
+const buttonTypeClass = computed(() => {
+  if (props.disabled)
+    return 'iu-button-disabled'
+  else
+    return props.type ? `iu-button-${props.type}` : ''
+})
+
+const pulseClass = computed(() => {
+  if (pulse.value)
+    return `iu-button-pulse-${props.type}`
+})
 
 const className = computed(() => {
   return [
-    buttonType.value,
+    buttonTypeClass.value,
+    pulseClass.value,
     {
       'iu-button-round': props.round,
-      'iu-button-pulse': pulse.value,
-      'iu-button-disabled': props.disabled,
     }]
 })
 
@@ -54,23 +63,6 @@ const handleAnimationEnd = () => {
 </template>
 
 <style lang="scss" scoped>
-@mixin pulse($pc0,$pc100) {
-  animation-name: iu-button-pulse;
-  animation-duration: 800ms;
-  animation-timing-function: ease;
-  animation-iteration-count: 1;
-
-  @keyframes iu-button-pulse {
-    0% {
-      box-shadow: 0 0 1px 0 $pc0;
-    }
-
-    100% {
-      box-shadow: 0 0 1px 6px $pc100;
-    }
-  }
-}
-
 .iu-button {
   --iu:
     in-flex-center align-middle
@@ -87,50 +79,6 @@ const handleAnimationEnd = () => {
 
 .iu-button-round {
   --iu: rounded-16px;
-}
-
-.iu-button-pulse {
-  $pulse0: rgb(1 1 1 / 40%);
-  $pulse100: rgb(1 1 1 / 0%);
-
-  animation-name: iu-button-pulse;
-  animation-duration: 800ms;
-  animation-timing-function: ease;
-  animation-iteration-count: 1;
-
-  @keyframes iu-button-pulse {
-    0% {
-      box-shadow: 0 0 1px 0 $pulse0;
-    }
-
-    100% {
-      box-shadow: 0 0 1px 4px $pulse100;
-    }
-  }
-
-  // @include pulse($pulse0, $pulse100);
-}
-
-.dark .iu-button-pulse {
-  $pulse0: rgb(222 222 222 / 60%);
-  $pulse100: rgb(222 222 222 / 0%);
-
-  animation-name: iu-button-pulse-dark;
-  animation-duration: 800ms;
-  animation-timing-function: ease;
-  animation-iteration-count: 1;
-
-  @keyframes iu-button-pulse-dark {
-    0% {
-      box-shadow: 0 0 1px 0 $pulse0;
-    }
-
-    100% {
-      box-shadow: 0 0 1px 6px $pulse100;
-    }
-  }
-
-  // @include pulse($pulse0, $pulse100);
 }
 
 .iu-button-default {
@@ -161,5 +109,55 @@ const handleAnimationEnd = () => {
   --iu:
     bg-red-500 hover:bg-red-600 active:bg-red-500
     dark:bg-red-600 dark:hover:bg-red-500 dark:active:bg-red-600;
+}
+
+.iu-button-pulse-default {
+  --pulse-c-0: rgb(1 1 1 / 40%);
+  --pulse-c-1: rgb(1 1 1 / 0%);
+
+  animation: 0.8s ease 1 iu-button-pulse;
+
+  .dark & {
+    --pulse-c-0: rgb(222 222 222 / 60%);
+    --pulse-c-1: rgb(222 222 222 / 0%);
+  }
+}
+
+.iu-button-pulse-primary {
+  --pulse-c-0: rgb(94 234 212 / 80%);
+  --pulse-c-1: rgb(94 234 212 / 0%);
+
+  animation: 0.8s ease 1 iu-button-pulse;
+}
+
+.iu-button-pulse-warning {
+  --pulse-c-0: rgb(252 211 77 / 80%);
+  --pulse-c-1: rgb(252 211 77 / 0%);
+
+  animation: 0.8s ease 1 iu-button-pulse;
+}
+
+.iu-button-pulse-success {
+  --pulse-c-0: rgb(134 239 172 / 80%);
+  --pulse-c-1: rgb(134 239 172 / 0%);
+
+  animation: 0.8s ease 1 iu-button-pulse;
+}
+
+.iu-button-pulse-error {
+  --pulse-c-0: rgb(252 165 165 / 80%);
+  --pulse-c-1: rgb(252 165 165 / 0%);
+
+  animation: 0.8s ease 1 iu-button-pulse;
+}
+
+@keyframes iu-button-pulse {
+  0% {
+    box-shadow: 0 0 1px 0 var(--pulse-c-0);
+  }
+
+  100% {
+    box-shadow: 0 0 1px 4px var(--pulse-c-1);
+  }
 }
 </style>

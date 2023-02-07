@@ -37,7 +37,6 @@ declare module '@vue/runtime-core' {
     InputApi: typeof import('./src/components/doc/input/InputApi.md')['default']
     InputRound: typeof import('./src/components/doc/input/InputRound.vue')['default']
     InputState: typeof import('./src/components/doc/input/InputState.vue')['default']
-    IuBacktop: typeof import('iu-ui')['IuBacktop']
     IuButton: typeof import('iu-ui')['IuButton']
     IuCard: typeof import('iu-ui')['IuCard']
     IuCheckbox: typeof import('iu-ui')['IuCheckbox']
