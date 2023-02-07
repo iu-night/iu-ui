@@ -104,6 +104,8 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       }),
 
       Inspect(),
+
+      // dts(),
     ],
 
     // ssgOptions: {
