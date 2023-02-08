@@ -7,6 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    2: typeof import('./src/components/doc/affix/AffixPosition copy 2.vue')['default']
+    AffixApi: typeof import('./src/components/doc/affix/AffixApi.md')['default']
+    AffixOffset: typeof import('./src/components/doc/affix/AffixOffset.vue')['default']
+    AffixPosition: typeof import('./src/components/doc/affix/AffixPosition.vue')['default']
+    AffixZIndex: typeof import('./src/components/doc/affix/AffixZIndex.vue')['default']
     ButtonApi: typeof import('./src/components/doc/button/ButtonApi.md')['default']
     ButtonDisabled: typeof import('./src/components/doc/button/ButtonDisabled.vue')['default']
     ButtonRound: typeof import('./src/components/doc/button/ButtonRound.vue')['default']
@@ -19,8 +24,10 @@ declare module '@vue/runtime-core' {
     CheckboxDisabled: typeof import('./src/components/doc/checkbox/CheckboxDisabled.vue')['default']
     CheckboxRound: typeof import('./src/components/doc/checkbox/CheckboxRound.vue')['default']
     CodeBox: typeof import('./src/components/CodeBox.vue')['default']
+    copy: typeof import('./src/components/doc/affix/DocAffix copy.vue')['default']
     DividerApi: typeof import('./src/components/doc/divider/DividerApi.md')['default']
     DividerVertical: typeof import('./src/components/doc/divider/DividerVertical.vue')['default']
+    DocAffix: typeof import('./src/components/doc/affix/DocAffix.vue')['default']
     DocButton: typeof import('./src/components/doc/button/DocButton.vue')['default']
     DocCard: typeof import('./src/components/doc/card/DocCard.vue')['default']
     DocCheckbox: typeof import('./src/components/doc/checkbox/DocCheckbox.vue')['default']
@@ -37,6 +44,7 @@ declare module '@vue/runtime-core' {
     InputApi: typeof import('./src/components/doc/input/InputApi.md')['default']
     InputRound: typeof import('./src/components/doc/input/InputRound.vue')['default']
     InputState: typeof import('./src/components/doc/input/InputState.vue')['default']
+    IuAffix: typeof import('iu-ui')['IuAffix']
     IuButton: typeof import('iu-ui')['IuButton']
     IuCard: typeof import('iu-ui')['IuCard']
     IuCheckbox: typeof import('iu-ui')['IuCheckbox']

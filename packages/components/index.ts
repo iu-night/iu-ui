@@ -1,3 +1,4 @@
+export * from './affix'
 export * from './backtop'
 export * from './button'
 export * from './card'

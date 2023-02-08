@@ -116,14 +116,25 @@ const sideItems: ISideBar[] = [
     ],
   },
   {
-    title: '布局',
+    title: '导航',
     items: [
+      {
+        title: '固钉',
+        name: 'Affix',
+        route: `${com}affix`,
+        tips: '',
+      },
       {
         title: '回到顶部',
         name: 'Backtop',
         route: `${com}backtop`,
         tips: '',
       },
+    ],
+  },
+  {
+    title: '布局',
+    items: [
       {
         title: '分割线',
         name: 'Divider',
