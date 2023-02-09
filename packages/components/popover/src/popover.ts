@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 
-type triggerType = 'hover' | 'click' | 'focus' | 'manual'
+type triggerType = 'hover' | 'click' | 'focus' | 'contextmenu'
 type placeType = 'top' | 'right' | 'bottom' | 'left'
 export type setRefType = (el: HTMLElement | null) => void
 
@@ -16,6 +16,10 @@ export const popoverProps = {
   trigger: {
     type: String as PropType<triggerType>,
     default: 'hover',
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
   },
 }
 

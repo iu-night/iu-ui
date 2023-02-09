@@ -8,7 +8,6 @@ import {
   useFloating,
 } from '@floating-ui/vue'
 import type { StyleValue } from 'vue'
-import type { IInstance } from './popover'
 import { popoverProps } from './popover'
 import popTrigger from './popTrigger'
 
@@ -22,9 +21,8 @@ const triggerRef = shallowRef<HTMLElement | null>(null)
 const popoverRef = shallowRef<HTMLElement | null>(null)
 const arrowRef = shallowRef<HTMLElement | null>(null)
 
-const { isOutside } = useMouseInElement(triggerRef)
-
 const isShow = ref(false)
+const toggleShow = useToggle(isShow)
 
 const { x, y, strategy, placement, middlewareData } = useFloating(triggerRef, popoverRef, {
   placement: props.placement,
@@ -55,16 +53,67 @@ const setTargetRef = (el: HTMLElement | null): void => {
   triggerRef.value = el
 }
 
-watch(isOutside, (value) => {
-  if (value)
+onClickOutside(popoverRef, () => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'click' || props.trigger === 'contextmenu')
     isShow.value = false
-  else
-    isShow.value = true
+}, {
+  ignore: [triggerRef],
 })
+
+const onClick = () => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'click')
+    toggleShow()
+}
+const onContextmenu = (e: Event) => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'contextmenu') {
+    e.preventDefault()
+    toggleShow()
+  }
+}
+
+const onMouseenter = () => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'hover')
+    isShow.value = true
+}
+const onMouseleave = () => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'hover')
+    isShow.value = false
+}
+
+const onFocus = () => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'focus')
+    isShow.value = true
+}
+const onBlur = () => {
+  if (props.disabled)
+    return
+  if (props.trigger === 'focus')
+    isShow.value = false
+}
 </script>
 
 <template>
-  <popTrigger :setRef="setTargetRef">
+  <popTrigger
+    :setRef="setTargetRef"
+    @click="onClick"
+    @mouseenter="onMouseenter"
+    @mouseleave="onMouseleave"
+    @focus="onFocus"
+    @blur="onBlur"
+    @contextmenu="onContextmenu"
+  >
     <slot name="trigger" />
   </popTrigger>
   <Teleport :to="to">
@@ -78,6 +127,8 @@ watch(isOutside, (value) => {
           left: `${x ?? 0}px`,
           width: 'max-content',
         }"
+        @mouseenter="onMouseenter"
+        @mouseleave="onMouseleave"
       >
         <div
           class="
@@ -99,7 +150,7 @@ watch(isOutside, (value) => {
 .iu-popover-enter-from,
 .iu-popover-leave-to {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .iu-popover-leave-from,

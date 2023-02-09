@@ -1,5 +1,5 @@
 import type { PropType } from 'vue'
-import { withDirectives } from 'vue'
+import { cloneVNode, withDirectives } from 'vue'
 
 import { getFirstVNode } from 'iu-ui/utils'
 import type { setRefType } from './popover'
@@ -12,19 +12,21 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  setup(props, { attrs }) {
     const setTargetDirective = {
       mounted: props.setRef,
       updated: props.setRef,
     }
     return {
       setTargetDirective,
+      attrs,
     }
   },
   render() {
-    const { setTargetDirective } = this
+    const { setTargetDirective, attrs } = this
+    const firstLegitNode = getFirstVNode(this, 'default')
 
-    return withDirectives(getFirstVNode(this, 'default'), [
+    return withDirectives(cloneVNode(firstLegitNode!, attrs), [
       [setTargetDirective],
     ])
   },
