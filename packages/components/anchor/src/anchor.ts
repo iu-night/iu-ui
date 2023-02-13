@@ -1,3 +1,4 @@
+import { isClient } from '@vueuse/core'
 import type { InjectionKey, PropType } from 'vue'
 import type { AffixProps } from './../../affix'
 
@@ -43,7 +44,9 @@ export const anchorKey: InjectionKey<{
   handleLinkClick: (link: { href: string; title: string; e: MouseEvent }) => void
 }> = Symbol('AnchorInjectKey')
 
-export function getOffsetTop(target: HTMLElement, container: Window | HTMLElement): number {
+export function getOffsetTop(target: HTMLElement, container: Window | HTMLElement | undefined): number {
+  if (!isClient || !container)
+    return 0
   const { top } = target.getBoundingClientRect()
   if (container === window)
     return top - document.documentElement.clientTop

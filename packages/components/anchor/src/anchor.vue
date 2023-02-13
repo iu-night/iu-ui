@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isClient } from '@vueuse/core'
 import { IuAffix } from 'iu-ui/components/affix'
 import type { StyleValue } from 'vue'
 import { anchorKey, anchorProps, getOffsetTop } from './anchor'
@@ -25,6 +26,8 @@ const scrollLock = ref(false)
 const wrapperStyle = ref({})
 
 const getContainerEl = (container: string | (() => Window | HTMLElement) = 'body') => {
+  if (!isClient)
+    return undefined
   if (typeof container === 'string')
     return document.querySelector(container) as HTMLElement
 
@@ -63,7 +66,7 @@ const handleLinkClick = (link: { href: string; title: string; e: MouseEvent }) =
 }
 
 const getLinkEl = (link: string) => {
-  if (!document)
+  if (!isClient)
     return
   const result = link.match(linkReg)
   if (!result)
