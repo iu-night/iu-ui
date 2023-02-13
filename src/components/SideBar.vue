@@ -125,6 +125,12 @@ const sideItems: ISideBar[] = [
         tips: '',
       },
       {
+        title: '锚点',
+        name: 'Anchor',
+        route: `${com}anchor`,
+        tips: '',
+      },
+      {
         title: '回到顶部',
         name: 'Backtop',
         route: `${com}backtop`,

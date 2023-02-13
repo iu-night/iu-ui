@@ -37,9 +37,9 @@ const setDis = (val: boolean) => {
             </Starport>
           </JumpPage>
           <JumpPage to="popover">
-            <!-- <Starport port="iu-popover" w-330px h-34px>
+            <Starport port="iu-popover" w-330px h-34px>
               <DocPopover />
-            </Starport> -->
+            </Starport>
           </JumpPage>
           <JumpPage to="space">
             <Starport port="iu-space" w-300px h-34px>

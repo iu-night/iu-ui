@@ -1,4 +1,5 @@
 export * from './affix'
+export * from './anchor'
 export * from './backtop'
 export * from './button'
 export * from './card'

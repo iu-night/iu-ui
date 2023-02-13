@@ -3,9 +3,9 @@ import type { PropType } from 'vue'
 type positionType = 'top' | 'bottom'
 
 export interface AffixProps {
-  offset: number
-  position: positionType
-  zIndex: number
+  offset?: number
+  position?: positionType
+  zIndex?: number
 }
 
 export const affixProps = {
