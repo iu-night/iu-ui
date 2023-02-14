@@ -2,7 +2,7 @@
 import { isClient } from '@vueuse/core'
 import { IuAffix } from 'iu-ui/components/affix'
 import type { StyleValue } from 'vue'
-import { anchorKey, anchorProps, getOffsetTop } from './anchor'
+import { anchorKey, anchorProps, getOffsetTop, getScroll, scrollTo } from './anchor'
 
 const props = defineProps(anchorProps)
 const emit = defineEmits<{
@@ -25,7 +25,7 @@ const active = ref('')
 const scrollLock = ref(false)
 const wrapperStyle = ref({})
 
-const getContainerEl = (container: string | (() => Window | HTMLElement) = 'body') => {
+const getContainerEl = (container: string | (() => Window | HTMLElement | Document) = 'body') => {
   if (!isClient)
     return undefined
   if (typeof container === 'string')
@@ -42,14 +42,16 @@ const getContainer = computed(() => {
 })
 
 const updateActiveLinkStyle = () => {
-  const ele = anchorRef.value?.querySelector('.iu-anchor>a') as HTMLAnchorElement
-  if (!ele)
+  const ele = anchorRef.value?.querySelector('.iu-anchor-link-active>a') as HTMLElement
+  if (!ele) {
+    wrapperStyle.value = {}
     return
+  }
 
-  const { offsetTop: top, offsetHeight: height } = ele
+  const { offsetTop, offsetHeight } = ele
   wrapperStyle.value = {
-    top: `${top}px`,
-    height: `${height}px`,
+    top: `${offsetTop}px`,
+    height: `${offsetHeight}px`,
     opacity: 1,
   }
 }
@@ -77,18 +79,19 @@ const getLinkEl = (link: string) => {
   return el
 }
 
-const setActiveLink = async (link: string): Promise<void> => {
+const setActiveLink = (link: string) => {
   if (active.value === link)
     return
 
   active.value = link
-  await nextTick()
-  updateActiveLinkStyle()
+  nextTick(() => {
+    updateActiveLinkStyle()
+  })
 }
 
 const handleScroll = () => {
-  // if (scrollLock.value)
-  //   return
+  if (scrollLock.value)
+    return
   const { bounds, targetOffset } = props
   const linkItems: { top: number; link: string }[] = []
   let activeLink = ''
@@ -118,18 +121,20 @@ const handleScrollTo = (link: string) => {
   setActiveLink(link)
   if (!linkel)
     return
+  scrollLock.value = true
   linkel.scrollIntoView({ behavior: 'smooth' })
-  handleScroll()
-  // scrollLock.value = true
+  // handleScroll()
   // const { targetOffset } = props
-  // const scrollTop = getScroll(scrollContainer.value)
+  // const scrollTop = getScroll(getContainer.value)
   // const offsetTop = getOffsetTop(linkel, getContainer.value)
   // const top = scrollTop + offsetTop - targetOffset
   // scrollTo(top, {
-  //   container: getContainer.value,
+  //   getContainer: window,
   // })
-  // scrollLock.value = false
+  scrollLock.value = false
 }
+
+const _handleScroll = useThrottleFn(handleScroll, 100)
 
 provide(anchorKey,
   reactive({
@@ -141,9 +146,8 @@ provide(anchorKey,
   }),
 )
 
-useEventListener(getContainer.value, 'scroll', handleScroll)
-
 onMounted(() => {
+  useEventListener(document, 'scroll', _handleScroll, true)
   handleScroll()
 })
 </script>
@@ -153,10 +157,6 @@ onMounted(() => {
     <div ref="anchorRef" class="iu-anchor">
       <div class="iu-anchor-line">
         <div class="iu-anchor-cursor-wrapper" :style="wrapperStyle">
-          <!-- <template v-if="$slots.cursor">
-            <slot name="cursor" />
-          </template>
-          <div v-else class="iu-anchor-cursor" /> -->
           <slot name="cursor">
             <div class="iu-anchor-cursor" />
           </slot>
@@ -186,10 +186,13 @@ onMounted(() => {
   --iu:
     absolute
     w-3px
-    transition-200;
+    transition-all-200;
 }
 
 .iu-anchor-cursor {
-  --iu: h-full w-3px bg-teal-500;
+  --iu:
+    h-full w-3px
+    bg-teal-600
+    rounded-4px;
 }
 </style>

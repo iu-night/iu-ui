@@ -48,6 +48,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "eslint": "^8.33.0",
+    "markdown-it-anchor": "^8.6.6",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-prism": "^2.3.0",
     "postcss": "^8.4.21",

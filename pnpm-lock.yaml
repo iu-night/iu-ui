@@ -15,6 +15,7 @@ specifiers:
   '@vueuse/core': ^9.12.0
   '@vueuse/head': ^1.0.25
   eslint: ^8.33.0
+  markdown-it-anchor: ^8.6.6
   markdown-it-link-attributes: ^4.0.1
   markdown-it-prism: ^2.3.0
   nprogress: ^0.2.0
@@ -73,6 +74,7 @@ devDependencies:
   '@vitejs/plugin-vue': 4.0.0_vite@4.1.1+vue@3.2.47
   '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.1.1+vue@3.2.47
   eslint: 8.33.0
+  markdown-it-anchor: 8.6.6
   markdown-it-link-attributes: 4.0.1
   markdown-it-prism: 2.3.0
   postcss: 8.4.21
@@ -5522,6 +5524,13 @@ packages:
 
   /markdown-escapes/1.0.4:
     resolution: {integrity: sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==}
+    dev: true
+
+  /markdown-it-anchor/8.6.6:
+    resolution: {integrity: sha512-jRW30YGywD2ESXDc+l17AiritL0uVaSnWsb26f+68qaW9zgbIIr1f4v2Nsvc0+s0Z2N3uX6t/yAw7BwCQ1wMsA==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
     dev: true
 
   /markdown-it-link-attributes/4.0.1:

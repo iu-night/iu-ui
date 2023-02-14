@@ -7,6 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import Prism from 'markdown-it-prism'
+import MarkdownItAnchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Pages from 'vite-plugin-pages'
@@ -99,6 +100,9 @@ export default defineConfig(({ mode }: ConfigEnv) => {
               target: '_blank',
               rel: 'noopener',
             },
+          })
+          md.use(MarkdownItAnchor, {
+            tabIndex: false,
           })
         },
       }),
