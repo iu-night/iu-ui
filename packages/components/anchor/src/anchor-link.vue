@@ -42,7 +42,7 @@ onUnmounted(() => {
 
 <template>
   <div class="iu-anchor-link" :class="{ 'iu-anchor-link-active': isActive }">
-    <a :href="href" @click="handleClick">
+    <a :href="href" @click.prevent="handleClick">
       {{ title }}
     </a>
   </div>
