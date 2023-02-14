@@ -90,8 +90,8 @@ const setActiveLink = (link: string) => {
 }
 
 const handleScroll = () => {
-  if (scrollLock.value)
-    return
+  // if (scrollLock.value)
+  //   return
   const { bounds, targetOffset } = props
   const linkItems: { top: number; link: string }[] = []
   let activeLink = ''
@@ -116,12 +116,12 @@ const handleScroll = () => {
   setActiveLink(activeLink)
 }
 
-const handleScrollTo = (link: string) => {
+const handleScrollTo = async (link: string) => {
   const linkel = getLinkEl(link)
-  setActiveLink(link)
+  // setActiveLink(link)
   if (!linkel)
     return
-  scrollLock.value = true
+  // scrollLock.value = true
   linkel.scrollIntoView({ behavior: 'smooth' })
   // handleScroll()
   // const { targetOffset } = props
@@ -131,7 +131,9 @@ const handleScrollTo = (link: string) => {
   // scrollTo(top, {
   //   getContainer: window,
   // })
-  scrollLock.value = false
+  // setTimeout(() => {
+  // scrollLock.value = false
+  // }, 400)
 }
 
 const _handleScroll = useThrottleFn(handleScroll, 100)
