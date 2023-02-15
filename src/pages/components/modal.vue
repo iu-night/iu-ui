@@ -1,25 +1,32 @@
+<script setup lang="ts">
+const name = 'Modal'
+const anchor = [
+  'Modal',
+  'API',
+  'Modal Props',
+  'Modal Slots',
+]
+</script>
+
 <template>
-  <div class="flex flex-col mt-30px">
-    <div mb-30px text-30px font-bold>
-      Modal
-    </div>
-    <IuSpace>
-      <IuSpace vertical>
-        <ExDisplay title="基础" name="modal" comName="DocModal">
-          <Starport port="iu-modal" h-34px w-82px>
-            <DocModal />
-          </Starport>
-        </ExDisplay>
-        <ExDisplay title="插槽" name="modal" comName="ModalSlot">
-          <ModalSlot />
-        </ExDisplay>
-      </IuSpace>
-      <IuSpace vertical>
-        <ExDisplay title="遮罩关闭" name="modal" comName="ModalMask">
-          <ModalMask />
-        </ExDisplay>
-      </IuSpace>
+  <ComPage :name="name" :anchor="anchor">
+    <IuSpace vertical>
+      <ExDisplay title="基础" name="modal" comName="DocModal">
+        <Starport port="iu-modal" h-34px w-82px>
+          <DocModal />
+        </Starport>
+      </ExDisplay>
+      <ExDisplay title="插槽" name="modal" comName="ModalSlot">
+        <ModalSlot />
+      </ExDisplay>
     </IuSpace>
-    <ModalApi />
-  </div>
+    <IuSpace vertical>
+      <ExDisplay title="遮罩关闭" name="modal" comName="ModalMask">
+        <ModalMask />
+      </ExDisplay>
+    </IuSpace>
+    <template #api>
+      <ModalApi />
+    </template>
+  </ComPage>
 </template>

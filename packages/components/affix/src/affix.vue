@@ -46,8 +46,8 @@ const affixUpdate = () => {
     return
   if (props.position === 'top')
     fixed.value = props.offset >= top.value
-  else
-    fixed.value = windowHeight.value - props.offset < bottom.value
+
+  else fixed.value = windowHeight.value - props.offset < bottom.value
 }
 onMounted(() => {
   scrollContainer.value = window

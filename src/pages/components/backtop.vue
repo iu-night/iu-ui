@@ -1,16 +1,22 @@
+<script setup lang="ts">
+const name = 'Backtop'
+const anchor = [
+  'Backtop',
+  'API',
+  'Backtop Props',
+]
+</script>
+
 <template>
-  <div class="flex flex-col mt-30px">
-    <div mb-30px text-30px font-bold>
-      Backtop
-    </div>
-    <IuSpace>
-      <IuSpace vertical>
-        <ExDisplay title="基础" name="backtop" comName="DocBacktop">
-          <DocBacktop />
-        </ExDisplay>
-      </IuSpace>
+  <ComPage :name="name" :anchor="anchor">
+    <IuSpace vertical>
+      <ExDisplay title="基础" name="backtop" comName="DocBacktop">
+        <DocBacktop />
+      </ExDisplay>
     </IuSpace>
-    <BacktopApi />
-    <div h-2000px />
-  </div>
+    <template #api>
+      <BacktopApi />
+      <div h-2000px />
+    </template>
+  </ComPage>
 </template>

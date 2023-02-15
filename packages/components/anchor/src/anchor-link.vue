@@ -52,7 +52,7 @@ onUnmounted(() => {
 .iu-anchor-link {
   --iu:
     flex flex-col
-    px-12px py-2px
+    px-12px my-2px
     hover:c-teal-500;
 }
 

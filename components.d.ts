@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     CheckboxDisabled: typeof import('./src/components/doc/checkbox/CheckboxDisabled.vue')['default']
     CheckboxRound: typeof import('./src/components/doc/checkbox/CheckboxRound.vue')['default']
     CodeBox: typeof import('./src/components/CodeBox.vue')['default']
+    ComPage: typeof import('./src/components/ComPage.vue')['default']
     copy: typeof import('./src/components/doc/anchor/AnchorAffix.vue')['default']
     DividerApi: typeof import('./src/components/doc/divider/DividerApi.md')['default']
     DividerVertical: typeof import('./src/components/doc/divider/DividerVertical.vue')['default']
