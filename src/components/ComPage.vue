@@ -13,7 +13,7 @@ const getHref = (title: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col mt-30px relative">
+  <div class="flex flex-col mt-30px pr-110px relative">
     <div :id="name?.toLowerCase()" mb-30px text-30px font-bold>
       {{ name }}
     </div>
