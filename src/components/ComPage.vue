@@ -13,25 +13,24 @@ const getHref = (title: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col mt-30px pr-110px relative">
-    <div :id="name?.toLowerCase()" mb-30px text-30px font-bold>
-      {{ name }}
+  <div flex w-full>
+    <div class="flex flex-col mt-30px flex-1">
+      <div :id="name?.toLowerCase()" mb-30px text-30px font-bold>
+        {{ name }}
+      </div>
+      <IuSpace>
+        <slot />
+      </IuSpace>
+      <slot name="api" />
     </div>
-    <IuSpace>
-      <slot />
-    </IuSpace>
-    <slot name="api" />
-    <div absolute top-75px right-0>
-      <IuAnchor
-        affix
-        :affix-props="{
-          offset: 60,
-          zIndex: 999,
-        }"
-        :bounds="55"
-      >
-        <IuAnchorLink v-for="item in anchor" :key="item" :href="getHref(item)" :title="item" />
-      </IuAnchor>
+    <div relative max-w-200px class="lt-lg:hidden">
+      <div sticky top-105px>
+        <IuAnchor
+          :bounds="55"
+        >
+          <IuAnchorLink v-for="item in anchor" :key="item" :href="getHref(item)" :title="item" />
+        </IuAnchor>
+      </div>
     </div>
   </div>
 </template>
