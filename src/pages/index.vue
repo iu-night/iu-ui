@@ -19,6 +19,16 @@ const setDis = (val: boolean) => {
           禁用跳转
         </IuCheckbox>
       </div>
+      <div mb-30px>
+        <RouterLink to="/components/button">
+          <button class="start-button">
+            开始
+            <div class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" /><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" /></svg>
+            </div>
+          </button>
+        </RouterLink>
+      </div>
       <JumpPage to="button">
         <Starport port="iu-button" w-490px h-50px>
           <DocButton />
@@ -75,25 +85,41 @@ const setDis = (val: boolean) => {
 </template>
 
 <style scoped lang="scss">
-// .dark .someStyle {
-//   --iu: p-10px rounded-5px overflow-hidden z-5;
+.start-button {
+  --iu: relative overflow-hidden
+  flex items-center
+  h-34px pr-38px pl-16px
+  c-white bg-teal-500 dark:bg-teal-600
+  shadow-inset shadow-teal-600 shadow dark:shadow-teal-700
+  rounded-4px;
 
-//   box-shadow: inset 0 0 10px #80c3ff, 0 0 20px 10px rgb(163 212 255 / 13%);
+  & .icon{
+    --iu: absolute
+      flex flex-center
+      right-4px
+      w-25px h-25px
+      bg-white
+      rounded-4px
+      transition-all-300;
+  }
 
-//   &::before {
-//     --iu: animate-spin animate-duration-5000;
+  &:hover .icon{
+    width: calc(100% - 8px);
+  }
 
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: -1;
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 0 !important;
-//     box-shadow: 0 0 17px 3px #a3d4ff, 0 0 4px 2px #a3d4ff, inset 0 0 17px 3px #80c3ff, inset 0 0 4px 2px #80c3ff;
-//     content: '';
-//   }
-// }
+  & .icon svg {
+    --iu: w-18px c-teal-500 dark:c-teal-600
+      transition-transform-300;
+  }
+
+  &:hover .icon svg{
+    // --iu: translate-x-2px;
+  }
+
+  &:active .icon{
+    --iu: scale-95;
+  }
+}
 </style>
 
 <route lang="yaml">
