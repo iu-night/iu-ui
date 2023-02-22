@@ -14,10 +14,12 @@ import Pages from 'vite-plugin-pages'
 // import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
-// @ts-expect-error Waiting for the solution
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import Preview from 'vite-plugin-vue-component-preview'
 // import prismjs from 'vite-plugin-prismjs'
 import Inspector from 'vite-plugin-vue-inspector'
+
+const PreviewFunc = (Preview as any).default
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
@@ -33,6 +35,8 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     },
 
     plugins: [
+      // PreviewFunc(),
+
       vue({
         include: [/\.vue$/, /\.md$/],
         reactivityTransform: true,
