@@ -1,0 +1,33 @@
+{
+  "name": "iu-vue",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/iu.umd.cjs",
+  "module": "./dist/iu.js",
+  "exports": {
+    ".": {
+      "import": "./dist/iu.js",
+      "require": "./dist/iu.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "vue-tsc --noEmit",
+    "dts": "vue-tsc --declaration --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@floating-ui/vue": "^0.2.1",
+    "@vueuse/components": "^9.13.0",
+    "@vueuse/core": "^9.13.0",
+    "vue": "^3.2.47"
+  }
+}

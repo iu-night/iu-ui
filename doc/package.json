@@ -1,15 +1,13 @@
 {
+  "name": "iu-vue-doc",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "workspaces": [
-    "packages/*",
-    "doc"
-  ],
   "scripts": {
-    "dev": "pnpm -C doc dev",
-    "site": "pnpm -C doc site",
-    "lib": "pnpm -C packages/iu-vue build",
-    "preview": "pnpm -C doc preview",
+    "dev": "vite --port 3366 --host",
+    "site": "vite-ssg build",
+    "lib": "vite build --mode package",
+    "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit",
@@ -20,6 +18,7 @@
     "@vueuse/components": "^9.13.0",
     "@vueuse/core": "^9.13.0",
     "@vueuse/head": "^1.0.26",
+    "iu-vue": "workspace:*",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.32",
     "prism-theme-vars": "^0.2.4",

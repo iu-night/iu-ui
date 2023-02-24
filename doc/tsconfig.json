@@ -22,6 +22,9 @@
       "unplugin-vue-define-options/macros-global",
       "vite-plugin-vue-component-preview/tooling",
     ],
+    "paths": {
+      "@/*": ["./src/*"],
+    }
   },
-  "exclude": ["dist","packages/iu-vue/dist" ,"node_modules"]
+  "exclude": ["dist","node_modules"]
 }
