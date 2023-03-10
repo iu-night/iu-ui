@@ -20,7 +20,7 @@
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-vue-define-options/macros-global",
-      "vite-plugin-vue-component-preview/tooling",
+      // "vite-plugin-vue-component-preview/tooling",
     ],
   },
   "exclude": ["dist","packages/iu-vue/dist" ,"node_modules"]

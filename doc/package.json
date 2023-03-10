@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite --port 3366 --host",
     "site": "vite-ssg build",
-    "lib": "vite build --mode package",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

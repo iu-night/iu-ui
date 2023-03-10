@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit",
-    "dts": "vue-tsc --declaration --emitDeclarationOnly"
+    "dts": "vue-tsc --declaration --emitDeclarationOnly",
+    "deploy": "pnpm run lib && pnpm run site"
   },
   "dependencies": {
     "@floating-ui/vue": "^0.2.1",
@@ -32,6 +33,7 @@
     "@antfu/eslint-config": "^0.36.0",
     "@iconify-json/carbon": "^1.1.16",
     "@types/markdown-it-link-attributes": "^3.0.1",
+    "@types/node": "^18.15.0",
     "@types/nprogress": "^0.2.0",
     "@types/prismjs": "^1.26.0",
     "@vicons/fa": "^0.12.0",
@@ -61,7 +63,6 @@
     "vite-plugin-dts": "^2.1.0",
     "vite-plugin-inspect": "^0.7.16",
     "vite-plugin-pages": "^0.28.0",
-    "vite-plugin-vue-component-preview": "^1.1.5",
     "vite-plugin-vue-inspector": "^3.3.2",
     "vite-plugin-vue-layouts": "^0.8.0",
     "vite-plugin-vue-markdown": "^0.22.4",

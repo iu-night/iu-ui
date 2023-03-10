@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import type { ConfigEnv } from 'vite'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -7,10 +7,10 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
-import Preview from 'vite-plugin-vue-component-preview'
+// import Preview from 'vite-plugin-vue-component-preview'
 import dts from 'vite-plugin-dts'
 
-const PreviewFunc = (Preview as any).default
+// const PreviewFunc = (Preview as any).default
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {

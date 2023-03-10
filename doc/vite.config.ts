@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import type { ConfigEnv } from 'vite'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -15,13 +15,13 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import DefineOptions from 'unplugin-vue-define-options/vite'
-import Preview from 'vite-plugin-vue-component-preview'
+// import Preview from 'vite-plugin-vue-component-preview'
 // import prismjs from 'vite-plugin-prismjs'
 import Inspector from 'vite-plugin-vue-inspector'
 
 import { IuVueResolver } from 'iu-vue'
 
-const PreviewFunc = (Preview as any).default
+// const PreviewFunc = (Preview as any).default
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
