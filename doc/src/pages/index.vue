@@ -1,8 +1,12 @@
 <script setup lang="ts">
 const store = useStore()
 const disabled = computed(() => store.disableJump)
+const animate = computed(() => store.animate)
 const setDis = (val: boolean) => {
   store.setDisable(val)
+}
+const setAnimate = (val: boolean) => {
+  store.setAnimate(val)
 }
 </script>
 
@@ -14,10 +18,15 @@ const setDis = (val: boolean) => {
       </IuCheckbox>
     </div> -->
     <div class="flex-center flex-col relative p-5px z-1 rounded-5px bg-white dark:bg-[#333]">
-      <div mb-30px font-bold>
-        <IuCheckbox :modelValue="disabled" @update:modelValue="setDis">
-          禁用跳转
-        </IuCheckbox>
+      <div mb-30px>
+        <IuSpace>
+          <IuCheckbox :modelValue="animate" @update:modelValue="setAnimate">
+            开启动画
+          </IuCheckbox>
+          <IuCheckbox :modelValue="disabled" @update:modelValue="setDis">
+            禁用组件跳转
+          </IuCheckbox>
+        </IuSpace>
       </div>
       <div mb-30px>
         <RouterLink to="/components/button">

@@ -19,6 +19,8 @@ import Preview from 'vite-plugin-vue-component-preview'
 // import prismjs from 'vite-plugin-prismjs'
 import Inspector from 'vite-plugin-vue-inspector'
 
+import { IuVueResolver } from 'iu-vue'
+
 const PreviewFunc = (Preview as any).default
 
 // https://vitejs.dev/config/
@@ -84,10 +86,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         extensions: ['vue', 'md'],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [
-          (name: string) => {
-            if (name.match(/^(Iu[A-Z]|iu-[a-z])/))
-              return { name, from: 'iu-vue' }
-          },
+          IuVueResolver(),
         ],
         dts: './components.d.ts',
       }),

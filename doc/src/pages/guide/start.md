@@ -1,20 +1,42 @@
-## 开始...
-<!-- ## 安装
+# Start
 
-#### npm i
+## Install
 
+```shell
+pnpm install iu-vue
+```
 
-## 如何使用
+## Usage
 
-### 直接引入 -->
+### Full Import
 
-<!-- ```html
-<script setup>
-  // import { IuButtom } from 'iu-vue'
-</script>
-```  -->
+```js
+// main.ts
+import IuVue from 'iu-vue'
+import 'iu-vue/dist/style.css'
+// ...
+app.use(IuVue)
+app.mount('#app')
+```
 
-<!-- <route lang="yaml">
-meta:
-  layout: guide
-</route> -->
+### Auto import `Recommend`
+
+```shell
+pnpm install -D unplugin-vue-components
+```
+
+```js
+// vite.config.ts
+import { defineConfig } from 'vite'
+import Components from 'unplugin-vue-components/vite'
+import { IuVueResolver } from 'iu-vue'
+
+export default defineConfig({
+  plugins: [
+    // ...
+    Components({
+      resolvers: [IuVueResolver()],
+    }),
+  ],
+})
+```

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const store = useStore()
-const disabled = $computed(() => store.disableJump)
+const disabled = computed(() => store.disableJump)
+const animate = computed(() => store.animate)
 
 const target = ref(null)
 const parallax = reactive(useParallax(target))
@@ -20,7 +21,7 @@ const toogleStarTimeOut = () => {
 }
 
 const specialStyle = computed(() => {
-  if (disabled) {
+  if (animate.value) {
     return {
       transition: '.3s ease-out all',
       transform: `rotateX(${parallax.roll * 20}deg) rotateY(${parallax.tilt * 20}deg)`,

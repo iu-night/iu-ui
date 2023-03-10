@@ -3,9 +3,8 @@ import type { ComponentResolver } from 'unplugin-vue-components'
 /**
  * Resolver for iu-vue
  *
- * @link
  */
-export function IuUiResolver(): ComponentResolver {
+export function IuVueResolver(): ComponentResolver {
   return {
     type: 'component',
     resolve: (name: string) => {

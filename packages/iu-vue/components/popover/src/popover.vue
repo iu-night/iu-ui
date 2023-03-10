@@ -31,15 +31,12 @@ const { x, y, strategy, placement, middlewareData } = useFloating(triggerRef, po
 })
 
 const popStyle = computed<StyleValue>(() => {
-  if (isShow.value) {
-    return {
-      position: strategy.value,
-      top: `${y.value ?? 0}px`,
-      left: `${x.value ?? 0}px`,
-      width: 'max-content',
-    }
+  return {
+    position: strategy.value,
+    top: `${y.value ?? 0}px`,
+    left: `${x.value ?? 0}px`,
+    width: 'max-content',
   }
-  return {}
 })
 
 const arrowStyle = computed<StyleValue>(() => {
@@ -131,7 +128,7 @@ const onBlur = () => {
   <Teleport :to="to">
     <transition name="iu-popover">
       <div
-        v-show="isShow"
+        v-if="isShow"
         ref="popoverRef"
         :style="popStyle"
         @mouseenter="onMouseenter"

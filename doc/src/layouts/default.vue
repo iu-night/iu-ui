@@ -4,7 +4,7 @@
     <div class="flex flex-row flex-nowrap h-100vh">
       <SideBar />
       <main
-        class="bg-[#fafafa]
+        class="bg-[#fbfbfb]
         px-40px pt-55px pb-40px
         overflow-auto crollDivClass dark:bg-[#1e1e1e]
         flex-auto"
