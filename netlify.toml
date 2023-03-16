@@ -3,7 +3,7 @@
 
 [build]
   publish = "doc/dist"
-  command = "pnpm site"
+  command = "pnpm run deploy"
 
 [[redirects]]
   from = "/*"
