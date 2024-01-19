@@ -1,5 +1,7 @@
 # Iu-vue
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/62ea343d-8f5e-4dee-8cb7-8a104399d349/deploy-status)](https://app.netlify.com/sites/iu-ui/deploys)
+
 **Components based on Vue3.**
 
 ## Install
