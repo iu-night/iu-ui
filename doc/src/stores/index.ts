@@ -7,8 +7,8 @@ interface IState {
 
 export const useStore = defineStore('user', {
   state: (): IState => ({
-    disableJump: true,
-    animate: true,
+    disableJump: false,
+    animate: false,
   }),
 
   actions: {
