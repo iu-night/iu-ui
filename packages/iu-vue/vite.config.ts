@@ -20,7 +20,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
 
       vue({
         include: [/\.vue$/, /\.md$/],
-        reactivityTransform: true,
       }),
 
       vueJsx(),
@@ -32,7 +31,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       AutoImport({
         imports: [
           'vue',
-          'vue/macros',
           '@vueuse/head',
           '@vueuse/core',
         ],
@@ -41,14 +39,14 @@ export default defineConfig(({ mode }: ConfigEnv) => {
 
       dts({
         entryRoot: './components',
-        outputDir: 'dist/components',
-        tsConfigFilePath: '../../tsconfig.json',
+        outDir: 'dist/components',
+        tsconfigPath: '../../tsconfig.json',
       }),
     ],
 
     build: {
       target: 'modules',
-      // cssCodeSplit: true,
+      cssCodeSplit: false,
       lib: {
         entry: resolve(__dirname, './index.ts'),
         name: 'iu-vue',

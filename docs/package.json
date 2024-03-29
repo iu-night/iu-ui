@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "iu-vue": "workspace:*",
+    "vitepress": "^1.0.1"
+  }
+}

@@ -19,15 +19,16 @@
   },
   "scripts": {
     "build": "vite build",
+    "build:watch": "vite build --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit",
     "dts": "vue-tsc --declaration --emitDeclarationOnly"
   },
   "dependencies": {
-    "@floating-ui/vue": "^0.2.1",
-    "@vueuse/components": "^9.13.0",
-    "@vueuse/core": "^9.13.0",
-    "vue": "^3.2.47"
+    "@floating-ui/vue": "^1.0.6",
+    "@vueuse/components": "^10.9.0",
+    "@vueuse/core": "^10.9.0",
+    "vue": "^3.4.21"
   }
 }

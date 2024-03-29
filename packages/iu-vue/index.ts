@@ -1,6 +1,5 @@
 import type { App } from 'vue'
 
-import './styles/var.scss'
 import 'uno.css'
 
 import * as components from './components'
